@@ -13,34 +13,34 @@ namespace obligatorioP2
         {
             Console.WriteLine("obligatorio p2");
             Console.WriteLine("Menu principal");
-            Console.WriteLine(
-                "1 - agregar vuelo \n" +
-                "2 - Listar Pasajes en un rango de fechas \n" +
-                "3 - Listar Pasajeros \n" +
-                "4 - Dar de alta cliente ocasional.");
+            Console.WriteLine();
 
             int seleccion = -1;
             while (seleccion != 0)
             {
-                seleccion = SolicitarInt("Seleccione que acción quiere realizar: " +
-                "\n(0 para salir)", 8, 0);
-                Console.Clear();
+                seleccion = SolicitarInt("Seleccione que acción quiere realizar: \n" +
+
+                "1 - Listar Pasajeros. \n" +
+                "2 -  \n" +
+                "3 - Dar de alta cliente ocasional. \n" +
+                "4 - Listar Pasajes en un rango de fechas. \n" +
+                "(0 para salir)", 8, 0);
 
                 switch (seleccion)
                 {
                     case 4:
+                        ListarPasajesSegunRangoDeFechas();
+                        break;
+                    case 3:
                         //PARTE C
                         DarDeAltaClienteOcasional(); //estamos llamando al metodo de program (el de sistema se llama igual, pero tiene parametros, por eso solo ponemos acá "DarDeAltaClienteOcasional" y no "sistema.DarDeAltaClienteOcasional".
                         break;
-                    case 3:
-                        //PARTE A
-                        sistema.ListarPasajeros();
-                        break;
                     case 2:
-                        ListarPasajesSegunRangoDeFechas();
+
                         break;
                     case 1:
-                        AgregarVuelo();
+                        //PARTE A
+                        sistema.ListarPasajeros();
                         break;
                     case 0:
                         Console.WriteLine("Gracias por utilizar nuestro sistema, Nos vemos pronto!");
@@ -85,42 +85,13 @@ namespace obligatorioP2
             }
 
 
-
-
-
-
-
-            static void AgregarVuelo()
-            {
-                Console.Clear();
-                Console.WriteLine("Agregar vuelo");
-                Console.WriteLine("0 para salir");
-
-                int seleccion = -1;
-                while (seleccion != 0)
-                {
-
-                    int numViaje = SolicitarInt("Número de vuelo", 9999, 0);
-                    Console.Clear();
-
-                    Avion avion = new Avion("xa", "ax", 1, 1, 1, "a");
-                    Ruta ruta = new Ruta(null, null, 1);
-
-                    List<string> frecuencia = CrearListaFrecuencia();
-                    Vuelo vuelo = new Vuelo(numViaje, avion, ruta, frecuencia);
-                    vuelo.ToString();
-                }
-            }
-
             //PARTE D (SOLICITAR LAS DOS FECHAS).
             static void ListarPasajesSegunRangoDeFechas()
             {
-                Console.Clear();
+
                 DateTime fechaInicial = SolicitarDateTime("Ingrese la fecha inicial (formato dd-MM-yyyy).");
-                Console.Clear();
 
                 DateTime fechaFinal = SolicitarDateTime("Ingrese la final fecha (formato dd-MM-yyyy).");
-                Console.Clear();
 
                 List<Pasaje> pasajes = sistema.ObtenerPasajeEntre(fechaInicial, fechaFinal);
 
@@ -130,39 +101,16 @@ namespace obligatorioP2
                 }
                 else
                 {
-                    foreach (Pasaje pasajeEncontrado in pasajes)
+                    Console.WriteLine($" Pasajes entre  {fechaInicial} y {fechaFinal}:\n");
+
+                    foreach (Pasaje unPasaje in pasajes)
                     {
-                        Console.WriteLine($"Pasajes entre {fechaInicial} y {fechaFinal}: " + pasajeEncontrado);
+                        Console.WriteLine(unPasaje);
                     }
                 }
+
             }
 
-            static List<string> CrearListaFrecuencia()
-            {
-
-                Console.WriteLine("Ingrese la frecuencia del vuelo (formato esperado: lunes)");
-                bool ingresoSalir = false;
-                List<string> frecuencia = new List<string>();
-                int cantidadMaximaDeDiasIngresables = 7;
-                int i = 0;
-                while (!ingresoSalir && i < cantidadMaximaDeDiasIngresables)
-                {
-                    Console.WriteLine();
-
-                    string stringIngresado = Console.ReadLine().ToLower().Trim();
-                    if (stringIngresado != "salir")
-
-                    {
-                        frecuencia.Add(stringIngresado);
-                    }
-                    else
-                    {
-                        ingresoSalir = true;
-                    }
-                    i++;
-                }
-                return frecuencia;
-            }
 
 
             //Metodos de solicitar

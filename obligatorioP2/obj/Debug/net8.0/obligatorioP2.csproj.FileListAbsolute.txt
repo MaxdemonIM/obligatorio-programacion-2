@@ -57,3 +57,22 @@ C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGR
 C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\CUARTA SEMANA\Obligatorio P2 12042025\obligatorioP2\obj\Debug\net8.0\obligato.B5070A98.Up2Date
 C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\CUARTA SEMANA\Obligatorio P2 12042025\obligatorioP2\obj\Debug\net8.0\obligatorioP2.genruntimeconfig.cache
 C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\CUARTA SEMANA\Obligatorio P2 12042025\obligatorioP2\obj\Debug\net8.0\ref\obligatorioP2.dll
+D:\GitHub\obligatorio-programacion-2\obligatorioP2\bin\Debug\net8.0\obligatorioP2.exe
+D:\GitHub\obligatorio-programacion-2\obligatorioP2\bin\Debug\net8.0\obligatorioP2.deps.json
+D:\GitHub\obligatorio-programacion-2\obligatorioP2\bin\Debug\net8.0\obligatorioP2.runtimeconfig.json
+D:\GitHub\obligatorio-programacion-2\obligatorioP2\bin\Debug\net8.0\obligatorioP2.dll
+D:\GitHub\obligatorio-programacion-2\obligatorioP2\bin\Debug\net8.0\obligatorioP2.pdb
+D:\GitHub\obligatorio-programacion-2\obligatorioP2\bin\Debug\net8.0\Dominio.dll
+D:\GitHub\obligatorio-programacion-2\obligatorioP2\bin\Debug\net8.0\Dominio.pdb
+D:\GitHub\obligatorio-programacion-2\obligatorioP2\obj\Debug\net8.0\obligatorioP2.csproj.AssemblyReference.cache
+D:\GitHub\obligatorio-programacion-2\obligatorioP2\obj\Debug\net8.0\obligatorioP2.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\obligatorio-programacion-2\obligatorioP2\obj\Debug\net8.0\obligatorioP2.AssemblyInfoInputs.cache
+D:\GitHub\obligatorio-programacion-2\obligatorioP2\obj\Debug\net8.0\obligatorioP2.AssemblyInfo.cs
+D:\GitHub\obligatorio-programacion-2\obligatorioP2\obj\Debug\net8.0\obligatorioP2.csproj.CoreCompileInputs.cache
+D:\GitHub\obligatorio-programacion-2\obligatorioP2\obj\Debug\net8.0\obligatorioP2.sourcelink.json
+D:\GitHub\obligatorio-programacion-2\obligatorioP2\obj\Debug\net8.0\obligato.B5070A98.Up2Date
+D:\GitHub\obligatorio-programacion-2\obligatorioP2\obj\Debug\net8.0\obligatorioP2.dll
+D:\GitHub\obligatorio-programacion-2\obligatorioP2\obj\Debug\net8.0\refint\obligatorioP2.dll
+D:\GitHub\obligatorio-programacion-2\obligatorioP2\obj\Debug\net8.0\obligatorioP2.pdb
+D:\GitHub\obligatorio-programacion-2\obligatorioP2\obj\Debug\net8.0\obligatorioP2.genruntimeconfig.cache
+D:\GitHub\obligatorio-programacion-2\obligatorioP2\obj\Debug\net8.0\ref\obligatorioP2.dll
