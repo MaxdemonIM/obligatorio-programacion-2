@@ -1,0 +1,41 @@
+C:\Users\ropin\Downloads\obligatorioP2-09042025 archivo final antes de cortar!-20250410T112705Z-001\obligatorioP2-09042025 archivo final antes de cortar!\obligatorioP2-04042025\Dominio\obj\Debug\net8.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ropin\Downloads\obligatorioP2-09042025 archivo final antes de cortar!-20250410T112705Z-001\obligatorioP2-09042025 archivo final antes de cortar!\obligatorioP2-04042025\Dominio\obj\Debug\net8.0\Dominio.AssemblyInfoInputs.cache
+C:\Users\ropin\Downloads\obligatorioP2-09042025 archivo final antes de cortar!-20250410T112705Z-001\obligatorioP2-09042025 archivo final antes de cortar!\obligatorioP2-04042025\Dominio\obj\Debug\net8.0\Dominio.AssemblyInfo.cs
+C:\Users\ropin\Downloads\obligatorioP2-09042025 archivo final antes de cortar!-20250410T112705Z-001\obligatorioP2-09042025 archivo final antes de cortar!\obligatorioP2-04042025\Dominio\obj\Debug\net8.0\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\TERCERA SEMANA\no copila\Dominio\obj\Debug\net8.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\TERCERA SEMANA\no copila\Dominio\obj\Debug\net8.0\Dominio.AssemblyInfoInputs.cache
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\TERCERA SEMANA\no copila\Dominio\obj\Debug\net8.0\Dominio.AssemblyInfo.cs
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\TERCERA SEMANA\no copila\Dominio\obj\Debug\net8.0\Dominio.csproj.CoreCompileInputs.cache
+D:\no copila\Dominio\obj\Debug\net8.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+D:\no copila\Dominio\obj\Debug\net8.0\Dominio.AssemblyInfoInputs.cache
+D:\no copila\Dominio\obj\Debug\net8.0\Dominio.AssemblyInfo.cs
+D:\no copila\Dominio\obj\Debug\net8.0\Dominio.csproj.CoreCompileInputs.cache
+D:\no copila\Dominio\bin\Debug\net8.0\Dominio.deps.json
+D:\no copila\Dominio\bin\Debug\net8.0\Dominio.dll
+D:\no copila\Dominio\bin\Debug\net8.0\Dominio.pdb
+D:\no copila\Dominio\obj\Debug\net8.0\Dominio.dll
+D:\no copila\Dominio\obj\Debug\net8.0\refint\Dominio.dll
+D:\no copila\Dominio\obj\Debug\net8.0\Dominio.pdb
+D:\no copila\Dominio\obj\Debug\net8.0\ref\Dominio.dll
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\TERCERA SEMANA\Obligatorio P2 12042025\Dominio\obj\Debug\net8.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\TERCERA SEMANA\Obligatorio P2 12042025\Dominio\obj\Debug\net8.0\Dominio.AssemblyInfoInputs.cache
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\TERCERA SEMANA\Obligatorio P2 12042025\Dominio\obj\Debug\net8.0\Dominio.AssemblyInfo.cs
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\TERCERA SEMANA\Obligatorio P2 12042025\Dominio\obj\Debug\net8.0\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\TERCERA SEMANA\Obligatorio P2 12042025\Dominio\obj\Debug\net8.0\Dominio.dll
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\TERCERA SEMANA\Obligatorio P2 12042025\Dominio\obj\Debug\net8.0\refint\Dominio.dll
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\TERCERA SEMANA\Obligatorio P2 12042025\Dominio\obj\Debug\net8.0\Dominio.pdb
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\TERCERA SEMANA\Obligatorio P2 12042025\Dominio\bin\Debug\net8.0\Dominio.deps.json
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\TERCERA SEMANA\Obligatorio P2 12042025\Dominio\bin\Debug\net8.0\Dominio.dll
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\TERCERA SEMANA\Obligatorio P2 12042025\Dominio\bin\Debug\net8.0\Dominio.pdb
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\TERCERA SEMANA\Obligatorio P2 12042025\Dominio\obj\Debug\net8.0\ref\Dominio.dll
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\CUARTA SEMANA\Obligatorio P2 12042025\Dominio\obj\Debug\net8.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\CUARTA SEMANA\Obligatorio P2 12042025\Dominio\obj\Debug\net8.0\Dominio.AssemblyInfoInputs.cache
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\CUARTA SEMANA\Obligatorio P2 12042025\Dominio\obj\Debug\net8.0\Dominio.AssemblyInfo.cs
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\CUARTA SEMANA\Obligatorio P2 12042025\Dominio\obj\Debug\net8.0\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\CUARTA SEMANA\Obligatorio P2 12042025\Dominio\obj\Debug\net8.0\Dominio.dll
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\CUARTA SEMANA\Obligatorio P2 12042025\Dominio\obj\Debug\net8.0\refint\Dominio.dll
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\CUARTA SEMANA\Obligatorio P2 12042025\Dominio\obj\Debug\net8.0\Dominio.pdb
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\CUARTA SEMANA\Obligatorio P2 12042025\Dominio\bin\Debug\net8.0\Dominio.deps.json
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\CUARTA SEMANA\Obligatorio P2 12042025\Dominio\bin\Debug\net8.0\Dominio.dll
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\CUARTA SEMANA\Obligatorio P2 12042025\Dominio\bin\Debug\net8.0\Dominio.pdb
+C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\CUARTA SEMANA\Obligatorio P2 12042025\Dominio\obj\Debug\net8.0\ref\Dominio.dll

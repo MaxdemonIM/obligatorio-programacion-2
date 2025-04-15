@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35828.75
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "obligatorioP2", "obligatorioP2.csproj", "{97777633-7BA5-48FD-80A9-88F516E2A78C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{476A1FD8-D83D-416E-9310-9A1EF13AFBE8} = {476A1FD8-D83D-416E-9310-9A1EF13AFBE8}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "..\Dominio\Dominio.csproj", "{476A1FD8-D83D-416E-9310-9A1EF13AFBE8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97777633-7BA5-48FD-80A9-88F516E2A78C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97777633-7BA5-48FD-80A9-88F516E2A78C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97777633-7BA5-48FD-80A9-88F516E2A78C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97777633-7BA5-48FD-80A9-88F516E2A78C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{476A1FD8-D83D-416E-9310-9A1EF13AFBE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{476A1FD8-D83D-416E-9310-9A1EF13AFBE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{476A1FD8-D83D-416E-9310-9A1EF13AFBE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{476A1FD8-D83D-416E-9310-9A1EF13AFBE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F1B683D1-709D-4FB8-BF83-090C739FADA3}
+	EndGlobalSection
+EndGlobal
