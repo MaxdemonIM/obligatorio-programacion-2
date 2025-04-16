@@ -8,19 +8,19 @@ namespace Dominio
 {
     public class Pasajero : Usuario
     {
-
         private string _nacionalidad;
         private string _docIdentidad;
         private string _nombre;
         private List<Premium> _premiums;
         private List<Ocasional> _ocasionales;
 
+        public string DocIdentidad { get { return _docIdentidad; } }
+
+        public string Nombre { get { return _nombre; } }
+
         public List<Premium> Premiums { get { return _premiums; } }
 
         public List<Ocasional> Ocasionales { get { return _ocasionales; } }
-
-
-        public string Nombre { get { return _nombre; } }
 
 
         public Pasajero(string nacionalidad, string docIdentidad, string nombre, string password, string email) : base(password, email)
@@ -31,7 +31,6 @@ namespace Dominio
             this._premiums = new List<Premium>();
             this._ocasionales = new List<Ocasional>();
             this.Validar();
-
         }
 
         public void Validar()
@@ -74,7 +73,6 @@ namespace Dominio
                 {
                     throw new Exception("El documento de identidad debe contener solo números.");
                 }
-
             }
 
             if (this._docIdentidad.Length < 7 || this._docIdentidad.Length > 8)
@@ -82,14 +80,13 @@ namespace Dominio
                 throw new Exception("El documento de identidad debe tener entre 7 y 8 dígitos.");
             }
 
-           // if (existe) //to do
+
         }
 
 
         public override string ToString()
         {
-            return $"Nombre: {_nombre} | Email: {_email} | Nacionalidad: {_nacionalidad} | Cedula Identidad: {_docIdentidad}"; 
+            return $"Nombre: {_nombre} | Email: {_email} | Nacionalidad: {_nacionalidad} | Cedula Identidad: {_docIdentidad}";
         }
-
     }
 }

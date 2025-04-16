@@ -6,22 +6,25 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class Vuelo 
+    public class Vuelo
     {
 
         private int _numVuelo;
         private Avion _avion;    //SE PASA OBJETO
         private Ruta _ruta;
-        private List<string> _frecuencia;
+        private string _frecuencia;
         private decimal _costoXAsiento;
 
         public int NumVuelo { get { return _numVuelo; } }
 
-        public List<string> Frecuencia { get { return this._frecuencia; } } //para pueda ser accesible desde pasaje que lo vamos usar. 
+        public string Frecuencia { get { return this._frecuencia; } } //para pueda ser accesible desde pasaje que lo vamos usar. 
+
+        public Ruta Ruta { get { return this._ruta; } } //para sean publicas para la PARTE B
+
+        public Avion Avion { get { return this._avion; } } ////para sean publicas para la PARTE B
 
 
-
-        public Vuelo(int numVuelo, Avion avion, Ruta ruta, List<string> frecuencia)
+        public Vuelo(int numVuelo, Avion avion, Ruta ruta, string frecuencia)
         {
             this._numVuelo = numVuelo;
             this._avion = avion;
@@ -30,7 +33,7 @@ namespace Dominio
             this._costoXAsiento = this.CalcularCostoPorAsiento();
             this.Validar();
         }
-        
+
         public void Validar()
         {
             this.ValidarFrecuencia();
@@ -39,43 +42,24 @@ namespace Dominio
 
         public void ValidarAvionPuedeCompletarRuta()
         {
-            if(_avion.Alcance < _ruta.Distancia)
+            if (_avion.Alcance < _ruta.Distancia)
             {
                 throw new Exception("El avión no puede recorrer la totalidad de la distancia de la ruta");
             }
         }
 
-        public void ValidarFrecuencia() //para que sea un día de la semana. 
+        public void ValidarFrecuencia() //para que los dias ingresados correspondan a un día de la semana. 
         {
-            List<string> diasValidos = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"];
-
-
-            // List<string> _frecuencia = ["lunes", "martes", "jueves", "sabado", "feriado"];
+            List<string> diasValidos = ["lunes", "martes", "miercoles", "miércoles", "jueves", "viernes", "sabado", "sábado", "domingo"];
 
             int i = 0;
-            bool esValido = true;
-
-            while (esValido && i < this._frecuencia.Count)
+            bool esValido = false;
+            while (!esValido && i < diasValidos.Count)
             {
-                string diaDeFrecuencia = this._frecuencia[i];
-
-                bool encontrado = false;
-                int j = 0;
-
-                while (!encontrado && j < diasValidos.Count)
+                if (this._frecuencia == diasValidos[i])
                 {
-                    if (diaDeFrecuencia == diasValidos[j])
-                    {
-                        encontrado = true;
-                    }
-                    j++;
+                    esValido = true;
                 }
-
-                if (!encontrado)
-                {
-                    esValido = false;
-                }
-
                 i++;
             }
 
@@ -92,18 +76,17 @@ namespace Dominio
             decimal distanciaRuta = _ruta.Distancia;
             decimal costoOppAeropuertos = _ruta.AeropuertoSalida.CostoOpp + _ruta.AeropuertoLlegada.CostoOpp;
             int cantAsientos = _avion.CantAsientos;
-            decimal costoPorAsiento = 0;
-            return costoPorAsiento = ((costoXKm * distanciaRuta) + costoOppAeropuertos) / cantAsientos;
+            return ((costoXKm * distanciaRuta) + costoOppAeropuertos) / cantAsientos;
         }
 
 
-        
+
         //FALTA LO DE LISTAR VUELOENAEROPUERTO.
 
-        
+
         public override string ToString()
         {
-            return $"{this._numVuelo} {this._avion} {this._ruta} {this._frecuencia}\n";
+            return $"Vuelo # {this._numVuelo} - {this._avion} - {this._ruta} - {this._frecuencia}\n";
         }
 
     }

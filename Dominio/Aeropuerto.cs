@@ -21,19 +21,18 @@ namespace Dominio
 
         public decimal CostoOpp { get { return _costoOpp; } }
 
-        public Aeropuerto(string IATACode, string ciudad, decimal costoOpp, decimal costoTasas) 
+        public Aeropuerto(string IATACode, string ciudad, decimal costoOpp, decimal costoTasas)
         {
             IATACode = IATACode.ToUpper(); //Forzamos que este en mayúscula desde un comienzo para no hacer validación. 
             this._IATACode = IATACode;
-            this._Ciudad = ciudad;  
-            this._costoOpp = costoOpp; 
+            this._Ciudad = ciudad;
+            this._costoOpp = costoOpp;
             this._costoTasas = costoTasas;
             this.Validar();
-            
+
         }
 
 
-        //FALTAN LOS METODOS!!!!!!!!
 
         public void Validar()
         {
@@ -46,17 +45,17 @@ namespace Dominio
 
         public void ValidarIATA()
         {
-            if (IATACode.Length != 3) 
-            { 
+            if (IATACode.Length != 3)
+            {
                 throw new Exception("El código IATA debe tener exactamente 3 caracteres.");
             }
 
             foreach (char caracter in IATACode)
             {
-                if(!char.IsLetter(caracter))
-                    {
-                        throw new Exception("Solo ingresar letras en el código IATA, no números, espacios en blanco ni simbolos.");
-                    }
+                if (!char.IsLetter(caracter))
+                {
+                    throw new Exception("Solo ingresar letras en el código IATA, no números, espacios en blanco ni simbolos.");
+                }
             }
         }
 
@@ -84,6 +83,13 @@ namespace Dominio
             {
                 throw new Exception("Las tasas no pueden ser 0 o un número negativo");
             }
+        }
+
+
+
+        public override string ToString()
+        {
+            return $"{_IATACode}";
 
         }
 
@@ -92,14 +98,6 @@ namespace Dominio
             if (obj == null || !(obj is Aeropuerto)) return false;
             Aeropuerto otro = (Aeropuerto)obj;
             return this.IATACode.Equals(otro.IATACode);
-        }
-
-        // To Do
-
-        public override string ToString()
-        {
-            return "a";
-
         }
 
     }

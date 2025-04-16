@@ -12,7 +12,9 @@ namespace Dominio
 
         private string _nickname;
 
-        public Administrador(string nickname, string password, string email) : base (password, email)
+        //public string Nickname { get { return _nickname; } }
+
+        public Administrador(string nickname, string password, string email) : base(password, email)
         {
             this._nickname = nickname;
             this.Validar();
@@ -30,14 +32,13 @@ namespace Dominio
             {
                 throw new Exception("El valor no puede estar vacío o solo contener espacios.");
             }
-
         }
 
 
         public override bool Equals(object? obj)
         {
             if (obj == null || !(obj is Administrador)) return false;
-             Administrador otro = (Administrador)obj;
+            Administrador otro = (Administrador)obj;
             return this._nickname.Equals(otro._nickname);
         }
 

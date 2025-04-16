@@ -15,11 +15,11 @@ namespace Dominio
         private Aeropuerto _aeropuertoSalida;
         private decimal _distancia;
 
-        public decimal Distancia { get  { return this._distancia; } } //Para validar que el avion pueda hacer el vuelo.
+        public decimal Distancia { get { return this._distancia; } } //Para validar que el avion pueda hacer el vuelo.
 
-        public Aeropuerto AeropuertoLlegada { get { return this._aeropuertoLlegada ; } }
+        public Aeropuerto AeropuertoLlegada { get { return this._aeropuertoLlegada; } }
 
-        public Aeropuerto AeropuertoSalida { get { return _aeropuertoSalida ; } }
+        public Aeropuerto AeropuertoSalida { get { return this._aeropuertoSalida; } }
 
         public Ruta(Aeropuerto aeropuertoLlegada, Aeropuerto aeropuertoSalida, decimal distancia)
         {
@@ -41,7 +41,7 @@ namespace Dominio
         public void Validar()
         {
             this.ValidarDistancia();
-       
+
 
         }
 
@@ -56,12 +56,11 @@ namespace Dominio
 
         public void ValidarQueAeropuertoNoSeRepita()
         {
-            if (_aeropuertoLlegada.Equals(_aeropuertoSalida)) 
+            if (_aeropuertoLlegada.Equals(_aeropuertoSalida))
             {
                 throw new Exception("El aeropuerto de salida no puede ser el mismo que el de llegada");
             }
         }
-
 
 
 
