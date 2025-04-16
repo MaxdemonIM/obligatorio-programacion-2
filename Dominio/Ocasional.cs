@@ -30,9 +30,11 @@ namespace Dominio
         }
 
 
-        public override string ToString() { 
+        public override string ToString()
+        {
             return base.ToString() + $" Elegible: {(_elegible ? "Sí" : "No")}";
         }
+
 
     }
 }

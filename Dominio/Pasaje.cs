@@ -9,7 +9,7 @@ namespace Dominio
 {
     public class Pasaje
     {
-        private static int s_ultimoId = -1;
+        private static int s_ultimoId = 0;
         private int _id;
         private Vuelo _vuelo;
         private Pasajero _pasajero;
@@ -62,14 +62,6 @@ namespace Dominio
             return $"Datos del Pasaje: ID: {_id} | Pasajero: {_pasajero.Nombre} | Fecha: {_fecha:dd-MM-yyyy} | Precio: ${_precio} | Vuelo: {_vuelo.NumVuelo}";
         }
 
-
-        //FALTAN LOS METODOS!!!!!!!!
-
-
-
-
     }
-
-
 }
 

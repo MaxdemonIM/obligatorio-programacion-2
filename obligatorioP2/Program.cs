@@ -21,13 +21,14 @@ namespace obligatorioP2
                 seleccion = SolicitarInt("Seleccione que acción quiere realizar: \n" +
 
                 "1 - Listar Pasajeros. \n" +
-                "2 -  \n" +
+                "2 - Listar vuelos respecto a un código IATA. \n" +
                 "3 - Dar de alta cliente ocasional. \n" +
                 "4 - Listar Pasajes en un rango de fechas. \n" +
                 "(0 para salir)", 8, 0);
 
                 switch (seleccion)
                 {
+                        //PARTE D
                     case 4:
                         ListarPasajesSegunRangoDeFechas();
                         break;
@@ -35,12 +36,13 @@ namespace obligatorioP2
                         //PARTE C
                         DarDeAltaClienteOcasional(); //estamos llamando al metodo de program (el de sistema se llama igual, pero tiene parametros, por eso solo ponemos acá "DarDeAltaClienteOcasional" y no "sistema.DarDeAltaClienteOcasional".
                         break;
+                        //PARTE B
                     case 2:
-
+                        ListarVuelosQueIncluyenIATACode();
                         break;
                     case 1:
                         //PARTE A
-                        sistema.ListarPasajeros();
+                        ListarPasajeros();
                         break;
                     case 0:
                         Console.WriteLine("Gracias por utilizar nuestro sistema, Nos vemos pronto!");
@@ -49,6 +51,25 @@ namespace obligatorioP2
                         Console.WriteLine("Seleccion invalida");
                         break;
                 }
+            }
+
+
+            //PARTE B
+
+            static void ListarVuelosQueIncluyenIATACode()
+            {
+                Console.WriteLine("Ingrese el código IATA de el aeropuerto del cual quiere conocer los vuelos:");
+                string IATACode = Console.ReadLine().ToUpper().Trim();
+
+                sistema.ListarVuelosPorAeropuerto(IATACode);
+            }
+
+
+            //PARTE A
+
+            static void ListarPasajeros() 
+            {
+                sistema.ListarPasajeros();
             }
 
             //PARTE C --- DAR DE ALTA CLIENTE OCASIONAL
@@ -80,7 +101,7 @@ namespace obligatorioP2
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Error al dar de alta el cliente:");
+                    Console.WriteLine(e.Message);
                 }
             }
 
@@ -108,7 +129,6 @@ namespace obligatorioP2
                         Console.WriteLine(unPasaje);
                     }
                 }
-
             }
 
 

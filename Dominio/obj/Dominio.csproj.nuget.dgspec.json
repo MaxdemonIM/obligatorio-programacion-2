@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maric\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\PROGRAMACION\\FACULTAD\\Programacion 2\\OBLIGATORIO\\CUARTA SEMANA\\Obligatorio P2 12042025\\Dominio\\Dominio.csproj": {}
+    "D:\\GitHub\\obligatorio-programacion-2\\Dominio\\Dominio.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maric\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\PROGRAMACION\\FACULTAD\\Programacion 2\\OBLIGATORIO\\CUARTA SEMANA\\Obligatorio P2 12042025\\Dominio\\Dominio.csproj": {
+    "D:\\GitHub\\obligatorio-programacion-2\\Dominio\\Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maric\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\PROGRAMACION\\FACULTAD\\Programacion 2\\OBLIGATORIO\\CUARTA SEMANA\\Obligatorio P2 12042025\\Dominio\\Dominio.csproj",
+        "projectUniqueName": "D:\\GitHub\\obligatorio-programacion-2\\Dominio\\Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "C:\\Users\\maric\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\PROGRAMACION\\FACULTAD\\Programacion 2\\OBLIGATORIO\\CUARTA SEMANA\\Obligatorio P2 12042025\\Dominio\\Dominio.csproj",
+        "projectPath": "D:\\GitHub\\obligatorio-programacion-2\\Dominio\\Dominio.csproj",
         "packagesPath": "C:\\Users\\maric\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maric\\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\\PROGRAMACION\\FACULTAD\\Programacion 2\\OBLIGATORIO\\CUARTA SEMANA\\Obligatorio P2 12042025\\Dominio\\obj\\",
+        "outputPath": "D:\\GitHub\\obligatorio-programacion-2\\Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

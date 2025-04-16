@@ -1,3 +1,9 @@
+Version - 1.0
+
+-Se implemento la funcion ListarVuelosQueIncluyenIATACode() la cual recibe un IATA Code por consola y muestra todos
+los vuelos que tengan asociado el aeropuerto con dicho IATA
+-bug fixes y cambios para correcta delegacion de responsabilidades
+
 Version - 14042025
 
 -Override de Equals en Administrador que determina que dos Administradores son el mismo si tienen el mismo nickname

@@ -39,3 +39,15 @@ C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGR
 C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\CUARTA SEMANA\Obligatorio P2 12042025\Dominio\bin\Debug\net8.0\Dominio.dll
 C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\CUARTA SEMANA\Obligatorio P2 12042025\Dominio\bin\Debug\net8.0\Dominio.pdb
 C:\Users\maric\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\PROGRAMACION\FACULTAD\Programacion 2\OBLIGATORIO\CUARTA SEMANA\Obligatorio P2 12042025\Dominio\obj\Debug\net8.0\ref\Dominio.dll
+D:\GitHub\obligatorio-programacion-2\Dominio\bin\Debug\net8.0\Dominio.deps.json
+D:\GitHub\obligatorio-programacion-2\Dominio\bin\Debug\net8.0\Dominio.dll
+D:\GitHub\obligatorio-programacion-2\Dominio\bin\Debug\net8.0\Dominio.pdb
+D:\GitHub\obligatorio-programacion-2\Dominio\obj\Debug\net8.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\obligatorio-programacion-2\Dominio\obj\Debug\net8.0\Dominio.AssemblyInfoInputs.cache
+D:\GitHub\obligatorio-programacion-2\Dominio\obj\Debug\net8.0\Dominio.AssemblyInfo.cs
+D:\GitHub\obligatorio-programacion-2\Dominio\obj\Debug\net8.0\Dominio.csproj.CoreCompileInputs.cache
+D:\GitHub\obligatorio-programacion-2\Dominio\obj\Debug\net8.0\Dominio.sourcelink.json
+D:\GitHub\obligatorio-programacion-2\Dominio\obj\Debug\net8.0\Dominio.dll
+D:\GitHub\obligatorio-programacion-2\Dominio\obj\Debug\net8.0\refint\Dominio.dll
+D:\GitHub\obligatorio-programacion-2\Dominio\obj\Debug\net8.0\Dominio.pdb
+D:\GitHub\obligatorio-programacion-2\Dominio\obj\Debug\net8.0\ref\Dominio.dll
