@@ -86,8 +86,7 @@ namespace Dominio
             {
                 if (unUsuario is Pasajero unPasajero) //Determina si el objeto usuario es ademas un Pasajero
                 {
-
-                    Console.WriteLine(unPasajero.ToString());
+                    Console.WriteLine(unPasajero);
                 }
             }
         }

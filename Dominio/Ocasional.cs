@@ -21,7 +21,6 @@ namespace Dominio
         private bool CalcularElegibilidad()
         {
             //si el random cae en el numero limite o antes es elegible, si es mayor no es elegible
-
             int chance = 70;
             Random numeroRandom = new Random();
             int numero = numeroRandom.Next(0, 100);
@@ -34,7 +33,5 @@ namespace Dominio
         {
             return base.ToString() + $" Elegible: {(_elegible ? "Sí" : "No")}";
         }
-
-
     }
 }

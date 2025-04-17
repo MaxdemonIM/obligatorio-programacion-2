@@ -9,7 +9,7 @@ namespace Dominio
     public class Avion
     {
         private string _fabricante;
-        private string _modelo;
+        private string _modelo;  //determinante to do
         private int _alcance;
         private int _cantAsientos;
         private decimal _costoXKm;

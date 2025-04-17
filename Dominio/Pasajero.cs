@@ -64,6 +64,10 @@ namespace Dominio
             {
                 throw new Exception("El documento de identidad no puede estar vacío ni contener espacios en blanco.");
             }
+            if (this._docIdentidad.Length < 7 || this._docIdentidad.Length > 8)
+            {
+                throw new Exception("El documento de identidad debe tener entre 7 y 8 dígitos.");
+            }
 
             for (int i = 0; i < this._docIdentidad.Length; i++)
             {
@@ -74,15 +78,7 @@ namespace Dominio
                     throw new Exception("El documento de identidad debe contener solo números.");
                 }
             }
-
-            if (this._docIdentidad.Length < 7 || this._docIdentidad.Length > 8)
-            {
-                throw new Exception("El documento de identidad debe tener entre 7 y 8 dígitos.");
-            }
-
-
         }
-
 
         public override string ToString()
         {

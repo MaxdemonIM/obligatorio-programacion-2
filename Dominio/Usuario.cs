@@ -42,16 +42,14 @@
             }
 
             int i = 0;
+            int cantidadMinima = 1;
+
             int contadorMayusculas = 0;
             int contadorNumeros = 0;
             int contadorMinusculas = 0;
             int contadorSimbolo = 0;
 
-            int cantidadMinima = 1;
-
-
             char caracter = _password[i];
-
             while (i < _password.Length || contadorMayusculas == cantidadMinima && contadorMinusculas == cantidadMinima && contadorSimbolo == cantidadMinima && contadorNumeros == cantidadMinima)
             {
                 if (char.IsDigit(caracter))

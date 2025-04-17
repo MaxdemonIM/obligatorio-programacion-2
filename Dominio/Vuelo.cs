@@ -36,8 +36,8 @@ namespace Dominio
 
         public void Validar()
         {
-            this.ValidarFrecuencia();
             this.ValidarAvionPuedeCompletarRuta();
+            this.ValidarFrecuencia();
         }
 
         public void ValidarAvionPuedeCompletarRuta()
@@ -69,7 +69,6 @@ namespace Dominio
             }
         }
 
-
         public decimal CalcularCostoPorAsiento()
         {
             decimal costoXKm = _avion.CostoXKm;
@@ -78,11 +77,6 @@ namespace Dominio
             int cantAsientos = _avion.CantAsientos;
             return ((costoXKm * distanciaRuta) + costoOppAeropuertos) / cantAsientos;
         }
-
-
-
-        //FALTA LO DE LISTAR VUELOENAEROPUERTO.
-
 
         public override string ToString()
         {

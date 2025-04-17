@@ -18,20 +18,6 @@ namespace Dominio
             this.Validar();
         }
 
-        //FALTAN LOS METODOS!!!!!!!!
-
-        //To Do
-
-        public void Validar()
-        {
-
-        }
-
-
-
-
-        //ESTO ES PARA PROBAR
-
         public override string ToString()
         {
             return base.ToString() + $" Puntos: {_puntos}";

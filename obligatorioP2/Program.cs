@@ -165,8 +165,6 @@ namespace obligatorioP2
                 return retorno;
             }
 
-
-            //Para menú e ingresar datos.
             static int SolicitarInt(string mensaje, int maximo, int minimo)
             {
                 int retorno = -1;
