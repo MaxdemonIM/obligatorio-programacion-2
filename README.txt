@@ -1,40 +1,34 @@
-Version - 1.0
+Sistema de Gestión de Vuelos - Obligatorio Programación 2
 
--Se implemento la funcion ListarVuelosQueIncluyenIATACode() la cual recibe un IATA Code por consola y muestra todos
-los vuelos que tengan asociado el aeropuerto con dicho IATA
--bug fixes y cambios para correcta delegacion de responsabilidades
+Aplicación de consola desarrollada en C# como parte del curso de Programación 2 en ORT Uruguay. El sistema permite gestionar vuelos, usuarios, pasajes, rutas y aviones de una aerolínea ficticia.
 
-Version - 14042025
+ Objetivo del Proyecto
 
--Override de Equals en Administrador que determina que dos Administradores son el mismo si tienen el mismo nickname
+Simular un sistema de backend para una aerolínea, con lógica de negocio aplicada a:
+- Gestión de vuelos
+- Alta y baja de usuarios (pasajeros ocasionales y premium)
+- Administración de rutas y aviones
+- Compra de pasajes
+- Roles de administrador y pasajero
 
--Se implemento el metodo en sistema ListarPasajeros() que muestra en consola: Nombre, email, nacionalidad, documento de 
-identidad y puntos o elegibilidad (dependiendo si es ocacional o premium) de cada pasajero.
+Herramientas Utilizadas
 
+- C# (.NET)
+- Programación Orientada a Objetos
+- Lógica de validaciones
+- Persistencia en memoria
 
+Cómo Ejecutar
 
-Version - 13042025
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/MaxdemonIM/obligatorio-programacion-2.git
+2. Abrir el proyecto en Visual Studio o Visual Studio Code.
 
--Cambio en UML en el tipo de dato del atributo _equipaje de Enum a TIPO_EQUIPAJE ya que era un error conceptual
+3. Compilar y ejecutar la solución.
 
+4. Seguir las instrucciones en la consola.
 
-Version - 12042025
+Este proyecto fue desarrollado como parte de una entrega académica. Libre para uso educativo.
 
-
--Agregamos precarga provisoria que aun no funciona
-
--Herencias hechas con constructor
-
--Metodo en program SolicitarDateTime(textoFecha : string) : DateTime
-
--Metodo en Sistema ObtenerPasajeEntre(fechaInicial : DateTime, fechaFinal : DateTime) : List<Pasaje> que luego vamos a usar para listarlos en program
-
--Metodo en program ListarPasajesSegunRangoDeFechas() : void recibe del usuario 2 fechas, manda los datos a sistema y recibe de sistema la lista de los pasajes, luego los lista
-
--En el menu principal agregamos case 2 en el switch de program para acceder a la funcion ListarPasajesSegunRangoDeFechas()
-
--Cambiamos ToString() en Pasaje para mostrar: id, Nombre pasajero, Fecha, precio, NumVuelo de vuelo
-
--Elegibilidad con criterio random quedo 70% de chances de ser elegible, esta implementado
-
--Metodo en administrador ValidarNickname() : void
+Nota: Por el momento, la aplicación no utiliza base de datos ni persistencia en archivos.
