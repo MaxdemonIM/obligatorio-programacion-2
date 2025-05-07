@@ -143,17 +143,18 @@ namespace obligatorioP2
                 DateTime fechaInicial = SolicitarDateTime("Ingrese la fecha inicial (formato dd-MM-yyyy).");
 
                 DateTime fechaFinal = SolicitarDateTime("Ingrese la final fecha (formato dd-MM-yyyy).");
-
-                List<Pasaje> pasajes = sistema.ObtenerPasajeEntre(fechaInicial, fechaFinal);
-
                 try
                 {
+                    List<Pasaje> pasajes = sistema.ObtenerPasajeEntre(fechaInicial, fechaFinal);
+
+                
                     Console.WriteLine($" Pasajes entre  {fechaInicial} y {fechaFinal}:\n");
 
                     foreach (Pasaje unPasaje in pasajes)
                     {
                         Console.WriteLine(unPasaje.ToString());
                     }
+
                 }catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
