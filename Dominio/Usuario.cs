@@ -76,10 +76,24 @@
                 throw new Exception("El valor no puede estar vacío o solo contener espacios.");
             }
 
-            if (this._email.IndexOf('@') == -1)
-            {
-                throw new Exception("No puede ingresar un mail sin '@' ");
+            bool tieneArroba = false;
+            bool tienePunto = false;
 
+            foreach (char c in this._email)
+            {
+                if (c.ToString() == "@")
+                {
+                    tieneArroba = true;
+                }
+                else if (tieneArroba && c.ToString() == ".")
+                {
+                    tienePunto = true;
+                }
+            }
+
+            if (!tieneArroba || !tienePunto)
+            {
+                throw new Exception("El correo debe contener '@' y un '.' después del '@'.");
             }
         }
 
