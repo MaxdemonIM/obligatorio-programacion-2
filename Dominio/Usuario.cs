@@ -6,7 +6,6 @@
         protected string _email;
 
 
-
         public Usuario(string password, string email)
         {
                 this._password = password;
@@ -81,11 +80,11 @@
 
             foreach (char c in this._email)
             {
-                if (c.ToString() == "@")
+                if (c == '@')
                 {
                     tieneArroba = true;
                 }
-                else if (tieneArroba && c.ToString() == ".")
+                else if (tieneArroba && c == '.')
                 {
                     tienePunto = true;
                 }

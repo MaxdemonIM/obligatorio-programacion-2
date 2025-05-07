@@ -59,18 +59,12 @@ namespace obligatorioP2
                 try
                 {
                     List<Pasajero> listaDePasajeros = sistema.ListarPasajeros();
-
-                    if (listaDePasajeros.Count == 0)
+ 
+                    foreach (Pasajero unPasajero in listaDePasajeros)
                     {
-                        Console.WriteLine();
+                        Console.WriteLine(unPasajero);
                     }
-                    else
-                    {
-                        foreach (Pasajero unPasajero in listaDePasajeros)
-                        {
-                            Console.WriteLine(unPasajero);
-                        }
-                    }
+                  
                 }catch(Exception e)
                 {
                     Console.WriteLine(e.Message);

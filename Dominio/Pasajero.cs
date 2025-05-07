@@ -49,7 +49,6 @@ namespace Dominio
             }
         }
 
-
         public void ValidarDocumentoDeIdentidad()
         {
             if (string.IsNullOrWhiteSpace(this._docIdentidad))
@@ -74,7 +73,7 @@ namespace Dominio
 
         public override string ToString()
         {
-            return $"Nombre: {_nombre} | Email: {_email} | Nacionalidad: {_nacionalidad} | Cedula Identidad: {_docIdentidad}";
+            return $"Nombre: {this._nombre} | Email: {this._email} | Nacionalidad: {this._nacionalidad} | Cedula Identidad: {this._docIdentidad}";
         }
     }
 }

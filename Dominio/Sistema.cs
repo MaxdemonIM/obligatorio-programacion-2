@@ -28,7 +28,6 @@ namespace Dominio
             this._pasajes = new List<Pasaje>();
             this._aviones = new List<Avion>();
             this.PrecargarDatos();
-
         }
 
         //SINGLETON
@@ -110,11 +109,11 @@ namespace Dominio
         //Primero vamos a recibir los datos del nuevo cliente a crear por parametros. Creamos la instancia de la clase Ocasional con el "Ocasional nuevo= new Ocasional", y por ultimo agregamos el
         //pasajero ocasional a la lista general de usuarios con el .add
 
-        public void DarDeAltaClienteOcasional (Usuario nuevo)
+        public void DarDeAltaClienteOcasional (Usuario nuevoCliente)
         {
-            this.ValidarExisteUsuario(nuevo);
-            nuevo.Validar();
-            _usuarios.Add(nuevo);
+            this.ValidarExisteUsuario(nuevoCliente);
+            nuevoCliente.Validar();
+            _usuarios.Add(nuevoCliente);
         }
 
 
