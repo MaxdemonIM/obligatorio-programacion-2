@@ -13,7 +13,6 @@ namespace obligatorioP2
         {
             Console.WriteLine("Sistema de gestion Aerolinea");
             Console.WriteLine("Menu principal");
-            Console.WriteLine();
 
             int seleccion = -1;
             while (seleccion != 0)

@@ -75,6 +75,12 @@
             {
                 throw new Exception("El valor no puede estar vacío o solo contener espacios.");
             }
+
+            if (this._email.IndexOf('@') == -1)
+            {
+                throw new Exception("No puede ingresar un mail sin '@' ");
+
+            }
         }
 
         public override bool Equals(object? obj)
