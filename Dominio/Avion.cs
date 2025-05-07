@@ -34,8 +34,6 @@ namespace Dominio
             this.Validar();
         }
 
-        //FALTAN LOS METODOS!!!!!!!!
-
         public void Validar()
         {
             this.ValidarFabricante();
@@ -90,5 +88,9 @@ namespace Dominio
 
         }
 
+        public override string ToString()
+        {
+            return $"{this._modelo}";
+        }
     }
 }

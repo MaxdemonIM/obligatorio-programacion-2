@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace Dominio
 {
@@ -12,19 +13,19 @@ namespace Dominio
         private int _numVuelo;
         private Avion _avion;    //SE PASA OBJETO
         private Ruta _ruta;
-        private string _frecuencia;
+        private List<DayOfWeek> _frecuencia;
         private decimal _costoXAsiento;
 
         public int NumVuelo { get { return _numVuelo; } }
 
-        public string Frecuencia { get { return this._frecuencia; } } //para pueda ser accesible desde pasaje que lo vamos usar. 
+        public List<DayOfWeek> Frecuencia { get { return this._frecuencia; } } //para pueda ser accesible desde pasaje que lo vamos usar. 
 
         public Ruta Ruta { get { return this._ruta; } } //para sean publicas para la PARTE B
 
         public Avion Avion { get { return this._avion; } } ////para sean publicas para la PARTE B
 
 
-        public Vuelo(int numVuelo, Avion avion, Ruta ruta, string frecuencia)
+        public Vuelo(int numVuelo, Avion avion, Ruta ruta, List<DayOfWeek> frecuencia)
         {
             this._numVuelo = numVuelo;
             this._avion = avion;
@@ -48,25 +49,10 @@ namespace Dominio
             }
         }
 
-        public void ValidarFrecuencia() //para que los dias ingresados correspondan a un día de la semana. 
+        public void ValidarFrecuencia()
         {
-            List<string> diasValidos = ["lunes", "martes", "miercoles", "miércoles", "jueves", "viernes", "sabado", "sábado", "domingo"];
-
-            int i = 0;
-            bool esValido = false;
-            while (!esValido && i < diasValidos.Count)
-            {
-                if (this._frecuencia == diasValidos[i])
-                {
-                    esValido = true;
-                }
-                i++;
-            }
-
-            if (!esValido)
-            {
-                throw new Exception($"Valor inválido.\n" + "Se esperaba el nombre de un día de la semana (ejemplo: lunes).");
-            }
+            if (_frecuencia == null || _frecuencia.Count == 0)
+                throw new Exception("La frecuencia del vuelo no puede estar vacía.");
         }
 
         public decimal CalcularCostoPorAsiento()
@@ -78,9 +64,32 @@ namespace Dominio
             return ((costoXKm * distanciaRuta) + costoOppAeropuertos) / cantAsientos;
         }
 
+        public string ObtenerFrecuenciaFormateada() //para poder mostrar la frecuencia como string en el programa, porque se guarda en formato DayOfWeek
+        {
+            string resultado = "";
+            CultureInfo cultura = new CultureInfo("es-ES");
+
+            for (int i = 0; i < _frecuencia.Count; i++)
+            {
+                string diaEnEspanol = cultura.DateTimeFormat.GetDayName(_frecuencia[i]);
+
+                diaEnEspanol = char.ToUpper(diaEnEspanol[0]) + diaEnEspanol.Substring(1);
+
+                resultado += diaEnEspanol;
+
+                if (i < _frecuencia.Count - 1)
+                {
+                    resultado += " - ";
+                }
+            }
+
+            return resultado;
+        }
+
+
         public override string ToString()
         {
-            return $"Vuelo # {this._numVuelo} - {this._avion} - {this._ruta} - {this._frecuencia}\n";
+            return $"Vuelo # {this._numVuelo} | Modelo de avion:  {this._avion} | Ruta: {this._ruta} Frecuencia: {this.ObtenerFrecuenciaFormateada()}\n";
         }
 
     }

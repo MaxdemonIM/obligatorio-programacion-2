@@ -4,20 +4,14 @@
     {
         private string _password;
         protected string _email;
-        private List<Administrador> _administradores;
-        private List<Pasajero> _pasajeros;
 
-        public List<Pasajero> Pasajeros { get { return _pasajeros; } }
 
-        public List<Administrador> Administradores { get { return _administradores; } }
 
         public Usuario(string password, string email)
         {
-            this._password = password;
-            this._email = email;
-            this._administradores = new List<Administrador> { };
-            this._pasajeros = new List<Pasajero> { };
-            this.Validar();
+                this._password = password;
+                this._email = email;
+                this.Validar();
         }
 
         public void Validar()
@@ -38,7 +32,6 @@
             if(_password.Length > 64)
             {
                 throw new Exception("La contraseña no puede ser mayor a 64 caracteres.");
-
             }
 
             int i = 0;
@@ -49,9 +42,9 @@
             int contadorMinusculas = 0;
             int contadorSimbolo = 0;
 
-            char caracter = _password[i];
             while (i < _password.Length || contadorMayusculas == cantidadMinima && contadorMinusculas == cantidadMinima && contadorSimbolo == cantidadMinima && contadorNumeros == cantidadMinima)
             {
+                char caracter = _password[i];
                 if (char.IsDigit(caracter))
                 {
                     contadorNumeros++;
@@ -70,6 +63,10 @@
                 }
                 i++;
             }
+            if (contadorMayusculas < cantidadMinima || contadorMinusculas < cantidadMinima || contadorSimbolo < cantidadMinima || contadorNumeros < cantidadMinima)
+            {
+                throw new Exception("La contraseña debe contener al menos una mayúscula, una minúscula, un número y un símbolo.");
+            }
         }
 
         public void ValidarEmail()
@@ -80,11 +77,18 @@
             }
         }
 
+        public override bool Equals(object? obj)
+        {
+            if (obj == null || !(obj is Usuario)) return false;
+            Usuario otro = (Usuario)obj;
+            return this._email.Equals(otro._email);
+        }
+
         public override string ToString() 
         {
-            
-            return _pasajeros.ToString() + $"{_email}";
+            return this.ToString() + $"{_email}";
         }
+
     }
 
 

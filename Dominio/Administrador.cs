@@ -8,7 +8,6 @@ namespace Dominio
 {
     public class Administrador : Usuario
     {
-        static Sistema sistema = Sistema.Instancia;
 
         private string _nickname;
 
@@ -34,25 +33,5 @@ namespace Dominio
             }
         }
 
-
-        public override bool Equals(object? obj)
-        {
-            if (obj == null || !(obj is Administrador)) return false;
-            Administrador otro = (Administrador)obj;
-            return this._nickname.Equals(otro._nickname);
-        }
-
-        /*
-
-       //Podemos llegar a necesitar
-
-
-
-       public void ModificarPuntosCliente()
-       {
-
-       }
-
-       */
     }
 }

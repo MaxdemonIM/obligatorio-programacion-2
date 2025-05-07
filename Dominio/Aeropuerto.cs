@@ -32,8 +32,6 @@ namespace Dominio
 
         }
 
-
-
         public void Validar()
         {
             this.ValidarCiudad();
@@ -90,7 +88,6 @@ namespace Dominio
         public override string ToString()
         {
             return $"{_IATACode}";
-
         }
 
         public override bool Equals(object? obj)

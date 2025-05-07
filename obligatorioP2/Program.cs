@@ -11,7 +11,7 @@ namespace obligatorioP2
 
         static void Main(string[] args)
         {
-            Console.WriteLine("obligatorio p2");
+            Console.WriteLine("Sistema de gestion Aerolinea");
             Console.WriteLine("Menu principal");
             Console.WriteLine();
 
@@ -19,7 +19,6 @@ namespace obligatorioP2
             while (seleccion != 0)
             {
                 seleccion = SolicitarInt("Seleccione que acción quiere realizar: \n" +
-
                 "1 - Listar Pasajeros. \n" +
                 "2 - Listar vuelos respecto a un código IATA. \n" +
                 "3 - Dar de alta cliente ocasional. \n" +
@@ -28,30 +27,58 @@ namespace obligatorioP2
 
                 switch (seleccion)
                 {
-                        //PARTE D
-                    case 4:
-                        ListarPasajesSegunRangoDeFechas();
-                        break;
-                    case 3:
-                        //PARTE C
-                        DarDeAltaClienteOcasional(); //estamos llamando al metodo de program (el de sistema se llama igual, pero tiene parametros, por eso solo ponemos acá "DarDeAltaClienteOcasional" y no "sistema.DarDeAltaClienteOcasional".
-                        break;
-                        //PARTE B
-                    case 2:
-                        ListarVuelosQueIncluyenIATACode();
-                        break;
-                    case 1:
-                        //PARTE A
-                        ListarPasajeros();
-                        break;
-                    case 0:
-                        Console.WriteLine("Gracias por utilizar nuestro sistema, Nos vemos pronto!");
-                        break;
-                    default:
-                        Console.WriteLine("Seleccion invalida");
-                        break;
+                    //PARTE D
+                case 4:
+                    ListarPasajesSegunRangoDeFechas();
+                    break;
+                case 3:
+                    //PARTE C
+                    DarDeAltaClienteOcasional(); //estamos llamando al metodo de program (el de sistema se llama igual, pero tiene parametros, por eso solo ponemos acá "DarDeAltaClienteOcasional" y no "sistema.DarDeAltaClienteOcasional".
+                    break;
+                    //PARTE B
+                case 2:
+                    ListarVuelosQueIncluyenIATACode();
+                    break;
+                case 1:
+                    //PARTE A
+                    ListarPasajeros();
+                    break;
+                case 0:
+                    Console.WriteLine("Gracias por utilizar nuestro sistema, Nos vemos pronto!");
+                    break;
+                default:
+                    Console.WriteLine("Seleccion invalida");
+                    break;
                 }
             }
+
+
+            //PARTE A
+
+            static void ListarPasajeros()
+            {
+                try
+                {
+                    List<Pasajero> listaDePasajeros = sistema.ListarPasajeros();
+
+                    if (listaDePasajeros.Count == 0)
+                    {
+                        Console.WriteLine("No hay pasajes expedidos entre las fechas ingresadas");
+                    }
+                    else
+                    {
+                        foreach (Pasajero unPasajero in listaDePasajeros)
+                        {
+                            Console.WriteLine(unPasajero);
+                        }
+                    }
+                }catch(Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+
+            }
+
 
 
             //PARTE B
@@ -61,15 +88,18 @@ namespace obligatorioP2
                 Console.WriteLine("Ingrese el código IATA de el aeropuerto del cual quiere conocer los vuelos:");
                 string IATACode = Console.ReadLine().ToUpper().Trim();
 
-                sistema.ListarVuelosPorAeropuerto(IATACode);
-            }
-
-
-            //PARTE A
-
-            static void ListarPasajeros() 
-            {
-                sistema.ListarPasajeros();
+                List <Vuelo> listaDeVuelos = sistema.ListarVuelosPorAeropuerto(IATACode);
+                if (listaDeVuelos.Count == 0)
+                {
+                    Console.WriteLine("No hay pasajes expedidos entre las fechas ingresadas");
+                }
+                else
+                {
+                    foreach (Vuelo unVuelo in listaDeVuelos)
+                    {
+                        Console.WriteLine(unVuelo.ToString());
+                    }
+                }
             }
 
             //PARTE C --- DAR DE ALTA CLIENTE OCASIONAL
@@ -96,8 +126,9 @@ namespace obligatorioP2
 
                 try
                 {
-                    sistema.DarDeAltaClienteOcasional(nombre, nacionalidad, docIdentidad, password, email);
-                    Console.WriteLine("\n Cliente ocasional dado de alta exitosamente.");
+                    Ocasional nuevo = new Ocasional(nacionalidad, docIdentidad, nombre, password, email);
+                    sistema.DarDeAltaClienteOcasional(nuevo);
+                    Console.WriteLine($" Cliente {nuevo.ToString()} dado de alta exitosamente.");
                 }
                 catch (Exception e)
                 {
@@ -126,7 +157,7 @@ namespace obligatorioP2
 
                     foreach (Pasaje unPasaje in pasajes)
                     {
-                        Console.WriteLine(unPasaje);
+                        Console.WriteLine(unPasaje.ToString());
                     }
                 }
             }

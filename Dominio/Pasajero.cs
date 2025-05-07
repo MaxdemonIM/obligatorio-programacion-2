@@ -11,16 +11,10 @@ namespace Dominio
         private string _nacionalidad;
         private string _docIdentidad;
         private string _nombre;
-        private List<Premium> _premiums;
-        private List<Ocasional> _ocasionales;
 
         public string DocIdentidad { get { return _docIdentidad; } }
 
         public string Nombre { get { return _nombre; } }
-
-        public List<Premium> Premiums { get { return _premiums; } }
-
-        public List<Ocasional> Ocasionales { get { return _ocasionales; } }
 
 
         public Pasajero(string nacionalidad, string docIdentidad, string nombre, string password, string email) : base(password, email)
@@ -28,8 +22,6 @@ namespace Dominio
             this._nacionalidad = nacionalidad;
             this._docIdentidad = docIdentidad;
             this._nombre = nombre;
-            this._premiums = new List<Premium>();
-            this._ocasionales = new List<Ocasional>();
             this.Validar();
         }
 

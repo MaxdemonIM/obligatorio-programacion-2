@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Globalization;
 
 namespace Dominio
 {
@@ -14,12 +13,12 @@ namespace Dominio
         private Vuelo _vuelo;
         private Pasajero _pasajero;
         private DateTime _fecha;
-        private string _equipaje;
+        private TipoEquipaje _tipoEquipaje;
         private decimal _precio;
 
         public DateTime Fecha { get { return _fecha ; } }
 
-        public Pasaje(Vuelo vuelo, Pasajero pasajero, DateTime fecha, string equipaje, decimal precio)
+        public Pasaje(Vuelo vuelo, Pasajero pasajero, DateTime fecha, TipoEquipaje tipoEquipaje, decimal precio)
         {
             
             //aumenta el valor de id cada vez que se crea la instancia
@@ -27,7 +26,7 @@ namespace Dominio
             this._vuelo = vuelo;
             this._pasajero = pasajero;
             this._fecha = fecha;
-            this._equipaje = equipaje;
+            this._tipoEquipaje = tipoEquipaje;
             this._precio = precio;
             this.Validar();
         }
@@ -47,14 +46,11 @@ namespace Dominio
 
         public void ValidarFechaCorrespondeFrecuencia()
         {
-            string dia = _fecha.ToString("dddd", new CultureInfo("es-ES")).ToLower(); //agregamos globalizacion, para que cualquier dato de dia se transforme al español. 
-         
-            if (_vuelo.Frecuencia.IndexOf(dia) == -1)
+            if (!_vuelo.Frecuencia.Contains(_fecha.DayOfWeek))
             {
                 throw new Exception("La fecha del pasaje no coincide con la frecuencia del vuelo.");
             }
         }
-
 
 
         public override string ToString()

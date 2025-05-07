@@ -41,7 +41,7 @@ namespace Dominio
         public void Validar()
         {
             this.ValidarDistancia();
-
+            this.ValidarQueAeropuertoNoSeRepita();
 
         }
 
@@ -62,7 +62,19 @@ namespace Dominio
             }
         }
 
+        public string ObtenerIATAAeropuertoDeSalida()
+        {
+            return this._aeropuertoSalida.IATACode;
+        }
 
+        public string ObtenerIATAAeropuertoDeLlegada()
+        {
+            return this._aeropuertoLlegada.IATACode;
+        }
 
+        public override string ToString()
+        {
+            return $"{ObtenerIATAAeropuertoDeSalida()} - {ObtenerIATAAeropuertoDeLlegada()}";
+        }
     }
 }
