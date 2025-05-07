@@ -44,10 +44,10 @@ namespace Dominio
         //METODOS AUXILIARES PARA VALIDACION DE ALTA EN PARTE A:
         public void ValidarExisteUsuario(Usuario nuevo)
         {
-                if (_usuarios.Contains(nuevo))
-                {
-                    throw new Exception("Usuario no se puede registrar porque ya fue registrado previamente.");
-                }
+            if (_usuarios.Contains(nuevo))
+            {
+                throw new Exception("Usuario no se puede registrar porque ya fue registrado previamente.");
+            }
         }
 
 
@@ -109,11 +109,11 @@ namespace Dominio
         //Primero vamos a recibir los datos del nuevo cliente a crear por parametros. Creamos la instancia de la clase Ocasional con el "Ocasional nuevo= new Ocasional", y por ultimo agregamos el
         //pasajero ocasional a la lista general de usuarios con el .add
 
-        public void DarDeAltaClienteOcasional (Usuario nuevoCliente)
+        public void DarDeAltaClienteOcasional (Ocasional nuevoOcasional )
         {
-            this.ValidarExisteUsuario(nuevoCliente);
-            nuevoCliente.Validar();
-            _usuarios.Add(nuevoCliente);
+            this.ValidarExisteUsuario(nuevoOcasional);
+            nuevoOcasional.Validar();
+            _usuarios.Add(nuevoOcasional);
         }
 
 

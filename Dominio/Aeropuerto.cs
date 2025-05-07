@@ -10,7 +10,7 @@ namespace Dominio
     {
 
         private string _IATACode;
-        private string _Ciudad;
+        private string _ciudad;
         private decimal _costoOpp;
         private decimal _costoTasas;
 
@@ -25,7 +25,7 @@ namespace Dominio
         {
             IATACode = IATACode.ToUpper(); //Forzamos que este en mayúscula desde un comienzo para no hacer validación. 
             this._IATACode = IATACode;
-            this._Ciudad = ciudad;
+            this._ciudad = ciudad;
             this._costoOpp = costoOpp;
             this._costoTasas = costoTasas;
             this.Validar();
@@ -59,7 +59,7 @@ namespace Dominio
 
         public void ValidarCiudad()
         {
-            if (string.IsNullOrWhiteSpace(this._Ciudad))
+            if (string.IsNullOrWhiteSpace(this._ciudad))
             {
                 throw new Exception("La el nombre de la ciudad no puede estar vacía o solo contener espacios.");
             }

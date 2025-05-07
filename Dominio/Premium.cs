@@ -15,7 +15,6 @@ namespace Dominio
         public Premium(string nacionalidad, string docIdentidad, string nombre, string password, string email) : base(nacionalidad, docIdentidad, nombre, password, email)
         {
             this._puntos = 0;
-            this.Validar();
         }
 
         public override string ToString()
