@@ -62,7 +62,7 @@ namespace obligatorioP2
 
                     if (listaDePasajeros.Count == 0)
                     {
-                        Console.WriteLine("No hay pasajes expedidos entre las fechas ingresadas");
+                        Console.WriteLine();
                     }
                     else
                     {
@@ -86,19 +86,19 @@ namespace obligatorioP2
             {
                 Console.WriteLine("Ingrese el código IATA de el aeropuerto del cual quiere conocer los vuelos:");
                 string IATACode = Console.ReadLine().ToUpper().Trim();
+                try
+                {
+                    List<Vuelo> listaDeVuelos = sistema.ListarVuelosPorAeropuerto(IATACode);
 
-                List <Vuelo> listaDeVuelos = sistema.ListarVuelosPorAeropuerto(IATACode);
-                if (listaDeVuelos.Count == 0)
-                {
-                    Console.WriteLine("No hay pasajes expedidos entre las fechas ingresadas");
-                }
-                else
-                {
                     foreach (Vuelo unVuelo in listaDeVuelos)
                     {
                         Console.WriteLine(unVuelo.ToString());
                     }
+                }catch(Exception e)
+                {
+                    Console.WriteLine(e.Message);
                 }
+
             }
 
             //PARTE C --- DAR DE ALTA CLIENTE OCASIONAL
@@ -146,11 +146,7 @@ namespace obligatorioP2
 
                 List<Pasaje> pasajes = sistema.ObtenerPasajeEntre(fechaInicial, fechaFinal);
 
-                if (pasajes.Count == 0)
-                {
-                    Console.WriteLine("No hay pasajes expedidos entre las fechas ingresadas");
-                }
-                else
+                try
                 {
                     Console.WriteLine($" Pasajes entre  {fechaInicial} y {fechaFinal}:\n");
 
@@ -158,6 +154,9 @@ namespace obligatorioP2
                     {
                         Console.WriteLine(unPasaje.ToString());
                     }
+                }catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
                 }
             }
 

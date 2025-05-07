@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -60,12 +61,18 @@ namespace Dominio
         public List<Pasajero> ListarPasajeros()
         {
             List<Pasajero> lista = new List<Pasajero>();
+
             foreach (Usuario unUsuario in _usuarios)
             {
                 if (unUsuario is Pasajero unPasajero)
                 {
                     lista.Add(unPasajero);
                 }
+            }
+
+            if (lista.Count == 0)
+            {
+                throw new Exception("No hay pasajeros en el sistema");
             }
             return lista;
         }
@@ -75,6 +82,7 @@ namespace Dominio
 
         public List<Vuelo> ListarVuelosPorAeropuerto (string IATAfiltro)
         {
+
             List<Vuelo> vuelosQueSeVanAListar = new List<Vuelo>();
             foreach (Vuelo unVuelo in _vuelos)
             {
@@ -86,6 +94,12 @@ namespace Dominio
                     vuelosQueSeVanAListar.Add(unVuelo);
                 }
             }
+
+            if (vuelosQueSeVanAListar.Count == 0)
+            {
+                throw new Exception("No hay vuelos para el codigo IATA ingresados");
+            }
+
             return vuelosQueSeVanAListar;
         }
 
@@ -117,6 +131,12 @@ namespace Dominio
                     listaDePasajes.Add(pasaje);
                 }
             }
+
+            if (listaDePasajes.Count == 0)
+            {
+                throw new Exception("No hay pasajes expedidos entre las fechas ingresadas");
+            }
+
             return listaDePasajes;
         }
 
