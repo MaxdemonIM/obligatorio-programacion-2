@@ -635,11 +635,11 @@ namespace Dominio
                 pasaje23.Validar();
                 _pasajes.Add(pasaje23);
 
-                Pasaje pasaje24 = new Pasaje(v24, (Pasajero)_usuarios[7], new DateTime(2025, 6, 1), TipoEquipaje.BODEGA, 255);
+                Pasaje pasaje24 = new Pasaje(v24, (Pasajero)_usuarios[7], new DateTime(2025, 5, 31), TipoEquipaje.BODEGA, 255);
                 pasaje24.Validar();
                 _pasajes.Add(pasaje24);
 
-                Pasaje pasaje25 = new Pasaje(v25, (Pasajero)_usuarios[8], new DateTime(2025, 6, 2), TipoEquipaje.CABINA, 265);
+                Pasaje pasaje25 = new Pasaje(v25, (Pasajero)_usuarios[8], new DateTime(2025, 6, 1), TipoEquipaje.CABINA, 265);
                 pasaje25.Validar();
                 _pasajes.Add(pasaje25);
         
