@@ -80,6 +80,7 @@ namespace obligatorioP2
             {
                 Console.WriteLine("Ingrese el código IATA de el aeropuerto del cual quiere conocer los vuelos:");
                 string IATACode = Console.ReadLine().ToUpper().Trim();
+
                 try
                 {
                     List<Vuelo> listaDeVuelos = sistema.ListarVuelosPorAeropuerto(IATACode);
@@ -196,7 +197,7 @@ namespace obligatorioP2
                 while (!seleccionCorrecta)
                 {
                     try
-                    {
+                    {   
                         Console.WriteLine(mensaje);
                         Console.WriteLine("El maximo permitido es " + maximo
                             + " y el minimo es " + minimo);

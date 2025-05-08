@@ -72,7 +72,7 @@
         {
             if (string.IsNullOrWhiteSpace(this._email))
             {
-                throw new Exception("El valor no puede estar vacío o solo contener espacios.");
+                throw new Exception("El email no puede estar vacío o solo contener espacios.");
             }
 
             bool tieneArroba = false;
