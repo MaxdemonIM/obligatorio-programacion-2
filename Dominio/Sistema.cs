@@ -149,7 +149,6 @@ namespace Dominio
         {
             try
             {
-
                 // ----- ADMINISTRADORES -----
                 Administrador admin1 = new Administrador("admin1", "Admin123@", "admin1@empresa.com");
                 admin1.Validar();
