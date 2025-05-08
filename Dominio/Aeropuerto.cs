@@ -28,7 +28,7 @@ namespace Dominio
             this._ciudad = ciudad;
             this._costoOpp = costoOpp;
             this._costoTasas = costoTasas;
-            this.Validar();
+            Validar();
 
         }
 
@@ -37,18 +37,18 @@ namespace Dominio
             this.ValidarCiudad();
             this.ValidarCostoOpp();
             this.ValidarCostoTasas();
-            this.ValidarIATA();
+            ValidarIATA(this.IATACode);
         }
 
 
-        public void ValidarIATA()
+        public static void ValidarIATA(string IATA)
         {
-            if (IATACode.Length != 3)
+            if (IATA.Length != 3)
             {
                 throw new Exception("El código IATA debe tener exactamente 3 caracteres.");
             }
 
-            foreach (char caracter in IATACode)
+            foreach (char caracter in IATA)
             {
                 if (!char.IsLetter(caracter))
                 {

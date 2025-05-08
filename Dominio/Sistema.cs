@@ -81,6 +81,7 @@ namespace Dominio
 
         public List<Vuelo> ListarVuelosPorAeropuerto (string IATAfiltro)
         {
+            
             List<Vuelo> vuelosQueSeVanAListar = new List<Vuelo>();
             foreach (Vuelo unVuelo in _vuelos)
             {
@@ -146,8 +147,6 @@ namespace Dominio
 
         public void PrecargarDatos()
         {
-            try
-            {
                 // ----- ADMINISTRADORES -----
                 Administrador admin1 = new Administrador("admin1", "Admin123@", "admin1@empresa.com");
                 admin1.Validar();
@@ -640,12 +639,6 @@ namespace Dominio
                 Pasaje pasaje25 = new Pasaje(v25, (Pasajero)_usuarios[8], new DateTime(2025, 6, 1), TipoEquipaje.CABINA, 265);
                 pasaje25.Validar();
                 _pasajes.Add(pasaje25);
-        
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
 
         }
 

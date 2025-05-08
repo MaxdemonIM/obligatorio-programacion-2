@@ -83,6 +83,7 @@ namespace obligatorioP2
 
                 try
                 {
+                    Aeropuerto.ValidarIATA(IATACode);
                     List<Vuelo> listaDeVuelos = sistema.ListarVuelosPorAeropuerto(IATACode);
 
                     foreach (Vuelo unVuelo in listaDeVuelos)
