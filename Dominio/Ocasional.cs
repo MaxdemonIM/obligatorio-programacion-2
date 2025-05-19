@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dominio.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class Ocasional : Pasajero
+    public class Ocasional : Pasajero, IValidable
     {
 
         private bool _elegible;

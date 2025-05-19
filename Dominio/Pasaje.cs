@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dominio.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class Pasaje
+    public class Pasaje : IValidable , IComparable<Pasaje>
     {
         private static int s_ultimoId = 0;
         private int _id;
@@ -20,7 +21,6 @@ namespace Dominio
 
         public Pasaje(Vuelo vuelo, Pasajero pasajero, DateTime fecha, TipoEquipaje tipoEquipaje, decimal precio)
         {
-            
             //aumenta el valor de id cada vez que se crea la instancia
             this._id = s_ultimoId++;
             this._vuelo = vuelo;
@@ -58,6 +58,10 @@ namespace Dominio
             return $"Datos del Pasaje: ID: {_id} | Pasajero: {_pasajero.Nombre} | Fecha: {_fecha:dd-MM-yyyy} | Precio: ${_precio} | Vuelo: {_vuelo.NumVuelo}";
         }
 
+        public int CompareTo(Pasaje? other)
+        {
+            return this._precio.CompareTo(other._precio) * -1;
+        }
     }
 }
 

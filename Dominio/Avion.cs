@@ -1,4 +1,5 @@
-﻿ using System;
+﻿using Dominio.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class Avion
+    public class Avion : IValidable
     {
         private string _fabricante;
         private string _modelo;  //determinante to do

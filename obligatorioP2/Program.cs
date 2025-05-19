@@ -21,11 +21,16 @@ namespace obligatorioP2
                 "1 - Listar Pasajeros. \n" +
                 "2 - Listar vuelos respecto a un código IATA. \n" +
                 "3 - Dar de alta cliente ocasional. \n" +
-                "4 - Listar Pasajes en un rango de fechas. \n" +
+                "4 - Listar Pasajes en un rango de fechas. \n" + 
+                "5 - Ordenar pasaje por precio descendente \n" +
                 "(0 para salir)", 8, 0);
 
                 switch (seleccion)
                 {
+
+                case 5:
+                    sistema.OrdenarPasajes();
+                    break;
                     //PARTE D
                 case 4:
                     ListarPasajesSegunRangoDeFechas();

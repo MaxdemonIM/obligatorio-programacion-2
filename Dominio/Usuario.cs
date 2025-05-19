@@ -1,6 +1,8 @@
-﻿namespace Dominio
+﻿using Dominio.Interfaces;
+
+namespace Dominio
 {
-    public class Usuario
+    public class Usuario : IValidable
     {
         private string _password;
         protected string _email;

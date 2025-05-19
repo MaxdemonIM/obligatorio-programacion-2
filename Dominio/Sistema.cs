@@ -138,6 +138,21 @@ namespace Dominio
             return listaDePasajes;
         }
 
+        //Usuario CLIENTE
+
+        //ver pasajes comprados descendente por precio
+
+        public void OrdenarPasajes() 
+        {
+            this._pasajes.Sort();        
+        }
+
+
+        //Usuario ANONIMO
+
+
+        //Usuario ADMINISTRADOR
+
 
         //--------------PRECARGA------------------
         /* PROMT: Necesito que hagas una precarga mediante el metodo "public void PrecargarDatos()" de 5 clientes premium, 5 ocasionales y 2 administradores (que sean lo mas realistas posible (cedulas coherentes, etc) y validos. También, de 4 aviones,  
