@@ -8,6 +8,7 @@ namespace Dominio
         protected string _email;
 
 
+
         public Usuario(string password, string email)
         {
                 this._password = password;
@@ -23,16 +24,15 @@ namespace Dominio
 
         public void ValidarPassword()
         {
-            int limiteDeCaracteres = 64;
 
             if (string.IsNullOrWhiteSpace(this._password))
             {
                 throw new Exception("El valor no puede estar vacío o solo contener espacios.");
             }
 
-            if(_password.Length > 64)
+            if(_password.Length < 8)
             {
-                throw new Exception("La contraseña no puede ser mayor a 64 caracteres.");
+                throw new Exception("La contraseña no puede ser menor a 8 caracteres.");
             }
 
             int i = 0;
@@ -43,9 +43,8 @@ namespace Dominio
             int contadorMinusculas = 0;
             int contadorSimbolo = 0;
 
-            while (i < _password.Length || contadorMayusculas == cantidadMinima && contadorMinusculas == cantidadMinima && contadorSimbolo == cantidadMinima && contadorNumeros == cantidadMinima)
+            foreach (char caracter in _password)
             {
-                char caracter = _password[i];
                 if (char.IsDigit(caracter))
                 {
                     contadorNumeros++;
@@ -62,8 +61,8 @@ namespace Dominio
                 {
                     contadorSimbolo++;
                 }
-                i++;
             }
+
             if (contadorMayusculas < cantidadMinima || contadorMinusculas < cantidadMinima || contadorSimbolo < cantidadMinima || contadorNumeros < cantidadMinima)
             {
                 throw new Exception("La contraseña debe contener al menos una mayúscula, una minúscula, un número y un símbolo.");
@@ -107,7 +106,7 @@ namespace Dominio
 
         public override string ToString() 
         {
-            return this.ToString() + $"{_email}";
+            return  $"{_email}";
         }
 
     }

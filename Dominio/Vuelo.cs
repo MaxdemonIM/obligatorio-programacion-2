@@ -19,11 +19,13 @@ namespace Dominio
 
         public int NumVuelo { get { return _numVuelo; } }
 
-        public List<DayOfWeek> Frecuencia { get { return this._frecuencia; } } //para pueda ser accesible desde pasaje que lo vamos usar. 
+        public List<DayOfWeek> Frecuencia { get { return new List<DayOfWeek>(_frecuencia); } } //para pueda ser accesible desde pasaje que lo vamos usar. 
 
         public Ruta Ruta { get { return this._ruta; } } //para sean publicas para la PARTE B
 
         public Avion Avion { get { return this._avion; } } ////para sean publicas para la PARTE B
+
+        public decimal CostoXAsiento { get { return _costoXAsiento; } }
 
 
         public Vuelo(int numVuelo, Avion avion, Ruta ruta, List<DayOfWeek> frecuencia)
@@ -85,6 +87,25 @@ namespace Dominio
             }
 
             return resultado;
+        }
+
+        //Metodo AUXILIAR para obtener el costo de las tasas portuarias de cada aeropuerto involucrado, sumarlas y obtener el total.
+        //Luego lo llamamos en cada una de las subclases, para sumar el valor en la operación, dependiendo si es ocasional o premium. 
+        public decimal ObtenerCostoTasasPortuarias()
+        {
+            decimal costoAeropuertoSalida = this._ruta.AeropuertoSalida.CostoTasas;
+            decimal costoAeropuertoLlegada = this._ruta.AeropuertoLlegada.CostoTasas;
+
+            decimal costoTasasTotal = costoAeropuertoLlegada + costoAeropuertoSalida;
+
+            return costoTasasTotal;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj == null || !(obj is Vuelo)) return false;
+            Vuelo otro = (Vuelo)obj;
+            return this._avion.Equals(otro._avion) && this._ruta.Equals(otro._ruta);
         }
 
 

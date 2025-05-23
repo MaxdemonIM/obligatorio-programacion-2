@@ -50,7 +50,7 @@ namespace Dominio
         {
             if (this._distancia <= 0)
             {
-                throw new Exception("La ruta no puede tener una distancia negativa o igual a 0.");
+                throw new Exception("La distancia de la ruta debe ser mayor que 0.\n");
             }
 
         }
@@ -59,7 +59,7 @@ namespace Dominio
         {
             if (_aeropuertoLlegada.Equals(_aeropuertoSalida))
             {
-                throw new Exception("El aeropuerto de salida no puede ser el mismo que el de llegada");
+                throw new Exception("El aeropuerto de salida no puede ser el mismo que el de llegada\n");
             }
         }
 
@@ -71,6 +71,12 @@ namespace Dominio
         public string ObtenerIATAAeropuertoDeLlegada()
         {
             return this._aeropuertoLlegada.IATACode;
+        }
+        public override bool Equals(object? obj)
+        {
+            if (obj == null || !(obj is Ruta)) return false;
+            Ruta otro = (Ruta)obj;
+            return this._aeropuertoSalida.Equals(otro._aeropuertoSalida) && this._aeropuertoLlegada.Equals(otro._aeropuertoLlegada);
         }
 
         public override string ToString()

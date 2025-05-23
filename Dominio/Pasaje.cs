@@ -19,7 +19,7 @@ namespace Dominio
 
         public DateTime Fecha { get { return _fecha ; } }
 
-        public Pasaje(Vuelo vuelo, Pasajero pasajero, DateTime fecha, TipoEquipaje tipoEquipaje, decimal precio)
+        public Pasaje(Vuelo vuelo, Pasajero pasajero, DateTime fecha, TipoEquipaje tipoEquipaje)
         {
             //aumenta el valor de id cada vez que se crea la instancia
             this._id = s_ultimoId++;
@@ -27,8 +27,9 @@ namespace Dominio
             this._pasajero = pasajero;
             this._fecha = fecha;
             this._tipoEquipaje = tipoEquipaje;
-            this._precio = precio;
+            this._precio = this.CalcularPrecioDelPasaje();
             this.Validar();
+            
         }
 
         //el get para poder ver el valor del ultimo id asignado a la instancia anterior (NO NECESARIO, PERO PODEMOS USARLO PARA TESTING).
@@ -52,10 +53,25 @@ namespace Dominio
             }
         }
 
+        //Asigna en el atributo de precio, el valor obtenido mediante metodo CalcularPrecioPasaje realizado en Pasajero para guardarlo. 
+        public decimal CalcularPrecioDelPasaje()
+        {
+            decimal precio = this._pasajero.CalcularPrecioPasajeSegunTipoDeCliente(this._vuelo, this._tipoEquipaje);
+
+            return precio;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj == null || !(obj is Pasaje)) return false;
+            Pasaje otro = (Pasaje)obj;
+            return this._pasajero.Equals(otro._pasajero) && this._vuelo.Equals(otro._vuelo) && this._fecha.Equals(otro._fecha);
+        }
+
 
         public override string ToString()
         {
-            return $"Datos del Pasaje: ID: {_id} | Pasajero: {_pasajero.Nombre} | Fecha: {_fecha:dd-MM-yyyy} | Precio: ${_precio} | Vuelo: {_vuelo.NumVuelo}";
+            return $"Datos del Pasaje: ID: {_id} | Pasajero: {_pasajero.Nombre} | Fecha: {_fecha:dd-MM-yyyy} | Precio: ${_precio.ToString("F2")} | Vuelo número: {_vuelo.NumVuelo}";
         }
 
         public int CompareTo(Pasaje? other)

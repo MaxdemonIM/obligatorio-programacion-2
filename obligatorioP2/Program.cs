@@ -113,7 +113,7 @@ namespace obligatorioP2
                 Console.WriteLine("Ingrese la nacionalidad:");
                 string nacionalidad = Console.ReadLine();
 
-                Console.WriteLine("Ingrese el documento de identidad (7 u 8 digitos, solo números):");
+                Console.WriteLine("Ingrese el documento de identidad (solo números):");
                 string docIdentidad = Console.ReadLine();
 
                 Console.WriteLine("Ingrese email:");
@@ -126,8 +126,8 @@ namespace obligatorioP2
                 try
                 {
                     Ocasional nuevo = new Ocasional(nacionalidad, docIdentidad, nombre, password, email);
-                    sistema.DarDeAltaClienteOcasional(nuevo);
-                    Console.WriteLine($" Cliente {nuevo.ToString()} dado de alta exitosamente.");
+                    sistema.DarDeAltaUsuario(nuevo);
+                    Console.WriteLine($" Cliente {nuevo.ToString()}\n Ha sido dado de alta exitosamente.");
                 }
                 catch (Exception e)
                 {
@@ -142,7 +142,7 @@ namespace obligatorioP2
 
                 DateTime fechaInicial = SolicitarDateTime("Ingrese la fecha inicial (formato dd-MM-yyyy).");
 
-                DateTime fechaFinal = SolicitarDateTime("Ingrese la final fecha (formato dd-MM-yyyy).");
+                DateTime fechaFinal = SolicitarDateTime("Ingrese la fecha final (formato dd-MM-yyyy).");
                 try
                 {
                     List<Pasaje> pasajes = sistema.ObtenerPasajeEntre(fechaInicial, fechaFinal);

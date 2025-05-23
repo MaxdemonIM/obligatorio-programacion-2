@@ -22,10 +22,11 @@ namespace Dominio
 
         public decimal CostoOpp { get { return _costoOpp; } }
 
+        public decimal CostoTasas { get { return _costoTasas; } }
+
         public Aeropuerto(string IATACode, string ciudad, decimal costoOpp, decimal costoTasas)
         {
-            IATACode = IATACode.ToUpper(); //Forzamos que este en mayúscula desde un comienzo para no hacer validación. 
-            this._IATACode = IATACode;
+            this._IATACode = IATACode.ToUpper();//Forzamos que este en mayúscula desde un comienzo para no hacer validación. 
             this._ciudad = ciudad;
             this._costoOpp = costoOpp;
             this._costoTasas = costoTasas;
@@ -62,7 +63,7 @@ namespace Dominio
         {
             if (string.IsNullOrWhiteSpace(this._ciudad))
             {
-                throw new Exception("La el nombre de la ciudad no puede estar vacía o solo contener espacios.");
+                throw new Exception("El nombre de la ciudad no puede estar vacía o solo contener espacios.");
             }
 
         }

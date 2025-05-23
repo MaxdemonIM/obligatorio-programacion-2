@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class Pasajero : Usuario , IValidable
+    public abstract class Pasajero : Usuario , IValidable
     {
         private string _nacionalidad;
         private string _docIdentidad;
@@ -56,10 +56,14 @@ namespace Dominio
             {
                 throw new Exception("El documento de identidad no puede estar vacío ni contener espacios en blanco.");
             }
-            if (this._docIdentidad.Length < 7 || this._docIdentidad.Length > 8)
+
+            const int LIMITE_DOCUMENTO = 15;
+
+            if (_docIdentidad.Length >= LIMITE_DOCUMENTO)
             {
-                throw new Exception("El documento de identidad debe tener entre 7 y 8 dígitos.");
+                throw new Exception($"El documento de identidad debe tener menos de {LIMITE_DOCUMENTO} caracteres.");
             }
+
 
             for (int i = 0; i < this._docIdentidad.Length; i++)
             {
@@ -71,6 +75,14 @@ namespace Dominio
                 }
             }
         }
+
+        // Metodo ABSTRACT POLIMORFICO para calculo pasaje. Lo hacemos acá ya que esta es la clase base, y se va aplicar override en las subclases.
+        // Le pasamos por parámetro Vuelo, que recibe costo por asiento (precio base) y tipo de equipaje que es lo que necesitamos para aplicar las distintas casuisticas de la letra.
+
+        public abstract decimal CalcularPrecioPasajeSegunTipoDeCliente(Vuelo vuelo, TipoEquipaje tipoEquipaje);
+
+
+ 
 
         public override string ToString()
         {

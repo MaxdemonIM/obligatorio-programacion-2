@@ -70,28 +70,33 @@ namespace Dominio
             }
 
         }
-
         public void ValidarCantAsientos()
         {
-            if (this._alcance <= 0)
+            if (this._cantAsientos <= 0)
             {
-                throw new Exception("La cantidad de asientos no puede ser 0 o un número negativo");
+                throw new Exception("La cantidad de asientos no puede ser 0 o un número negativo.");
             }
-
         }
 
         public void ValidarCostXKm()
         {
-            if (this._alcance <= 0)
+            if (this._costoXKm <= 0)
             {
-                throw new Exception("El costo no puede ser 0 o un número negativo");
+                throw new Exception("El costo por kilómetro no puede ser 0 o negativo.");
             }
+        }
 
+
+        public override bool Equals(object? obj)
+        {
+            if (obj == null || !(obj is Avion)) return false;
+            Avion otro = (Avion)obj;
+            return this._fabricante.Equals(otro._fabricante) && this._modelo.Equals(otro._modelo);
         }
 
         public override string ToString()
         {
-            return $"{this._modelo}";
+            return $"Modelo de Avion :{this._modelo} | Fabricante :{this._fabricante}";
         }
     }
 }

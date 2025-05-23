@@ -29,7 +29,29 @@ namespace Dominio
             return numero <= chance;
         }
 
+        //METODO POLIMORFICO QUE SOBRESCRIBE METODO DE CLASE BASE (PASAJERO)
+        public override decimal CalcularPrecioPasajeSegunTipoDeCliente(Vuelo vuelo, TipoEquipaje tipoEquipaje)
+        {
+            decimal precio = vuelo.CostoXAsiento;
+            precio = precio * 1.25m; // porcentaje de ganancias.
+            if (tipoEquipaje == TipoEquipaje.CABINA)
+            {
 
+                precio += precio * 1.10m; //porcentaje de equipaje CABINA;
+            }
+            else if (tipoEquipaje == TipoEquipaje.BODEGA)
+            {
+                precio += precio * 1.20m; //porcentaje de equipaje CABINA;
+            }
+
+            //sumamos las tasas de ambos aeropuertos
+
+            decimal tasas = vuelo.ObtenerCostoTasasPortuarias();
+
+            precio += tasas;
+
+            return precio;
+        }
         public override string ToString()
         {
             return base.ToString() + $" Elegible: {(_elegible ? "Sí" : "No")}";
