@@ -24,23 +24,14 @@ namespace Dominio
         }
 
         //METODO POLIMORFICO QUE SOBRESCRIBE METODO DE CLASE BASE (PASAJERO)
-        public override decimal CalcularPrecioPasajeSegunTipoDeCliente(Vuelo vuelo, TipoEquipaje tipoEquipaje)
+        public override decimal CalcularPrecioEquipaje(TipoEquipaje tipoEquipaje)
         {
-            decimal precio = vuelo.CostoXAsiento;
-            precio = precio * 1.25m; // porcentaje de ganancias.
             if (tipoEquipaje == TipoEquipaje.BODEGA)
             {
-
-                precio += precio * 1.05m; //porcentaje de equipaje BODEGA;
+                return 1.05m; //porcentaje de equipaje BODEGA;
             }
 
-            //sumamos las tasas de ambos aeropuertos
-
-            decimal tasas = vuelo.ObtenerCostoTasasPortuarias();
-
-            precio += tasas;
-
-            return precio;
+            return 0m;
         }
     }
 
