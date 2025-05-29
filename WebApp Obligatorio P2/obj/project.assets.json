@@ -33,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ropin\\Source\\Repos\\obligatorio\\WebApp Obligatorio P2\\WebApp Obligatorio P2.csproj",
+      "projectUniqueName": "C:\\Users\\ropin\\Source\\Repos\\obligatorio-programacion-2\\WebApp Obligatorio P2\\WebApp Obligatorio P2.csproj",
       "projectName": "WebApp Obligatorio P2",
-      "projectPath": "C:\\Users\\ropin\\Source\\Repos\\obligatorio\\WebApp Obligatorio P2\\WebApp Obligatorio P2.csproj",
+      "projectPath": "C:\\Users\\ropin\\Source\\Repos\\obligatorio-programacion-2\\WebApp Obligatorio P2\\WebApp Obligatorio P2.csproj",
       "packagesPath": "C:\\Users\\ropin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ropin\\Source\\Repos\\obligatorio\\WebApp Obligatorio P2\\obj\\",
+      "outputPath": "C:\\Users\\ropin\\Source\\Repos\\obligatorio-programacion-2\\WebApp Obligatorio P2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -58,8 +58,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\ropin\\Source\\Repos\\obligatorio\\Dominio\\Dominio.csproj": {
-              "projectPath": "C:\\Users\\ropin\\Source\\Repos\\obligatorio\\Dominio\\Dominio.csproj"
+            "C:\\Users\\ropin\\Source\\Repos\\obligatorio-programacion-2\\Dominio\\Dominio.csproj": {
+              "projectPath": "C:\\Users\\ropin\\Source\\Repos\\obligatorio-programacion-2\\Dominio\\Dominio.csproj"
             }
           }
         }
