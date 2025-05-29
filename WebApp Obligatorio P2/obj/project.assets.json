@@ -27,23 +27,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\maric\\.nuget\\packages\\": {},
+    "C:\\Users\\ropin\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\obligatorio-programacion-2\\WebApp Obligatorio P2\\WebApp Obligatorio P2.csproj",
+      "projectUniqueName": "C:\\Users\\ropin\\Source\\Repos\\obligatorio\\WebApp Obligatorio P2\\WebApp Obligatorio P2.csproj",
       "projectName": "WebApp Obligatorio P2",
-      "projectPath": "D:\\GitHub\\obligatorio-programacion-2\\WebApp Obligatorio P2\\WebApp Obligatorio P2.csproj",
-      "packagesPath": "C:\\Users\\maric\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\obligatorio-programacion-2\\WebApp Obligatorio P2\\obj\\",
+      "projectPath": "C:\\Users\\ropin\\Source\\Repos\\obligatorio\\WebApp Obligatorio P2\\WebApp Obligatorio P2.csproj",
+      "packagesPath": "C:\\Users\\ropin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ropin\\Source\\Repos\\obligatorio\\WebApp Obligatorio P2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\maric\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ropin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -58,8 +58,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\GitHub\\obligatorio-programacion-2\\Dominio\\Dominio.csproj": {
-              "projectPath": "D:\\GitHub\\obligatorio-programacion-2\\Dominio\\Dominio.csproj"
+            "C:\\Users\\ropin\\Source\\Repos\\obligatorio\\Dominio\\Dominio.csproj": {
+              "projectPath": "C:\\Users\\ropin\\Source\\Repos\\obligatorio\\Dominio\\Dominio.csproj"
             }
           }
         }
@@ -98,7 +98,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
