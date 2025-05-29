@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using Dominio.Comparadores;
 
 namespace Dominio
 {
@@ -148,14 +149,18 @@ namespace Dominio
             return listaDePasajes;
         }
 
+
+       
         //Usuario CLIENTE
 
-        //ver pasajes comprados descendente por precio
+        //ver pasajes ordenados por FECHA (ya hacemos uso del COMPARE TO en pasajes)
 
-        public void OrdenarPasajes() 
-        {
-            this._pasajes.Sort();        
+        public List<Pasaje> OrdenarPasajes() 
+        { List<Pasaje> pasajesOrdenados = new List<Pasaje>(Pasajes);
+            pasajesOrdenados.Sort();
+            return pasajesOrdenados;
         }
+
 
 
         //Usuario ANONIMO
@@ -163,6 +168,13 @@ namespace Dominio
 
         //Usuario ADMINISTRADOR
 
+        //Ver pasajes PARA CLIENTE, ordenados por PRECIO (usamos la clase COMPARADORA CompararPasajePorPrecio creada). 
+        public List<Pasaje> OrdenarPasajesPorPrecio()
+        {
+            List<Pasaje> pasajesOrdenados = new List<Pasaje>(Pasajes);
+            pasajesOrdenados.Sort(new CompararPasajePorPrecio());
+            return pasajesOrdenados;
+        }
 
         //--------------PRECARGA------------------
         /* PROMT: Necesito que hagas una precarga mediante el metodo "public void PrecargarDatos()" de 5 clientes premium, 5 ocasionales y 2 administradores (que sean lo mas realistas posible (cedulas coherentes, etc) y validos. También, de 4 aviones,  
@@ -173,7 +185,7 @@ namespace Dominio
 
         //METODOS AUXILIARES:
 
-       
+
         public void ValidarExisteUsuario(Usuario nuevo)
         {
             if (_usuarios.Contains(nuevo))
@@ -250,6 +262,7 @@ namespace Dominio
             unPasaje.Validar();
             _pasajes.Add(unPasaje);
         }
+
 
 
         public void PrecargarDatos()

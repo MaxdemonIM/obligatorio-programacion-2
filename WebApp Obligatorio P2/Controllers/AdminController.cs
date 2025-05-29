@@ -15,12 +15,6 @@ namespace WebApp_Obligatorio_P2.Controllers
         }
 
 
-        public IActionResult verPasajes()
-        {
-            return View(_sistema.Pasajes);
-
-        }
-
 
 
     }

@@ -24,8 +24,12 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ropin/Source/Repos/obligatorio-programacion-2/WebApp Obligatorio P2/Views/Admin/VerPasajes.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVmVyUGFzYWplcy5jc2h0bWw=
+[C:/Users/ropin/Source/Repos/obligatorio-programacion-2/WebApp Obligatorio P2/Views/Pasaje/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzYWplXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ropin/Source/Repos/obligatorio-programacion-2/WebApp Obligatorio P2/Views/Pasaje/ListarPasajes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzYWplXExpc3RhclBhc2FqZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ropin/Source/Repos/obligatorio-programacion-2/WebApp Obligatorio P2/Views/Shared/Error.cshtml]

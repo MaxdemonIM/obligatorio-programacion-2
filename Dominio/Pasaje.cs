@@ -64,9 +64,9 @@ namespace Dominio
         //Asigna en el atributo de precio, el valor obtenido mediante metodo CalcularPrecioPasaje realizado en Pasajero para guardarlo. 
         public decimal CalcularPrecioDelPasaje()
         {
-            const decimal PORCENTAJE_GANANCIA = 1.25m;
+            const decimal PORCENTAJE_GANANCIA = 0.25m;
 
-            decimal costoPorAsiento = _vuelo.CostoXAsiento;
+            decimal costoPorAsiento = _vuelo.CalcularCostoPorAsiento();
 
             decimal precioBase = costoPorAsiento * PORCENTAJE_GANANCIA;
 
@@ -74,7 +74,7 @@ namespace Dominio
 
             decimal tasasPortuarias = _vuelo.ObtenerCostoTasasPortuarias();
 
-            return precioBase * cargoPorEquipaje + tasasPortuarias;
+            return costoPorAsiento * (PORCENTAJE_GANANCIA + cargoPorEquipaje) + tasasPortuarias;
         }
 
         public override bool Equals(object? obj)
@@ -92,7 +92,7 @@ namespace Dominio
 
         public int CompareTo(Pasaje? other)
         {
-            return this._precio.CompareTo(other._precio) * -1;
+            return this._fecha.CompareTo(other._fecha) * -1;
         }
     }
 }

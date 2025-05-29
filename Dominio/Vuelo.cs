@@ -34,7 +34,6 @@ namespace Dominio
             this._avion = avion;
             this._ruta = ruta;
             this._frecuencia = frecuencia;
-            this._costoXAsiento = this.CalcularCostoPorAsiento();
             this.Validar();
         }
 
