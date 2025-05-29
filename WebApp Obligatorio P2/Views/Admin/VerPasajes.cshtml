@@ -1,0 +1,48 @@
+﻿@using Dominio;
+@model List<Pasaje>
+
+<h2>LISTA DE PASAJES:</h2>
+
+//SE VE LA LISTA PERO NO ENTENDEMOS COMO MOSTRAR EL ERROR DE SI LA LISTA DE PASAJES ESTA VACIA. 
+HACEMOS LA LOGICA EN LA VISTA O TENEMOS QUE HACER ALGO EN SISTEMA? POR QUE SINO NO ENTENDEMOS TAMPOCO SI EL TRY Y CATCH DEL CONTROLLER ESTA BIEN
+
+@* @if (Model.Count() < 1  (ViewBag.Error))
+{
+    <div class="alert alert-danger">
+
+        @ViewBag.Error
+    </div>
+
+} *@
+
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+           
+            <th scope="col">ID</th>
+            <th scope="col">VUELO</th>
+            <th scope="col">PASAJERO</th>
+            <th scope="col">FECHA</th>
+            <th scope="col">TIPO EQUIPAJE</th>
+            <th scope="col">PRECIO</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Pasaje pasaje in Model)
+        {
+
+            <tr>
+               
+                <td>@pasaje.Id</td>
+                <td>@pasaje.Vuelo.NumVuelo</td>
+                <td>@pasaje.Pasajero.Nombre</td>
+                <td>@pasaje.Fecha.ToShortDateString()</td>
+                <td>@pasaje.TipoEquipaje</td>
+                <td>@pasaje.Precio.ToString("F2")</td>
+            </tr>
+
+        }
+        
+        
+    </tbody>
+</table>

@@ -1,0 +1,39 @@
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\bin\Debug\net8.0\appsettings.Development.json
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\bin\Debug\net8.0\appsettings.json
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\bin\Debug\net8.0\WebApp Obligatorio P2.staticwebassets.runtime.json
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\bin\Debug\net8.0\WebApp Obligatorio P2.staticwebassets.endpoints.json
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\bin\Debug\net8.0\WebApp Obligatorio P2.exe
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\bin\Debug\net8.0\WebApp Obligatorio P2.deps.json
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\bin\Debug\net8.0\WebApp Obligatorio P2.runtimeconfig.json
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\bin\Debug\net8.0\WebApp Obligatorio P2.dll
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\bin\Debug\net8.0\WebApp Obligatorio P2.pdb
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\WebApp Obligatorio P2.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\WebApp Obligatorio P2.AssemblyInfoInputs.cache
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\WebApp Obligatorio P2.AssemblyInfo.cs
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\WebApp Obligatorio P2.csproj.CoreCompileInputs.cache
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\WebApp Obligatorio P2.MvcApplicationPartsAssemblyInfo.cache
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\WebApp Obligatorio P2.RazorAssemblyInfo.cache
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\WebApp Obligatorio P2.RazorAssemblyInfo.cs
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\WebApp Obligatorio P2.sourcelink.json
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\scopedcss\bundle\WebApp Obligatorio P2.styles.css
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\scopedcss\projectbundle\WebApp Obligatorio P2.bundle.scp.css
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\staticwebassets.build.json
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\staticwebassets.development.json
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\staticwebassets\msbuild.WebApp Obligatorio P2.Microsoft.AspNetCore.StaticWebAssets.props
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\staticwebassets\msbuild.WebApp Obligatorio P2.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\staticwebassets\msbuild.build.WebApp Obligatorio P2.props
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WebApp Obligatorio P2.props
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WebApp Obligatorio P2.props
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\staticwebassets.pack.json
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\WebApp Obligatorio P2.dll
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\refint\WebApp Obligatorio P2.dll
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\WebApp Obligatorio P2.pdb
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\WebApp Obligatorio P2.genruntimeconfig.cache
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\ref\WebApp Obligatorio P2.dll
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\bin\Debug\net8.0\Dominio.dll
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\bin\Debug\net8.0\Dominio.pdb
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\WebApp Obligatorio P2.csproj.AssemblyReference.cache
+D:\GitHub\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\WebApp O.527F8852.Up2Date

@@ -77,7 +77,7 @@ namespace Dominio
         }
 
         // Metodo ABSTRACT POLIMORFICO para calculo pasaje. Lo hacemos acá ya que esta es la clase base, y se va aplicar override en las subclases.
-        // Le pasamos por parámetro Vuelo, que recibe costo por asiento (precio base) y tipo de equipaje que es lo que necesitamos para aplicar las distintas casuisticas de la letra.
+        // Le pasamos por parámetro tipo de equipaje que es lo que necesitamos para aplicar las distintas casuisticas de la letra.
 
         public abstract decimal CalcularPrecioEquipaje(TipoEquipaje tipoEquipaje);
 

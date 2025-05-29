@@ -18,6 +18,18 @@ namespace Dominio
         private List<Pasaje> _pasajes;
         private List<Avion> _aviones;
 
+        //GET PARA ACCEDER A LISTAS DESDE EL MVC
+
+        public List<Usuario> Usuarios { get { return _usuarios; } }
+        public List<Vuelo> Vuelos { get { return _vuelos; } }
+
+        public List<Ruta> Rutas { get { return _rutas; } }
+        public List<Aeropuerto> Aeropuerto { get { return _aeropuertos; } }
+
+        public List<Pasaje> Pasajes { get { return _pasajes; } }
+        public List<Avion> Avion { get { return _aviones; } }
+
+
 
         private Sistema()
         {
@@ -29,6 +41,8 @@ namespace Dominio
             this._aviones = new List<Avion>();
             this.PrecargarDatos();
         }
+
+      
 
         //SINGLETON
 
@@ -158,6 +172,8 @@ namespace Dominio
 
 
         //METODOS AUXILIARES:
+
+       
         public void ValidarExisteUsuario(Usuario nuevo)
         {
             if (_usuarios.Contains(nuevo))

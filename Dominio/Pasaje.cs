@@ -17,7 +17,15 @@ namespace Dominio
         private TipoEquipaje _tipoEquipaje;
         private decimal _precio;
 
-        public DateTime Fecha { get { return _fecha ; } }
+        //GET para acceder desde MVC
+        public int Id { get { return _id; } }
+        public Vuelo Vuelo { get { return _vuelo; } }
+        public Pasajero Pasajero { get { return _pasajero; } }
+        public DateTime Fecha { get { return _fecha; } }
+        public TipoEquipaje TipoEquipaje { get { return _tipoEquipaje; } }
+        public decimal Precio { get { return _precio; } }
+
+
 
         public Pasaje(Vuelo vuelo, Pasajero pasajero, DateTime fecha, TipoEquipaje tipoEquipaje)
         {
@@ -60,13 +68,13 @@ namespace Dominio
 
             decimal costoPorAsiento = _vuelo.CostoXAsiento;
 
-            decimal precioParcial = costoPorAsiento * PORCENTAJE_GANANCIA;
+            decimal precioBase = costoPorAsiento * PORCENTAJE_GANANCIA;
 
             decimal cargoPorEquipaje = _pasajero.CalcularPrecioEquipaje(this._tipoEquipaje);
 
             decimal tasasPortuarias = _vuelo.ObtenerCostoTasasPortuarias();
 
-            return precioParcial * cargoPorEquipaje + tasasPortuarias;
+            return precioBase * cargoPorEquipaje + tasasPortuarias;
         }
 
         public override bool Equals(object? obj)
