@@ -17,16 +17,7 @@ namespace WebApp_Obligatorio_P2.Controllers
 
         public IActionResult verPasajes()
         {
-            try
-            {
             return View(_sistema.Pasajes);
-            
-            }
-            catch (Exception ex) 
-            {
-                ViewBag.Error = ex.Message;
-                return View();
-            }
 
         }
 

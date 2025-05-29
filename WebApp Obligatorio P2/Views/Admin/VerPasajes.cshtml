@@ -3,17 +3,19 @@
 
 <h2>LISTA DE PASAJES:</h2>
 
-//SE VE LA LISTA PERO NO ENTENDEMOS COMO MOSTRAR EL ERROR DE SI LA LISTA DE PASAJES ESTA VACIA. 
-HACEMOS LA LOGICA EN LA VISTA O TENEMOS QUE HACER ALGO EN SISTEMA? POR QUE SINO NO ENTENDEMOS TAMPOCO SI EL TRY Y CATCH DEL CONTROLLER ESTA BIEN
 
-@* @if (Model.Count() < 1  (ViewBag.Error))
+@if (Model.Count()==0) 
 {
     <div class="alert alert-danger">
 
-        @ViewBag.Error
+        <p>Errorlista vacia</p>
     </div>
 
-} *@
+}
+else
+{
+    
+
 
 <table class="table table-hover table-dark">
     <thead>
@@ -46,3 +48,4 @@ HACEMOS LA LOGICA EN LA VISTA O TENEMOS QUE HACER ALGO EN SISTEMA? POR QUE SINO 
         
     </tbody>
 </table>
+}
