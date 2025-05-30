@@ -7,6 +7,10 @@ namespace Dominio
         private string _password;
         protected string _email;
 
+        //public, con get y set para usar el Model Binding en Registrar el Ocasional
+        public string password { get { return _password; } set { this._password = value; } }
+
+        public string email { get { return _email; } set { this._email = value; } }
 
 
         public Usuario(string password, string email)
@@ -15,6 +19,8 @@ namespace Dominio
                 this._email = email;
                 this.Validar();
         }
+
+        public Usuario() { }
 
         public void Validar()
         {
@@ -27,7 +33,7 @@ namespace Dominio
 
             if (string.IsNullOrWhiteSpace(this._password))
             {
-                throw new Exception("El valor no puede estar vacío o solo contener espacios.");
+                throw new Exception("La contraseña no puede estar vacía o solo contener espacios.");
             }
 
             if(_password.Length < 8)

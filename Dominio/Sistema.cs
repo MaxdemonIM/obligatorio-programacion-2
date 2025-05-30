@@ -113,7 +113,20 @@ namespace Dominio
         //por ultimo agregamos el usuario a la lista general de usuarios con el .add
 
  
-        public void DarDeAltaUsuario(Usuario nuevoUsuario)
+        public void DarDeAltaUsuario(Ocasional nuevoUsuario)
+        {
+            this.ValidarExisteUsuario(nuevoUsuario);
+            nuevoUsuario.Validar();
+            _usuarios.Add(nuevoUsuario);
+        }
+        public void DarDeAltaUsuario(Administrador nuevoUsuario)
+        {
+            this.ValidarExisteUsuario(nuevoUsuario);
+            nuevoUsuario.Validar();
+            _usuarios.Add(nuevoUsuario);
+        }
+
+        public void DarDeAltaUsuario(Premium nuevoUsuario)
         {
             this.ValidarExisteUsuario(nuevoUsuario);
             nuevoUsuario.Validar();
@@ -190,7 +203,7 @@ namespace Dominio
         {
             if (_usuarios.Contains(nuevo))
             {
-                throw new Exception("Usuario no se puede registrar porque ya fue registrado previamente.");
+                throw new Exception("No puede registrarse ya que el email ingresado se encuentra en uso.");
             }
         }
 

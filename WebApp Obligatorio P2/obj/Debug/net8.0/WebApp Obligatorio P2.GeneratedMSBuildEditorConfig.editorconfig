@@ -24,6 +24,18 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ropin/Source/Repos/obligatorio-programacion-2/WebApp Obligatorio P2/Views/Ocasional/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2Nhc2lvbmFsXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ropin/Source/Repos/obligatorio-programacion-2/WebApp Obligatorio P2/Views/Ocasional/RegistrarOcasional.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2Nhc2lvbmFsXFJlZ2lzdHJhck9jYXNpb25hbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ropin/Source/Repos/obligatorio-programacion-2/WebApp Obligatorio P2/Views/Pasajero/ListarPasajeros.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzYWplcm9cTGlzdGFyUGFzYWplcm9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ropin/Source/Repos/obligatorio-programacion-2/WebApp Obligatorio P2/Views/Pasaje/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzYWplXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

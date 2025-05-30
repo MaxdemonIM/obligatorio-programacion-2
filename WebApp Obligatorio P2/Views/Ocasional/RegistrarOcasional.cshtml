@@ -1,0 +1,62 @@
+﻿@using Dominio
+@model Ocasional
+
+<h2>REGISTRARSE</h2>
+
+@if (!string.IsNullOrWhiteSpace(ViewBag.Error)){
+
+    <div class="alert alert-danger">
+
+        @ViewBag.Error
+
+    </div>
+
+}
+
+<form method="post">
+    @*NACIONALIDAD*@
+    <div class="form-group">
+        <label for="txtNacionalidad">Nacionalidad</label>
+        <input type="text" class="form-control" name="nacionalidad" id="txtNacionalidad" placeholder="Ingrese nacionalidad..">
+        
+    </div>
+    @*DOCUMENTO DE IDENTIDAD*@
+
+    <div class="form-group">
+        <label for="txtDocIdentidad">Documento de identidad</label>
+        <input type="text" class="form-control" name="docIdentidad" id="txtDocIdentidad" placeholder="Ingrese su documento de identidad..">
+
+    </div>
+
+    @*NOMBRE*@
+    <div class="form-group">
+        <label for="txtNombre">Nombre </label>
+        <input type="text" class="form-control" name="nombre" id="txtNombre" placeholder="Ingrese su nombre..">
+
+    </div>
+
+    @*CONTRASEÑA*@
+
+    <div class="form-group">
+        <label for="txtContrasenha">Ingrese su Contraseña</label>
+        <input type="password" class="form-control" name="password" id="txtContrasenha" placeholder="Ingrese su contraseña..">
+    </div>
+
+    @*EMAIL*@
+    <div class="form-group">
+        <label for="email">Ingrese su email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su email..">
+        
+    </div>
+   
+    <br/>
+    <div class="d-flex gap-3">
+        <button type="submit" class="btn btn-primary">Registrarse</button>
+        @*ANCLA PARA A FUTURO REDIRIJA A LA VISTA DE ANONIMO (PREVIO A REGISTRARSE) *@
+        <a class="btn btn-outline-info" asp-area="" asp-controller="Anonimo" asp-action="Index"> Volver</a>
+    </div>
+</form>
+
+
+
+

@@ -1,0 +1,62 @@
+﻿@using Dominio;
+@model List<Pasajero>
+
+<h2>LISTA DE PASAJEROS:</h2>
+
+
+@if (Model.Count() == 0)
+{
+    <div class="alert alert-danger">
+
+        <p>No hay pasajeros para mostrar. </p>
+    </div>
+
+}
+else
+{
+
+    <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+
+                <th scope="col">NOMBRE</th>
+                <th scope="col">EMAIL</th>
+                <th scope="col">NACIONALIDAD</th>
+                <th scope="col">DOCUMENTO</th>
+                <th scope="col">PUNTOS / ELEGIBLE</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Pasajero pasajero in Model)
+            {
+                if (pasajero is Premium premium) {      
+                    <tr>
+
+                        <td>@premium.Nombre</td>
+                        <td>@premium.email</td>
+                        <td>@premium.Nacionalidad</td>
+                        <td>@premium.DocIdentidad</td>
+                        <td>Tiene @premium.Puntos puntos.</td>
+
+                    </tr>
+                }
+
+                if (pasajero is Ocasional ocasional)
+                {
+                    
+                    <tr>
+
+                        <td>@ocasional.Nombre</td>
+                        <td>@ocasional.email</td>
+                        <td>@ocasional.Nacionalidad</td>
+                        <td>@ocasional.DocIdentidad</td>
+                        <td>@(ocasional.elegible ? "Si" : "No") es elegible.</td>
+
+                    </tr>
+                }
+            }
+
+
+        </tbody>
+    </table>
+}

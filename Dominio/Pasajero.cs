@@ -13,9 +13,13 @@ namespace Dominio
         private string _docIdentidad;
         private string _nombre;
 
-        public string DocIdentidad { get { return _docIdentidad; } }
 
-        public string Nombre { get { return _nombre; } }
+        //public, con get y set para usar el Model Binding en Registrar el Ocasional
+        public string Nacionalidad { get { return _nacionalidad; } set { this._nacionalidad = value; } }
+
+        public string DocIdentidad { get { return _docIdentidad; } set { this._docIdentidad = value; } }
+
+        public string Nombre { get { return _nombre; } set { this._nombre = value; } }
 
 
         public Pasajero(string nacionalidad, string docIdentidad, string nombre, string password, string email) : base(password, email)
@@ -26,8 +30,11 @@ namespace Dominio
             this.Validar();
         }
 
+        public Pasajero() { }
+
         public void Validar()
         {
+            base.Validar();
             this.ValidarNombre();
             this.ValidarNacionalidad();
             this.ValidarDocumentoDeIdentidad();
@@ -46,7 +53,7 @@ namespace Dominio
             if (string.IsNullOrWhiteSpace(this._nacionalidad))
             {
 
-                throw new Exception("La nacionalidad no puede estar vacío ni contener espacios en blanco.");
+                throw new Exception("La nacionalidad no puede estar vacía ni contener espacios en blanco.");
             }
         }
 
@@ -55,24 +62,6 @@ namespace Dominio
             if (string.IsNullOrWhiteSpace(this._docIdentidad))
             {
                 throw new Exception("El documento de identidad no puede estar vacío ni contener espacios en blanco.");
-            }
-
-            const int LIMITE_DOCUMENTO = 15;
-
-            if (_docIdentidad.Length >= LIMITE_DOCUMENTO)
-            {
-                throw new Exception($"El documento de identidad debe tener menos de {LIMITE_DOCUMENTO} caracteres.");
-            }
-
-
-            for (int i = 0; i < this._docIdentidad.Length; i++)
-            {
-                char caracter = this._docIdentidad[i];
-
-                if (caracter < '0' || caracter > '9')
-                {
-                    throw new Exception("El documento de identidad debe contener solo números.");
-                }
             }
         }
 

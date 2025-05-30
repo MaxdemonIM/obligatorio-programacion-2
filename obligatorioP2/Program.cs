@@ -57,9 +57,10 @@ namespace obligatorioP2
             }
 
 
-            //PARTE A
 
-            static void ListarPasajeros()
+        //PARTE A
+
+        static void ListarPasajeros()
             {
                 try
                 {

@@ -26,12 +26,17 @@ namespace Dominio
         //METODO POLIMORFICO QUE SOBRESCRIBE METODO DE CLASE BASE (PASAJERO)
         public override decimal CalcularPrecioEquipaje(TipoEquipaje tipoEquipaje)
         {
-            if (tipoEquipaje == TipoEquipaje.BODEGA)
+           
+            switch (tipoEquipaje)
             {
-                return 1.05m; //porcentaje de equipaje BODEGA;
-            }
+                case TipoEquipaje.BODEGA:
 
-            return 0m;
+                    return 1.05m; //porcentaje de equipaje BODEGA;
+
+                default:
+                    return 1m;
+
+            }
         }
     }
 
