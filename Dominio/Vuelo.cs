@@ -27,7 +27,7 @@ namespace Dominio
 
         public decimal CostoXAsiento { get { return _costoXAsiento; } }
 
-
+      
         public Vuelo(int numVuelo, Avion avion, Ruta ruta, List<DayOfWeek> frecuencia)
         {
             this._numVuelo = numVuelo;

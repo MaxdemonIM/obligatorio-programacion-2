@@ -14,8 +14,13 @@ namespace WebApp_Obligatorio_P2.Controllers
         public IActionResult ListarPasajeros()
         {
 
+          
             return View(_sistema.ListarPasajeros());
 
         }
+
+       
+
+
     }
 }

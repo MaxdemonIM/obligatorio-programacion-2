@@ -54,9 +54,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ropin\\Source\\Repos\\obligatorio-programacion-2\\obligatorioP2\\obligatorioP2.csproj",
+      "projectUniqueName": "C:\\Users\\ropin\\source\\repos\\obligatorio-programacion-2\\obligatorioP2\\obligatorioP2.csproj",
       "projectName": "obligatorioP2",
-      "projectPath": "C:\\Users\\ropin\\Source\\Repos\\obligatorio-programacion-2\\obligatorioP2\\obligatorioP2.csproj",
+      "projectPath": "C:\\Users\\ropin\\source\\repos\\obligatorio-programacion-2\\obligatorioP2\\obligatorioP2.csproj",
       "packagesPath": "C:\\Users\\ropin\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\ropin\\Source\\Repos\\obligatorio-programacion-2\\obligatorioP2\\obj\\",
       "projectStyle": "PackageReference",
@@ -79,8 +79,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\ropin\\Source\\Repos\\obligatorio-programacion-2\\WebApp Obligatorio P2\\WebApp Obligatorio P2.csproj": {
-              "projectPath": "C:\\Users\\ropin\\Source\\Repos\\obligatorio-programacion-2\\WebApp Obligatorio P2\\WebApp Obligatorio P2.csproj"
+            "C:\\Users\\ropin\\source\\repos\\obligatorio-programacion-2\\WebApp Obligatorio P2\\WebApp Obligatorio P2.csproj": {
+              "projectPath": "C:\\Users\\ropin\\source\\repos\\obligatorio-programacion-2\\WebApp Obligatorio P2\\WebApp Obligatorio P2.csproj"
             }
           }
         }

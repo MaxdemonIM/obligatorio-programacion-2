@@ -90,6 +90,7 @@ namespace Dominio
             return $"Datos del Pasaje: ID: {_id} | Pasajero: {_pasajero.Nombre} | Fecha: {_fecha:dd-MM-yyyy} | Precio: ${_precio.ToString("F2")} | Vuelo número: {_vuelo.NumVuelo}";
         }
 
+        //ESTO ORDENA AL ADMINISTRADOR LOS PASAJES EMITIDOS POR FECHA
         public int CompareTo(Pasaje? other)
         {
             return this._fecha.CompareTo(other._fecha) * -1;

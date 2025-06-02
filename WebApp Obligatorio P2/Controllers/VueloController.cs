@@ -3,27 +3,19 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApp_Obligatorio_P2.Controllers
 {
-    public class PasajeController : Controller
+    public class VueloController : Controller
     {
         private Sistema _sistema = Sistema.Instancia;
-
         public IActionResult Index()
         {
             return View();
         }
 
-
-        public IActionResult ListarPasajes()
+        public IActionResult ListarVuelos()
         {
-          
-            return View(_sistema.OrdenarPasajes()); //para ordenar los pasajes emitidos por fecha PARA ADMINISTRADOR. 
-
+            return View(_sistema.Vuelos);
         }
-
-        
-    
 
 
     }
 }
-
