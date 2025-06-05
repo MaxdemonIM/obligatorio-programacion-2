@@ -43,6 +43,24 @@ else
                         }
                      </td>
                     <td><a href="~/Vuelo/Details/@vuelo.NumVuelo" class="btn btn-info">Ver detalle</a></td>
+
+                    <td>
+                        <form action="~/Pasaje/Add" method="post">
+                            <input type ="hidden" value="@vuelo.NumVuelo" name="numeroVuelo" />
+                            <input type="date" name="fecha"/>
+                            <select name="tipoEquipaje">
+                                <option value="">-----</option>
+                                @foreach (string equipaje in Enum.GetNames(typeof(TipoEquipaje))) //para mostrar la frecuencia
+                                {
+                                    <option value="@equipaje"> @equipaje</option>
+                                    <br />
+                                }
+                            </select>
+                            <input type="submit" value="Comprar pasaje"/>
+
+                        </form>
+
+                    </td>
                 </tr>
             }
                     </tbody>

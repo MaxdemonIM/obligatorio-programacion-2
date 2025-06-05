@@ -27,6 +27,15 @@ namespace WebApp_Obligatorio_P2.Controllers
 
         }
 
+        [HttpPost]
+
+        public IActionResult Add()
+        {
+
+            
+            return View(_sistema.Pasajes); //para ordenar los pasajes emitidos por fecha PARA ADMINISTRADOR. 
+
+        }
 
 
     }

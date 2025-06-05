@@ -84,7 +84,7 @@ namespace Dominio
         {
             if (obj == null || !(obj is Pasaje)) return false;
             Pasaje otro = (Pasaje)obj;
-            return this._pasajero.Equals(otro._pasajero) && this._vuelo.Equals(otro._vuelo) && this._fecha.Equals(otro._fecha);
+            return this._id.Equals(otro._id);
         }
 
 
