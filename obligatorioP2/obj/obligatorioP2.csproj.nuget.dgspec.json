@@ -76,7 +76,7 @@
         "projectName": "obligatorioP2",
         "projectPath": "C:\\Users\\ropin\\source\\repos\\obligatorio-programacion-2\\obligatorioP2\\obligatorioP2.csproj",
         "packagesPath": "C:\\Users\\ropin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ropin\\Source\\Repos\\obligatorio-programacion-2\\obligatorioP2\\obj\\",
+        "outputPath": "C:\\Users\\ropin\\source\\repos\\obligatorio-programacion-2\\obligatorioP2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -133,7 +133,21 @@ namespace Dominio
             _usuarios.Add(nuevoUsuario);
         }
 
-        //-------- PARTE D --------
+
+        public Vuelo ObtenerVueloPorNumVuelo(int numVuelo)
+        {
+            foreach (Vuelo unVuelo in this._vuelos)
+            {
+                if (unVuelo.NumVuelo == numVuelo)
+                {
+                
+                    return unVuelo;
+
+                }
+            }
+            throw new Exception($"No existe vuelo con el número: {numVuelo}");
+        }
+
 
         public List<Pasaje> ObtenerPasajeEntre(DateTime fechaInicial, DateTime fechaFinal)
         {
@@ -166,12 +180,11 @@ namespace Dominio
        
         //Usuario CLIENTE
 
-        //ver pasajes ordenados por FECHA (ya hacemos uso del COMPARE TO en pasajes)
+        //ver pasajes ordenados por FECHA desc(ya hacemos uso del COMPARE TO en pasajes)
 
-        public List<Pasaje> OrdenarPasajes() 
-        { List<Pasaje> pasajesOrdenados = new List<Pasaje>(Pasajes);
-            pasajesOrdenados.Sort();
-            return pasajesOrdenados;
+        public void OrdenarPasajes() 
+        {
+            this._pasajes.Sort();
         }
 
 
@@ -182,11 +195,9 @@ namespace Dominio
         //Usuario ADMINISTRADOR
 
         //Ver pasajes PARA CLIENTE, ordenados por PRECIO (usamos la clase COMPARADORA CompararPasajePorPrecio creada). 
-        public List<Pasaje> OrdenarPasajesPorPrecio()
+        public void OrdenarPasajesPorPrecio()
         {
-            List<Pasaje> pasajesOrdenados = new List<Pasaje>(Pasajes);
-            pasajesOrdenados.Sort(new CompararPasajePorPrecio());
-            return pasajesOrdenados;
+            this._pasajes.Sort(new CompararPasajePorPrecio());
         }
 
         //--------------PRECARGA------------------

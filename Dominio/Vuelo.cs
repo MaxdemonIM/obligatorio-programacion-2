@@ -100,11 +100,17 @@ namespace Dominio
             return costoTasasTotal;
         }
 
+        public decimal CalcularCostoSinEquipajeParaVistaDetails()
+        {
+            decimal costoXAsiento = CalcularCostoPorAsiento();
+            return costoXAsiento + (costoXAsiento * Pasaje.PORCENTAJE_GANANCIA);
+        }
+
         public override bool Equals(object? obj)
         {
             if (obj == null || !(obj is Vuelo)) return false;
             Vuelo otro = (Vuelo)obj;
-            return this._avion.Equals(otro._avion) && this._ruta.Equals(otro._ruta);
+            return this._numVuelo.Equals(otro._numVuelo);
         }
 
 

@@ -9,9 +9,9 @@ namespace Dominio.Comparadores
     //NOS SIRVE PARA ORDENAR LOS PASAJES POR PRECIO DESCENDENTE PARA EL CLIENTE
     public class CompararPasajePorPrecio : IComparer<Pasaje>
     {
-        public int Compare(Pasaje? x, Pasaje? y)
+        public int Compare(Pasaje? este, Pasaje? otro)
         {
-            return x.CalcularPrecioDelPasaje().CompareTo(y.CalcularPrecioDelPasaje());
+            return este.CalcularPrecioDelPasaje().CompareTo(otro.CalcularPrecioDelPasaje()) * -1;
         }
     }
 }

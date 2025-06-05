@@ -1,7 +1,7 @@
 ﻿@using Dominio;
 @model List<Pasaje>
 
-<h2>LISTA DE PASAJES:</h2>
+<h2>LISTA DE PASAJES por fecha se supone:</h2>
 
 
 @if (Model.Count() == 0)
@@ -38,7 +38,7 @@ else
                     <td>@pasaje.Pasajero.Nombre</td>
                     <td>@pasaje.Fecha.ToShortDateString()</td>
                     <td>@pasaje.TipoEquipaje</td>
-                    <td>@pasaje.Precio.ToString("F2")</td>
+                    <td>$@pasaje.Precio.ToString("F2")</td>
                 </tr>
 
             }

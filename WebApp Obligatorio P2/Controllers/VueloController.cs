@@ -16,6 +16,10 @@ namespace WebApp_Obligatorio_P2.Controllers
             return View(_sistema.Vuelos);
         }
 
-
+        public IActionResult Details(int id) 
+        {
+            Vuelo vuelo = _sistema.ObtenerVueloPorNumVuelo(id);
+            return View(vuelo);
+        }
     }
 }

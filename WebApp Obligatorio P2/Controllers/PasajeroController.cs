@@ -14,7 +14,7 @@ namespace WebApp_Obligatorio_P2.Controllers
         public IActionResult ListarPasajeros()
         {
 
-          
+            _sistema.OrdenarPasajesPorPrecio();
             return View(_sistema.ListarPasajeros());
 
         }

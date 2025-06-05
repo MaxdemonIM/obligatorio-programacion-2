@@ -24,6 +24,10 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ropin/source/repos/obligatorio-programacion-2/WebApp Obligatorio P2/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ropin/source/repos/obligatorio-programacion-2/WebApp Obligatorio P2/Views/Ocasional/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2Nhc2lvbmFsXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -40,8 +44,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzYWplXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ropin/source/repos/obligatorio-programacion-2/WebApp Obligatorio P2/Views/Pasaje/ListarPasajes.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzYWplXExpc3RhclBhc2FqZXMuY3NodG1s
+[C:/Users/ropin/source/repos/obligatorio-programacion-2/WebApp Obligatorio P2/Views/Pasaje/ListarPasajesPorFecha.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzYWplXExpc3RhclBhc2FqZXNQb3JGZWNoYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ropin/source/repos/obligatorio-programacion-2/WebApp Obligatorio P2/Views/Pasaje/ListarPasajesPorPrecio.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzYWplXExpc3RhclBhc2FqZXNQb3JQcmVjaW8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ropin/source/repos/obligatorio-programacion-2/WebApp Obligatorio P2/Views/Shared/Error.cshtml]
@@ -50,6 +58,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/ropin/source/repos/obligatorio-programacion-2/WebApp Obligatorio P2/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ropin/source/repos/obligatorio-programacion-2/WebApp Obligatorio P2/Views/Vuelo/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVnVlbG9cRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ropin/source/repos/obligatorio-programacion-2/WebApp Obligatorio P2/Views/Vuelo/Index.cshtml]

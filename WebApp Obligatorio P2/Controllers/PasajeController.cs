@@ -13,15 +13,20 @@ namespace WebApp_Obligatorio_P2.Controllers
         }
 
 
-        public IActionResult ListarPasajes()
+        public IActionResult ListarPasajesPorPrecio()
         {
-          
-            return View(_sistema.OrdenarPasajes()); //para ordenar los pasajes emitidos por fecha PARA ADMINISTRADOR. 
+            _sistema.OrdenarPasajesPorPrecio();
+            return View(_sistema.Pasajes); //para ordenar los pasajes emitidos por precio para CLIENTE. 
 
         }
 
-        
-    
+        public IActionResult ListarPasajesPorFecha()
+        {
+            _sistema.OrdenarPasajes();
+            return View(_sistema.Pasajes); //para ordenar los pasajes emitidos por fecha PARA ADMINISTRADOR. 
+
+        }
+
 
 
     }

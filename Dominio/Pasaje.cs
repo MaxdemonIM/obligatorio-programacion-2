@@ -17,6 +17,9 @@ namespace Dominio
         private TipoEquipaje _tipoEquipaje;
         private decimal _precio;
 
+        public static decimal PORCENTAJE_GANANCIA = 0.25m;
+
+
         //GET para acceder desde MVC
         public int Id { get { return _id; } }
         public Vuelo Vuelo { get { return _vuelo; } }
@@ -64,7 +67,6 @@ namespace Dominio
         //Asigna en el atributo de precio, el valor obtenido mediante metodo CalcularPrecioPasaje realizado en Pasajero para guardarlo. 
         public decimal CalcularPrecioDelPasaje()
         {
-            const decimal PORCENTAJE_GANANCIA = 0.25m;
 
             decimal costoPorAsiento = _vuelo.CalcularCostoPorAsiento();
 
@@ -76,6 +78,7 @@ namespace Dominio
 
             return costoPorAsiento * (PORCENTAJE_GANANCIA + cargoPorEquipaje) + tasasPortuarias;
         }
+
 
         public override bool Equals(object? obj)
         {
@@ -93,7 +96,7 @@ namespace Dominio
         //ESTO ORDENA AL ADMINISTRADOR LOS PASAJES EMITIDOS POR FECHA
         public int CompareTo(Pasaje? other)
         {
-            return this._fecha.CompareTo(other._fecha) * -1;
+            return this._fecha.CompareTo(other._fecha);
         }
     }
 }
