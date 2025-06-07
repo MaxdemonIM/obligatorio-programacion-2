@@ -43,6 +43,12 @@ namespace Dominio
             
         }
 
+        public Pasaje()
+        {
+
+        }
+
+
         //el get para poder ver el valor del ultimo id asignado a la instancia anterior (NO NECESARIO, PERO PODEMOS USARLO PARA TESTING).
         public static int UltimoId
         {

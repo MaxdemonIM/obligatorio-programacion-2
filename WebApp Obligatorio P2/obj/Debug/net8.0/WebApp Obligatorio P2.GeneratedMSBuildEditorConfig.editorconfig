@@ -36,8 +36,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2Nhc2lvbmFsXFJlZ2lzdHJhck9jYXNpb25hbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ropin/source/repos/obligatorio-programacion-2/WebApp Obligatorio P2/Views/Pasajero/ListarPasajeros.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzYWplcm9cTGlzdGFyUGFzYWplcm9zLmNzaHRtbA==
+[C:/Users/ropin/source/repos/obligatorio-programacion-2/WebApp Obligatorio P2/Views/Pasajero/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzYWplcm9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ropin/source/repos/obligatorio-programacion-2/WebApp Obligatorio P2/Views/Pasaje/Index.cshtml]
@@ -66,10 +66,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/ropin/source/repos/obligatorio-programacion-2/WebApp Obligatorio P2/Views/Vuelo/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVnVlbG9cSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ropin/source/repos/obligatorio-programacion-2/WebApp Obligatorio P2/Views/Vuelo/ListarVuelos.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVnVlbG9cTGlzdGFyVnVlbG9zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ropin/source/repos/obligatorio-programacion-2/WebApp Obligatorio P2/Views/_ViewImports.cshtml]

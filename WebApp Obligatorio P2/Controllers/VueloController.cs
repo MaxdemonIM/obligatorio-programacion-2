@@ -6,13 +6,10 @@ namespace WebApp_Obligatorio_P2.Controllers
     public class VueloController : Controller
     {
         private Sistema _sistema = Sistema.Instancia;
-        public IActionResult Index()
+        public IActionResult Index( string mensaje)
         {
-            return View();
-        }
 
-        public IActionResult ListarVuelos()
-        {
+            ViewBag.Mensaje = mensaje;
             return View(_sistema.Vuelos);
         }
 

@@ -1,0 +1,118 @@
+﻿@using Dominio;
+@model List<Pasajero>
+
+<h2>LISTA DE PASAJEROS:</h2>
+
+@if (!string.IsNullOrWhiteSpace(ViewBag.Mensaje))
+{
+    <div class="alert alert-success">
+        @ViewBag.Mensaje
+    </div>
+
+}
+
+@if (Model.Count() == 0)
+{
+    <div class="alert alert-danger">
+
+        <p>No hay pasajeros para mostrar. </p>
+    </div>
+
+}
+else
+{
+
+    <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+
+                <th scope="col">NOMBRE</th>
+                <th scope="col">EMAIL</th>
+                <th scope="col">NACIONALIDAD</th>
+                <th scope="col">DOCUMENTO</th>
+                <th scope="col">PUNTOS / ELEGIBLE</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Pasajero pasajero in Model)
+            {
+                <tr>
+                    <td>@pasajero.Nombre</td>
+                    <td>@pasajero.email</td>
+                    <td>@pasajero.Nacionalidad</td>
+                    <td>@pasajero.DocIdentidad</td>
+
+                    <td>
+                        <form method="post" action ="/Pasajero/Index">
+
+
+                            @if (pasajero is Premium premium)
+                            {
+                                <input type="hidden" name="pasajeroEmail" value="@premium.email" />
+
+                                <p>Tiene @premium.Puntos puntos.</p>
+                                <input type="number" name="puntos" value="@premium.Puntos"/>
+                                <input type="submit" value="Actualizar"/>
+
+
+                            } else if (pasajero is Ocasional ocasional)
+                            {
+                                <input type="hidden" name="pasajeroEmail" value="@ocasional.email" />
+
+                                <p>@(ocasional.elegible ? "Si" : "No") es elegible</p>
+                                <select name="elegible">
+
+                                        <option value="true" selected="@(ocasional.elegible ? " selected" :null)"> Si  </option>
+                                        <option value="false" selected="@(ocasional.elegible ? null : "selected")"> No  </option>
+
+                                </select>
+                      
+                                <input type="submit" value="Actualizar" />
+                            }
+
+                        </form>
+
+                    </td>
+                </tr>
+
+            }
+            
+        </tbody>
+    </table>
+    }
+
+
+
+  <!--
+
+@foreach (Pasajero pasajero in Model)
+{
+    if (pasajero is Premium premium)
+    {
+        <tr>
+
+            <td>@premium.Nombre</td>
+            <td>@premium.email</td>
+            <td>@premium.Nacionalidad</td>
+            <td>@premium.DocIdentidad</td>
+
+            <td>Tiene @premium.Puntos puntos.</td>
+
+        </tr>
+    }
+
+    if (pasajero is Ocasional ocasional)
+    {
+
+        <tr>
+
+            <td>@ocasional.Nombre</td>
+            <td>@ocasional.email</td>
+            <td>@ocasional.Nacionalidad</td>
+            <td>@ocasional.DocIdentidad</td>
+            <td>@(ocasional.elegible ? "Si" : "No") es elegible.</td>
+
+        </tr>
+    }
+}
+-->
