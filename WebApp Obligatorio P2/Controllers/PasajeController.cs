@@ -10,6 +10,7 @@ namespace WebApp_Obligatorio_P2.Controllers
         public IActionResult Index()
         {
             return View();
+
         }
 
 
@@ -29,11 +30,40 @@ namespace WebApp_Obligatorio_P2.Controllers
 
         [HttpPost]
 
-        public IActionResult Add()
+        //TODOOOOOOO 
+        public IActionResult Add(int numVuelo, Pasajero pasajeroLogueado, DateTime fecha, TipoEquipaje tipoEquipaje)
         {
+            try 
+            {
+                Vuelo vuelo = _sistema.ObtenerVueloPorNumVuelo(numVuelo);
+                string tipoUsuario = _sistema.ObtenerTipoUsuario(_sistema.Usuarios[7]);
+                if(tipoUsuario == "Pasajero")
+                {
+                    
 
-            
-            return View(_sistema.Pasajes); //para ordenar los pasajes emitidos por fecha PARA ADMINISTRADOR. 
+                }
+                Pasaje nuevo = new Pasaje(vuelo, pasajeroLogueado, fecha , tipoEquipaje);
+
+                _sistema.AgregarPasaje(nuevo);
+
+                return RedirectToAction("Index", "Vuelo",
+
+                    new
+                    {
+                        mensaje = $"Se compró el pasaje para la fecha " +
+                    $"{fecha.ToString("dd MMM yyyy")}"
+
+                    });
+                } catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Vuelo",
+                       new
+                       {
+                           mensaje = ex.Message,
+                       }
+                              );
+            }; 
+          
 
         }
 

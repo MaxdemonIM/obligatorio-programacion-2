@@ -11,13 +11,19 @@ namespace Dominio
     {
         private int _puntos;
 
-        public int Puntos { get { return _puntos; } }
+        public int Puntos { get { return _puntos; } set { _puntos = value; } }
 
         public Premium(string nacionalidad, string docIdentidad, string nombre, string password, string email) : base(nacionalidad, docIdentidad, nombre, password, email)
         {
             this._puntos = 0;
         }
 
+
+        public void Validar()
+        {
+            base.Validar();
+            this.ValidarPuntos(this._puntos);
+        }
         public override string ToString()
         {
             return base.ToString() + $" Puntos: {_puntos}";
@@ -38,6 +44,19 @@ namespace Dominio
 
             }
         }
+
+        public void ValidarPuntos(int puntos)
+        {
+            if (puntos < 0)
+            {
+                throw new Exception("Los puntos asignados no pueden ser negativos.");
+            }
+
+
+
+        }
+
+
     }
 
 

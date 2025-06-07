@@ -148,6 +148,56 @@ namespace Dominio
             throw new Exception($"No existe vuelo con el número: {numVuelo}");
         }
 
+        public string ObtenerTipoUsuario(Usuario usuario)
+        {
+            string tipoUsuario = "";
+            foreach (Usuario unUsuario in this._usuarios)
+            {
+                if (usuario is Pasajero)
+                {
+
+                    tipoUsuario = "Pasajero";
+
+                }
+                else 
+                { 
+                    tipoUsuario = "Administrador";
+                }
+            }
+            return tipoUsuario;
+        }
+
+        //Para editar
+
+        public void ActualizarPuntosPremium(int puntos, string email)
+        {
+            
+            foreach (Usuario usuario in this._usuarios)
+            {
+                if (usuario is Premium premium && premium.email == email)
+                {
+                    premium.ValidarPuntos(puntos);
+                    premium.Puntos = puntos;
+                    return;
+
+                }
+            }
+            throw new Exception ("No existe premium con el email:" + email);
+        }
+
+        public void ActualizarElegibilidadOcasional( string email, bool nuevoEstado)
+        {
+            foreach (Usuario usuario in this._usuarios)
+            {
+                if (usuario is Ocasional ocasional && ocasional.email == email)
+                {
+
+                    ocasional.elegible = nuevoEstado;
+                    return;
+                }
+            }
+            throw new Exception("No existe ocasional con el email:" + email);
+        }
 
         public List<Pasaje> ObtenerPasajeEntre(DateTime fechaInicial, DateTime fechaFinal)
         {

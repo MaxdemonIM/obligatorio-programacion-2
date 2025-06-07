@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public abstract class Pasajero : Usuario , IValidable
+    public abstract class Pasajero : Usuario , IValidable,IComparable <Pasajero>
     {
         private string _nacionalidad;
         private string _docIdentidad;
@@ -76,6 +76,11 @@ namespace Dominio
         public override string ToString()
         {
             return $"Nombre: {this._nombre} | Email: {this._email} | Nacionalidad: {this._nacionalidad} | Cedula Identidad: {this._docIdentidad}";
+        }
+
+        public int CompareTo(Pasajero? other)
+        {
+            return this._docIdentidad.CompareTo(other._docIdentidad);
         }
     }
 }

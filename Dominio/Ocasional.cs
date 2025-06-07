@@ -14,7 +14,7 @@ namespace Dominio
 
         private bool _elegible;
 
-        public bool elegible { get { return _elegible; } }
+        public bool elegible { get { return _elegible; } set { _elegible = value; } }
         public Ocasional(string nacionalidad, string docIdentidad, string nombre, string password, string email) : base(nacionalidad, docIdentidad, nombre, password, email)
         {
             this._elegible = CalcularElegibilidad();
