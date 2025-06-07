@@ -1,0 +1,34 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/obligatorio-programacion-2/v17/.wsuo
+/.vs/obligatorio-programacion-2/v17/DocumentLayout.backup.json
+/.vs/obligatorio-programacion-2/v17/DocumentLayout.json
+/Dominio/obj/Debug/net8.0/Dominio.AssemblyInfo.cs
+/Dominio/obj/Debug/net8.0/Dominio.AssemblyInfoInputs.cache
+/Dominio/obj/Debug/net8.0/Dominio.assets.cache
+/Dominio/obj/Debug/net8.0/Dominio.GeneratedMSBuildEditorConfig.editorconfig
+/Dominio/obj/Dominio.csproj.nuget.dgspec.json
+/Dominio/obj/Dominio.csproj.nuget.g.props
+/Dominio/obj/project.assets.json
+/Dominio/obj/project.nuget.cache
+/obligatorioP2/obj/Debug/net8.0/apphost.exe
+/obligatorioP2/obj/Debug/net8.0/obligatorioP2.AssemblyInfo.cs
+/obligatorioP2/obj/Debug/net8.0/obligatorioP2.AssemblyInfoInputs.cache
+/obligatorioP2/obj/Debug/net8.0/obligatorioP2.assets.cache
+/obligatorioP2/obj/Debug/net8.0/obligatorioP2.csproj.AssemblyReference.cache
+/obligatorioP2/obj/Debug/net8.0/obligatorioP2.GeneratedMSBuildEditorConfig.editorconfig
+/obligatorioP2/obj/obligatorioP2.csproj.nuget.dgspec.json
+/obligatorioP2/obj/obligatorioP2.csproj.nuget.g.props
+/obligatorioP2/obj/project.assets.json
+/obligatorioP2/obj/project.nuget.cache
+/WebApp Obligatorio P2/obj/Debug/net8.0/WebApp Obligatorio P2.AssemblyInfoInputs.cache
+/WebApp Obligatorio P2/obj/Debug/net8.0/WebApp Obligatorio P2.AssemblyInfo.cs
+/WebApp Obligatorio P2/obj/Debug/net8.0/WebApp Obligatorio P2.assets.cache
+/WebApp Obligatorio P2/obj/Debug/net8.0/WebApp Obligatorio P2.csproj.AssemblyReference.cache
+/WebApp Obligatorio P2/obj/Debug/net8.0/WebApp Obligatorio P2.GeneratedMSBuildEditorConfig.editorconfig
+/WebApp Obligatorio P2/obj/project.assets.json
+/WebApp Obligatorio P2/obj/project.nuget.cache
+/WebApp Obligatorio P2/obj/WebApp Obligatorio P2.csproj.nuget.dgspec.json
+/WebApp Obligatorio P2/obj/WebApp Obligatorio P2.csproj.nuget.g.props
