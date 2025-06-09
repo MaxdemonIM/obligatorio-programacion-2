@@ -424,37 +424,63 @@ namespace Dominio
             AgregarRuta(new Ruta(_aeropuertos[0], _aeropuertos[19], 3900));
 
             // ----- VUELOS -----
-
-            AgregarVuelo(new Vuelo(1, _aviones[0], _rutas[0], new List<DayOfWeek> { DayOfWeek.Monday, DayOfWeek.Wednesday }));
-            AgregarVuelo(new Vuelo(2, _aviones[1], _rutas[1], new List<DayOfWeek> { DayOfWeek.Tuesday, DayOfWeek.Thursday }));
-            AgregarVuelo(new Vuelo(3, _aviones[2], _rutas[2], new List<DayOfWeek> { DayOfWeek.Friday }));
-            AgregarVuelo(new Vuelo(4, _aviones[3], _rutas[3], new List<DayOfWeek> { DayOfWeek.Sunday }));
-            AgregarVuelo(new Vuelo(5, _aviones[0], _rutas[4], new List<DayOfWeek> { DayOfWeek.Monday }));
-            AgregarVuelo(new Vuelo(6, _aviones[1], _rutas[5], new List<DayOfWeek> { DayOfWeek.Tuesday }));
-            AgregarVuelo(new Vuelo(7, _aviones[2], _rutas[6], new List<DayOfWeek> { DayOfWeek.Wednesday }));
-            AgregarVuelo(new Vuelo(8, _aviones[3], _rutas[7], new List<DayOfWeek> { DayOfWeek.Thursday }));
-            AgregarVuelo(new Vuelo(9, _aviones[0], _rutas[8], new List<DayOfWeek> { DayOfWeek.Friday }));
-            AgregarVuelo(new Vuelo(10, _aviones[1], _rutas[9], new List<DayOfWeek> { DayOfWeek.Saturday }));
-            AgregarVuelo(new Vuelo(11, _aviones[2], _rutas[10], new List<DayOfWeek> { DayOfWeek.Sunday }));
-            AgregarVuelo(new Vuelo(12, _aviones[3], _rutas[11], new List<DayOfWeek> { DayOfWeek.Monday }));
-            AgregarVuelo(new Vuelo(13, _aviones[0], _rutas[12], new List<DayOfWeek> { DayOfWeek.Tuesday }));
-            AgregarVuelo(new Vuelo(14, _aviones[1], _rutas[13], new List<DayOfWeek> { DayOfWeek.Wednesday }));
-            AgregarVuelo(new Vuelo(15, _aviones[2], _rutas[14], new List<DayOfWeek> { DayOfWeek.Thursday }));
-            AgregarVuelo(new Vuelo(16, _aviones[3], _rutas[15], new List<DayOfWeek> { DayOfWeek.Friday }));
-            AgregarVuelo(new Vuelo(17, _aviones[0], _rutas[16], new List<DayOfWeek> { DayOfWeek.Saturday }));
-            AgregarVuelo(new Vuelo(18, _aviones[1], _rutas[17], new List<DayOfWeek> { DayOfWeek.Sunday }));
-            AgregarVuelo(new Vuelo(19, _aviones[2], _rutas[18], new List<DayOfWeek> { DayOfWeek.Monday }));
-            AgregarVuelo(new Vuelo(20, _aviones[3], _rutas[19], new List<DayOfWeek> { DayOfWeek.Tuesday }));
-            AgregarVuelo(new Vuelo(21, _aviones[0], _rutas[20], new List<DayOfWeek> { DayOfWeek.Wednesday }));
-            AgregarVuelo(new Vuelo(22, _aviones[1], _rutas[21], new List<DayOfWeek> { DayOfWeek.Thursday }));
-            AgregarVuelo(new Vuelo(23, _aviones[2], _rutas[22], new List<DayOfWeek> { DayOfWeek.Friday }));
-            AgregarVuelo(new Vuelo(24, _aviones[3], _rutas[23], new List<DayOfWeek> { DayOfWeek.Saturday }));
-            AgregarVuelo(new Vuelo(25, _aviones[0], _rutas[24], new List<DayOfWeek> { DayOfWeek.Sunday }));
-            AgregarVuelo(new Vuelo(26, _aviones[1], _rutas[25], new List<DayOfWeek> { DayOfWeek.Monday }));
-            AgregarVuelo(new Vuelo(27, _aviones[2], _rutas[26], new List<DayOfWeek> { DayOfWeek.Tuesday }));
-            AgregarVuelo(new Vuelo(28, _aviones[3], _rutas[27], new List<DayOfWeek> { DayOfWeek.Wednesday }));
-            AgregarVuelo(new Vuelo(29, _aviones[0], _rutas[28], new List<DayOfWeek> { DayOfWeek.Thursday }));
-            AgregarVuelo(new Vuelo(30, _aviones[1], _rutas[29], new List<DayOfWeek> { DayOfWeek.Friday }));
+            /*
+                        AgregarVuelo(new Vuelo(1, _aviones[0], _rutas[0], new List<DayOfWeek> { DayOfWeek.Monday, DayOfWeek.Wednesday }));
+                        AgregarVuelo(new Vuelo(2, _aviones[1], _rutas[1], new List<DayOfWeek> { DayOfWeek.Tuesday, DayOfWeek.Thursday }));
+                        AgregarVuelo(new Vuelo(3, _aviones[2], _rutas[2], new List<DayOfWeek> { DayOfWeek.Friday }));
+                        AgregarVuelo(new Vuelo(4, _aviones[3], _rutas[3], new List<DayOfWeek> { DayOfWeek.Sunday }));
+                        AgregarVuelo(new Vuelo(5, _aviones[0], _rutas[4], new List<DayOfWeek> { DayOfWeek.Monday }));
+                        AgregarVuelo(new Vuelo(6, _aviones[1], _rutas[5], new List<DayOfWeek> { DayOfWeek.Tuesday }));
+                        AgregarVuelo(new Vuelo(7, _aviones[2], _rutas[6], new List<DayOfWeek> { DayOfWeek.Wednesday }));
+                        AgregarVuelo(new Vuelo(8, _aviones[3], _rutas[7], new List<DayOfWeek> { DayOfWeek.Thursday }));
+                        AgregarVuelo(new Vuelo(9, _aviones[0], _rutas[8], new List<DayOfWeek> { DayOfWeek.Friday }));
+                        AgregarVuelo(new Vuelo(10, _aviones[1], _rutas[9], new List<DayOfWeek> { DayOfWeek.Saturday }));
+                        AgregarVuelo(new Vuelo(11, _aviones[2], _rutas[10], new List<DayOfWeek> { DayOfWeek.Sunday }));
+                        AgregarVuelo(new Vuelo(12, _aviones[3], _rutas[11], new List<DayOfWeek> { DayOfWeek.Monday }));
+                        AgregarVuelo(new Vuelo(13, _aviones[0], _rutas[12], new List<DayOfWeek> { DayOfWeek.Tuesday }));
+                        AgregarVuelo(new Vuelo(14, _aviones[1], _rutas[13], new List<DayOfWeek> { DayOfWeek.Wednesday }));
+                        AgregarVuelo(new Vuelo(15, _aviones[2], _rutas[14], new List<DayOfWeek> { DayOfWeek.Thursday }));
+                        AgregarVuelo(new Vuelo(16, _aviones[3], _rutas[15], new List<DayOfWeek> { DayOfWeek.Friday }));
+                        AgregarVuelo(new Vuelo(17, _aviones[0], _rutas[16], new List<DayOfWeek> { DayOfWeek.Saturday }));
+                        AgregarVuelo(new Vuelo(18, _aviones[1], _rutas[17], new List<DayOfWeek> { DayOfWeek.Sunday }));
+                        AgregarVuelo(new Vuelo(19, _aviones[2], _rutas[18], new List<DayOfWeek> { DayOfWeek.Monday }));
+                        AgregarVuelo(new Vuelo(20, _aviones[3], _rutas[19], new List<DayOfWeek> { DayOfWeek.Tuesday }));
+                        AgregarVuelo(new Vuelo(21, _aviones[0], _rutas[20], new List<DayOfWeek> { DayOfWeek.Wednesday }));
+                        AgregarVuelo(new Vuelo(22, _aviones[1], _rutas[21], new List<DayOfWeek> { DayOfWeek.Thursday }));
+                        AgregarVuelo(new Vuelo(23, _aviones[2], _rutas[22], new List<DayOfWeek> { DayOfWeek.Friday }));
+                        AgregarVuelo(new Vuelo(24, _aviones[3], _rutas[23], new List<DayOfWeek> { DayOfWeek.Saturday }));
+                        AgregarVuelo(new Vuelo(25, _aviones[0], _rutas[24], new List<DayOfWeek> { DayOfWeek.Sunday }));
+                        AgregarVuelo(new Vuelo(26, _aviones[1], _rutas[25], new List<DayOfWeek> { DayOfWeek.Monday }));
+                        AgregarVuelo(new Vuelo(27, _aviones[2], _rutas[26], new List<DayOfWeek> { DayOfWeek.Tuesday }));
+                        AgregarVuelo(new Vuelo(28, _aviones[3], _rutas[27], new List<DayOfWeek> { DayOfWeek.Wednesday }));
+                        AgregarVuelo(new Vuelo(29, _aviones[0], _rutas[28], new List<DayOfWeek> { DayOfWeek.Thursday }));
+                        AgregarVuelo(new Vuelo(30, _aviones[1], _rutas[29], new List<DayOfWeek> { DayOfWeek.Friday }));
+            */
+            AgregarVuelo(new Vuelo(1, _aviones[0], _rutas[0], new List<DayOfWeek> { DayOfWeek.Tuesday }));      // 2026-05-05
+            AgregarVuelo(new Vuelo(2, _aviones[1], _rutas[1], new List<DayOfWeek> { DayOfWeek.Wednesday }));    // 2026-05-06
+            AgregarVuelo(new Vuelo(3, _aviones[2], _rutas[2], new List<DayOfWeek> { DayOfWeek.Saturday }));     // 2026-05-09
+            AgregarVuelo(new Vuelo(4, _aviones[3], _rutas[3], new List<DayOfWeek> { DayOfWeek.Monday }));       // 2026-05-11
+            AgregarVuelo(new Vuelo(5, _aviones[0], _rutas[4], new List<DayOfWeek> { DayOfWeek.Tuesday }));      // 2026-05-12
+            AgregarVuelo(new Vuelo(6, _aviones[1], _rutas[5], new List<DayOfWeek> { DayOfWeek.Wednesday }));    // 2026-05-13
+            AgregarVuelo(new Vuelo(7, _aviones[2], _rutas[6], new List<DayOfWeek> { DayOfWeek.Thursday }));     // 2026-05-14
+            AgregarVuelo(new Vuelo(8, _aviones[3], _rutas[7], new List<DayOfWeek> { DayOfWeek.Friday }));       // 2026-05-15
+            AgregarVuelo(new Vuelo(9, _aviones[0], _rutas[8], new List<DayOfWeek> { DayOfWeek.Saturday }));     // 2026-05-16
+            AgregarVuelo(new Vuelo(10, _aviones[1], _rutas[9], new List<DayOfWeek> { DayOfWeek.Sunday }));      // 2026-05-17
+            AgregarVuelo(new Vuelo(11, _aviones[2], _rutas[10], new List<DayOfWeek> { DayOfWeek.Monday }));     // 2026-05-18
+            AgregarVuelo(new Vuelo(12, _aviones[3], _rutas[11], new List<DayOfWeek> { DayOfWeek.Tuesday }));    // 2026-05-19
+            AgregarVuelo(new Vuelo(13, _aviones[0], _rutas[12], new List<DayOfWeek> { DayOfWeek.Wednesday }));  // 2026-05-20
+            AgregarVuelo(new Vuelo(14, _aviones[1], _rutas[13], new List<DayOfWeek> { DayOfWeek.Thursday }));   // 2026-05-21
+            AgregarVuelo(new Vuelo(15, _aviones[2], _rutas[14], new List<DayOfWeek> { DayOfWeek.Friday }));     // 2026-05-22
+            AgregarVuelo(new Vuelo(16, _aviones[3], _rutas[15], new List<DayOfWeek> { DayOfWeek.Saturday }));   // 2026-05-23
+            AgregarVuelo(new Vuelo(17, _aviones[0], _rutas[16], new List<DayOfWeek> { DayOfWeek.Sunday }));     // 2026-05-24
+            AgregarVuelo(new Vuelo(18, _aviones[1], _rutas[17], new List<DayOfWeek> { DayOfWeek.Monday }));     // 2026-05-25
+            AgregarVuelo(new Vuelo(19, _aviones[2], _rutas[18], new List<DayOfWeek> { DayOfWeek.Tuesday }));    // 2026-05-26
+            AgregarVuelo(new Vuelo(20, _aviones[3], _rutas[19], new List<DayOfWeek> { DayOfWeek.Wednesday }));  // 2026-05-27
+            AgregarVuelo(new Vuelo(21, _aviones[0], _rutas[20], new List<DayOfWeek> { DayOfWeek.Thursday }));   // 2026-05-28
+            AgregarVuelo(new Vuelo(22, _aviones[1], _rutas[21], new List<DayOfWeek> { DayOfWeek.Friday }));     // 2026-05-29
+            AgregarVuelo(new Vuelo(23, _aviones[2], _rutas[22], new List<DayOfWeek> { DayOfWeek.Saturday }));   // 2026-05-30
+            AgregarVuelo(new Vuelo(24, _aviones[3], _rutas[23], new List<DayOfWeek> { DayOfWeek.Sunday }));     // 2026-05-31
+            AgregarVuelo(new Vuelo(25, _aviones[0], _rutas[24], new List<DayOfWeek> { DayOfWeek.Monday }));     // 2026-06-01
 
 
             // ----- PASAJES -----

@@ -31,14 +31,15 @@ namespace WebApp_Obligatorio_P2.Controllers
         [HttpPost]
 
         //TODOOOOOOO 
-        public IActionResult Add(int numVuelo, DateTime fecha, string tipoEquipajeString)
+        public IActionResult Add(int numVuelo, DateTime fecha, TipoEquipaje tipoEquipajeString)
         {
             try 
             {
                 Vuelo vuelo = _sistema.ObtenerVueloPorNumVuelo(numVuelo);        
                 Pasajero pasajeroHardcodeado = (Pasajero)_sistema.Usuarios[7];
-                TipoEquipaje tipoEquipaje = (TipoEquipaje)Enum.Parse(typeof(TipoEquipaje), tipoEquipajeString); // Recibe el string del formulario de la VIEW y lo convierte en TipoEquipaje (ENUM) para poder crear el pasaje. De lo contrario no se podría por si solo con lo que se manda de la VIEW por que es un STRING. 
-                Pasaje nuevo = new Pasaje(vuelo, pasajeroHardcodeado, fecha , tipoEquipaje);
+               // ValidarTipoEquipaje(tipoEquipajeString);
+                //TipoEquipaje tipoEquipaje = (TipoEquipaje)Enum.Parse(typeof(TipoEquipaje), tipoEquipajeString); // Recibe el string del formulario de la VIEW y lo convierte en TipoEquipaje (ENUM) para poder crear el pasaje. De lo contrario no se podría por si solo con lo que se manda de la VIEW por que es un STRING. 
+                Pasaje nuevo = new Pasaje(vuelo, pasajeroHardcodeado, fecha , tipoEquipajeString);
 
                 _sistema.AgregarPasaje(nuevo);
 
