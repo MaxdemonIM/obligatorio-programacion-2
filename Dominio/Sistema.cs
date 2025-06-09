@@ -133,7 +133,7 @@ namespace Dominio
             _usuarios.Add(nuevoUsuario);
         }
 
-
+      
         public Vuelo ObtenerVueloPorNumVuelo(int numVuelo)
         {
             foreach (Vuelo unVuelo in this._vuelos)
@@ -306,6 +306,8 @@ namespace Dominio
             }
         }
 
+
+
         public void AgregarAvion(Avion unAvion)
         {
             this.ValidarExisteAvion(unAvion);
@@ -456,31 +458,31 @@ namespace Dominio
 
 
             // ----- PASAJES -----
-            AgregarPasaje(new Pasaje(_vuelos[0], (Pasajero)_usuarios[2], new DateTime(2025, 5, 5), TipoEquipaje.CABINA));
-            AgregarPasaje(new Pasaje(_vuelos[1], (Pasajero)_usuarios[3], new DateTime(2025, 5, 6), TipoEquipaje.LIGHT));
-            AgregarPasaje(new Pasaje(_vuelos[2], (Pasajero)_usuarios[4], new DateTime(2025, 5, 9), TipoEquipaje.BODEGA));
-            AgregarPasaje(new Pasaje(_vuelos[3], (Pasajero)_usuarios[5], new DateTime(2025, 5, 11), TipoEquipaje.CABINA));
-            AgregarPasaje(new Pasaje(_vuelos[4], (Pasajero)_usuarios[6], new DateTime(2025, 5, 12), TipoEquipaje.LIGHT));
-            AgregarPasaje(new Pasaje(_vuelos[5], (Pasajero)_usuarios[7], new DateTime(2025, 5, 13), TipoEquipaje.BODEGA));
-            AgregarPasaje(new Pasaje(_vuelos[6], (Pasajero)_usuarios[8], new DateTime(2025, 5, 14), TipoEquipaje.CABINA));
-            AgregarPasaje(new Pasaje(_vuelos[7], (Pasajero)_usuarios[9], new DateTime(2025, 5, 15), TipoEquipaje.LIGHT));
-            AgregarPasaje(new Pasaje(_vuelos[8], (Pasajero)_usuarios[10], new DateTime(2025, 5, 16), TipoEquipaje.BODEGA));
-            AgregarPasaje(new Pasaje(_vuelos[9], (Pasajero)_usuarios[2], new DateTime(2025, 5, 17), TipoEquipaje.CABINA));
-            AgregarPasaje(new Pasaje(_vuelos[10], (Pasajero)_usuarios[3], new DateTime(2025, 5, 18), TipoEquipaje.LIGHT));
-            AgregarPasaje(new Pasaje(_vuelos[11], (Pasajero)_usuarios[4], new DateTime(2025, 5, 19), TipoEquipaje.BODEGA));
-            AgregarPasaje(new Pasaje(_vuelos[12], (Pasajero)_usuarios[5], new DateTime(2025, 5, 20), TipoEquipaje.CABINA));
-            AgregarPasaje(new Pasaje(_vuelos[13], (Pasajero)_usuarios[6], new DateTime(2025, 5, 21), TipoEquipaje.LIGHT));
-            AgregarPasaje(new Pasaje(_vuelos[14], (Pasajero)_usuarios[7], new DateTime(2025, 5, 22), TipoEquipaje.BODEGA));
-            AgregarPasaje(new Pasaje(_vuelos[15], (Pasajero)_usuarios[8], new DateTime(2025, 5, 23), TipoEquipaje.CABINA));
-            AgregarPasaje(new Pasaje(_vuelos[16], (Pasajero)_usuarios[9], new DateTime(2025, 5, 24), TipoEquipaje.LIGHT));
-            AgregarPasaje(new Pasaje(_vuelos[17], (Pasajero)_usuarios[10], new DateTime(2025, 5, 25), TipoEquipaje.BODEGA));
-            AgregarPasaje(new Pasaje(_vuelos[18], (Pasajero)_usuarios[2], new DateTime(2025, 5, 26), TipoEquipaje.CABINA));
-            AgregarPasaje(new Pasaje(_vuelos[19], (Pasajero)_usuarios[3], new DateTime(2025, 5, 27), TipoEquipaje.LIGHT));
-            AgregarPasaje(new Pasaje(_vuelos[20], (Pasajero)_usuarios[4], new DateTime(2025, 5, 28), TipoEquipaje.BODEGA));
-            AgregarPasaje(new Pasaje(_vuelos[21], (Pasajero)_usuarios[5], new DateTime(2025, 5, 29), TipoEquipaje.CABINA));
-            AgregarPasaje(new Pasaje(_vuelos[22], (Pasajero)_usuarios[6], new DateTime(2025, 5, 30), TipoEquipaje.LIGHT));
-            AgregarPasaje(new Pasaje(_vuelos[23], (Pasajero)_usuarios[7], new DateTime(2025, 5, 31), TipoEquipaje.BODEGA));
-            AgregarPasaje(new Pasaje(_vuelos[24], (Pasajero)_usuarios[8], new DateTime(2025, 6, 1), TipoEquipaje.CABINA));
+            AgregarPasaje(new Pasaje(_vuelos[0], (Pasajero)_usuarios[2], new DateTime(2026, 5, 5), TipoEquipaje.CABINA));
+            AgregarPasaje(new Pasaje(_vuelos[1], (Pasajero)_usuarios[3], new DateTime(2026, 5, 6), TipoEquipaje.LIGHT));
+            AgregarPasaje(new Pasaje(_vuelos[2], (Pasajero)_usuarios[4], new DateTime(2026, 5, 9), TipoEquipaje.BODEGA));
+            AgregarPasaje(new Pasaje(_vuelos[3], (Pasajero)_usuarios[5], new DateTime(2026, 5, 11), TipoEquipaje.CABINA));
+            AgregarPasaje(new Pasaje(_vuelos[4], (Pasajero)_usuarios[6], new DateTime(2026, 5, 12), TipoEquipaje.LIGHT));
+            AgregarPasaje(new Pasaje(_vuelos[5], (Pasajero)_usuarios[7], new DateTime(2026, 5, 13), TipoEquipaje.BODEGA));
+            AgregarPasaje(new Pasaje(_vuelos[6], (Pasajero)_usuarios[8], new DateTime(2026, 5, 14), TipoEquipaje.CABINA));
+            AgregarPasaje(new Pasaje(_vuelos[7], (Pasajero)_usuarios[9], new DateTime(2026, 5, 15), TipoEquipaje.LIGHT));
+            AgregarPasaje(new Pasaje(_vuelos[8], (Pasajero)_usuarios[10], new DateTime(2026, 5, 16), TipoEquipaje.BODEGA));
+            AgregarPasaje(new Pasaje(_vuelos[9], (Pasajero)_usuarios[2], new DateTime(2026, 5, 17), TipoEquipaje.CABINA));
+            AgregarPasaje(new Pasaje(_vuelos[10], (Pasajero)_usuarios[3], new DateTime(2026, 5, 18), TipoEquipaje.LIGHT));
+            AgregarPasaje(new Pasaje(_vuelos[11], (Pasajero)_usuarios[4], new DateTime(2026, 5, 19), TipoEquipaje.BODEGA));
+            AgregarPasaje(new Pasaje(_vuelos[12], (Pasajero)_usuarios[5], new DateTime(2026, 5, 20), TipoEquipaje.CABINA));
+            AgregarPasaje(new Pasaje(_vuelos[13], (Pasajero)_usuarios[6], new DateTime(2026, 5, 21), TipoEquipaje.LIGHT));
+            AgregarPasaje(new Pasaje(_vuelos[14], (Pasajero)_usuarios[7], new DateTime(2026, 5, 22), TipoEquipaje.BODEGA));
+            AgregarPasaje(new Pasaje(_vuelos[15], (Pasajero)_usuarios[8], new DateTime(2026, 5, 23), TipoEquipaje.CABINA));
+            AgregarPasaje(new Pasaje(_vuelos[16], (Pasajero)_usuarios[9], new DateTime(2026, 5, 24), TipoEquipaje.LIGHT));
+            AgregarPasaje(new Pasaje(_vuelos[17], (Pasajero)_usuarios[10], new DateTime(2026, 5, 25), TipoEquipaje.BODEGA));
+            AgregarPasaje(new Pasaje(_vuelos[18], (Pasajero)_usuarios[2], new DateTime(2026, 5, 26), TipoEquipaje.CABINA));
+            AgregarPasaje(new Pasaje(_vuelos[19], (Pasajero)_usuarios[3], new DateTime(2026, 5, 27), TipoEquipaje.LIGHT));
+            AgregarPasaje(new Pasaje(_vuelos[20], (Pasajero)_usuarios[4], new DateTime(2026, 5, 28), TipoEquipaje.BODEGA));
+            AgregarPasaje(new Pasaje(_vuelos[21], (Pasajero)_usuarios[5], new DateTime(2026, 5, 29), TipoEquipaje.CABINA));
+            AgregarPasaje(new Pasaje(_vuelos[22], (Pasajero)_usuarios[6], new DateTime(2026, 5, 30), TipoEquipaje.LIGHT));
+            AgregarPasaje(new Pasaje(_vuelos[23], (Pasajero)_usuarios[7], new DateTime(2026, 5, 31), TipoEquipaje.BODEGA));
+            AgregarPasaje(new Pasaje(_vuelos[24], (Pasajero)_usuarios[8], new DateTime(2026, 6, 1), TipoEquipaje.CABINA));
 
         }
     }

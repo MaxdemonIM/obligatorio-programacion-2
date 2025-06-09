@@ -28,6 +28,8 @@ namespace Dominio
             this.ValidarEmail();
         }
 
+        
+        
         public void ValidarPassword()
         {
 

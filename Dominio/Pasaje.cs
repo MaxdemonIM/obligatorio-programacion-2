@@ -59,8 +59,17 @@ namespace Dominio
         public void Validar()
         {
             this.ValidarFechaCorrespondeFrecuencia();
+            this.ValidarFecha();
         }
 
+        public void ValidarFecha()
+        {
+            if(this._fecha < DateTime.Today)
+            {
+                throw new Exception("La fecha del pasaje no puede ser anterior a la fecha actual.");
+            }
+        }
+       
 
         public void ValidarFechaCorrespondeFrecuencia()
         {
@@ -90,7 +99,7 @@ namespace Dominio
         {
             if (obj == null || !(obj is Pasaje)) return false;
             Pasaje otro = (Pasaje)obj;
-            return this._id.Equals(otro._id);
+            return this._fecha.Equals(otro._fecha) && this._pasajero.Equals(otro._pasajero);
         }
 
 

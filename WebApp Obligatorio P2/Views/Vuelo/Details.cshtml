@@ -7,7 +7,24 @@
         <h5 class="card-title">Vuelo @Model.Ruta</h5>
         <h6 class="card-subtitle mb-2 text-body-secondary">Precio : $@(Model.CalcularCostoSinEquipajeParaVistaDetails().ToString("F2"))</h6>
         
-        <a href="~/Vuelo/ListarVuelos" class="btn btn-primary">Volver</a>
-        
+        <a href="~/Vuelo/Index" class="btn btn-primary">Volver</a>
+
+        <form action="~/Pasaje/Add" method="post">
+            <input type="hidden" value="@Model.NumVuelo" name="numVuelo" />
+            <input type="date" name="fecha" />
+            <select name="tipoEquipaje">
+                <option value="">-----</option>
+                @foreach (string equipaje in Enum.GetNames(typeof(TipoEquipaje)))
+                {
+                    <option value="@equipaje"> @equipaje</option>
+                    <br />
+                }
+            </select>
+            <input type="submit" class="btn btn-success" value="Comprar pasaje" />
+
+        </form>
+
+
+
     </div>
 </div>
