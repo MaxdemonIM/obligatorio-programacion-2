@@ -31,18 +31,15 @@ namespace WebApp_Obligatorio_P2.Controllers
         [HttpPost]
 
         //TODOOOOOOO 
-        public IActionResult Add(int numVuelo, Pasajero pasajeroLogueado, DateTime fecha, TipoEquipaje tipoEquipaje)
+        public IActionResult Add(int numVuelo, DateTime fecha, TipoEquipaje tipoEquipaje)
         {
             try 
             {
                 Vuelo vuelo = _sistema.ObtenerVueloPorNumVuelo(numVuelo);
                 string tipoUsuario = _sistema.ObtenerTipoUsuario(_sistema.Usuarios[7]);
-                if(tipoUsuario == "Pasajero")
-                {
-                    
+                Pasajero pasajeroHardcodeado = (Pasajero)_sistema.Usuarios[7];
 
-                }
-                Pasaje nuevo = new Pasaje(vuelo, pasajeroLogueado, fecha , tipoEquipaje);
+                Pasaje nuevo = new Pasaje(vuelo, pasajeroHardcodeado, fecha , tipoEquipaje);
 
                 _sistema.AgregarPasaje(nuevo);
 
@@ -54,20 +51,11 @@ namespace WebApp_Obligatorio_P2.Controllers
                     $"{fecha.ToString("dd MMM yyyy")}"
 
                     });
-                } catch (Exception ex)
+            } catch (Exception ex)
             {
-                return RedirectToAction("Index", "Vuelo",
-                       new
-                       {
-                           mensaje = ex.Message,
-                       }
-                              );
+                return RedirectToAction("Index", "Vuelo", new { mensaje = ex.Message,});
             }; 
-          
-
         }
-
-
     }
 }
 
