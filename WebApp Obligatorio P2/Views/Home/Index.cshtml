@@ -1,20 +1,31 @@
-﻿<h1>bienvenido a esta tremenda pagina usuario totalmente anónimo</h1>
+﻿<div id="login" class="container p-4">
+    <div class=" align-content-between">
+            <h1 class="text-center">Bienvenido a <strong> Altavia </strong> </h1>
+            <h2 class="text-center">Ingrese sus datos para iniciar sesion</h2>
 
-<h2> @Context.Session.GetString("Email")</h2>
-  @if (string.IsNullOrWhiteSpace(Context.Session.GetString("email")))
- {
 
-<form method="post">
-    <div class="form-group">
-        <label for="">Ingrese su correo:</label>
-        <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo">
-       
+        <div class=" d-flex just p-5 justify-content-center align-content-center">
+            <h3> @Context.Session.GetString("Email")</h3>
+            @if (string.IsNullOrWhiteSpace(Context.Session.GetString("email")))
+            {
+
+                <form class="d-flex row justify-content-center align-content-between py-2" method="post">
+
+                    <div class="form-group col-12 my-4">
+                        <label for="">Ingrese su correo:</label>
+                        <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo">
+                    </div>
+
+                    <div class="form-group col-12 my-4">
+                        <label for="exampleInputPassword1">Ingrese su contraseña:</label>
+                        <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Ingrese su contraseña">
+                    </div>
+
+                    <div>
+                        <button type="submit" class="btn btn-primary col-3 my-1">Submit</button>
+                    </div>
+                </form>
+            }
+        </div>
     </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Ingrese su contraseña:</label>
-        <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Ingrese su contraseña">
-    </div>
-    
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-   }
+</div>

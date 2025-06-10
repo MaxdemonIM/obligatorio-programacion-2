@@ -85,7 +85,14 @@ namespace Dominio
 
         public List<Vuelo> ListarVuelosPorAeropuerto (string IATAfiltro, string IATAfiltro2)
         {
-            List<Vuelo> vuelosQueSeVanAListar = new List<Vuelo>();
+            List<Vuelo> vuelosFiltradosPorAeropuerto = new List<Vuelo>();
+
+            if (IATAfiltro == "" && IATAfiltro2 != "")
+            {
+                IATAfiltro = IATAfiltro2;
+                IATAfiltro2 = IATAfiltro;
+            }
+
             foreach (Vuelo unVuelo in _vuelos)
             {
                 string IATAsalida = unVuelo.Ruta.ObtenerIATAAeropuertoDeSalida();
@@ -93,20 +100,23 @@ namespace Dominio
 
                 if (IATAsalida == IATAfiltro && IATAllegada == IATAfiltro2 || IATAsalida == IATAfiltro2 && IATAllegada == IATAfiltro)
                 {
-                    vuelosQueSeVanAListar.Add(unVuelo);
+                    vuelosFiltradosPorAeropuerto.Add(unVuelo);
                 }
             }
 
-            if (vuelosQueSeVanAListar.Count == 0)
-            {
-                throw new Exception("No hay vuelos para el codigo IATA ingresados");
-            }
+            this.ValidarListaDeVuelosFiltrados(vuelosFiltradosPorAeropuerto);
 
-            return vuelosQueSeVanAListar;
+            return vuelosFiltradosPorAeropuerto;
         }
 
 
-
+        public void ValidarListaDeVuelosFiltrados (List<Vuelo> vuelosFiltradosPorAeropuerto)
+        {
+            if (vuelosFiltradosPorAeropuerto.Count == 0)
+            {
+                throw new Exception("No hay vuelos para el codigo IATA ingresados");
+            }
+        }
 
 
         //-------- PARTE C --------DAR DE ALTA USUARIO-------------------
@@ -286,22 +296,12 @@ namespace Dominio
 
         //Ver pasajes PARA CLIENTE, ordenados por PRECIO (usamos la clase COMPARADORA CompararPasajePorPrecio creada). 
 
-        /*
 
-        public List<Pasaje> OrdenarPasajesPorPrecio(List<Pasaje> listaDesordenada)
+
+        public void OrdenarPasajesPorPrecio()
         {
-            List<Pasaje> listaOrdenada = new List<Pasaje>(this.Pasajes.Sort(new CompararPasajePorPrecio())); //ROTOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-
-            return listaOrdenada;
+            this.Pasajes.Sort(new CompararPasajePorPrecio()); 
         }
-
-        */
-
-        //--------------PRECARGA------------------
-        /* PROMT: Necesito que hagas una precarga mediante el metodo "public void PrecargarDatos()" de 5 clientes premium, 5 ocasionales y 2 administradores (que sean lo mas realistas posible (cedulas coherentes, etc) y validos. También, de 4 aviones,  
-         20 aeropuertos, 30 rutas, 30 vuelos y 25 pasajes. Antes de agregar el objeto a la lista se debe crear en una variable el objeto y validarlo con objetoCualquiera.Validar(), 
-        El formato a utilizar para agregarlo debe ser siempre _nombreDeLista.Add(objetoCualquiera)*/
-
 
 
         //METODOS AUXILIARES:

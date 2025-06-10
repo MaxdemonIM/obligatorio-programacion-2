@@ -9,8 +9,6 @@ namespace WebApp_Obligatorio_P2.Controllers
         private Sistema _sistema = Sistema.Instancia;
         public IActionResult Index( string mensaje)
         {
-
-
             return View();
         }
 
@@ -28,8 +26,6 @@ namespace WebApp_Obligatorio_P2.Controllers
 
         public IActionResult Logout()
         {
-           
-
             HttpContext.Session.SetString("email", "");
 
             return RedirectToAction("Index");

@@ -13,15 +13,13 @@ namespace WebApp_Obligatorio_P2.Controllers
 
         }
 
-        /*
         public IActionResult ListarPasajesPorPrecio()
         {
-            List<Pasaje> listaOrdenada = 
-            _sistema.OrdenarPasajesPorPrecio(_sistema.ObtenerListaDePasajero());//rOTOOOOOOOOOOOOOOOOOOOOOOOORETSWEIORTSWUERITSERT
+            _sistema.OrdenarPasajesPorPrecio();
 
-            return View(); //para ordenar los pasajes emitidos por precio para CLIENTE. 
+            return View(_sistema.Pasajes); //para ordenar los pasajes emitidos por precio para CLIENTE. 
+        }
 
-        }*/
 
         public IActionResult ListarPasajesPorFecha()
         {
