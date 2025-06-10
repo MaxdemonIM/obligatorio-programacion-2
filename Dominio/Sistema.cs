@@ -25,7 +25,7 @@ namespace Dominio
         public List<Vuelo> Vuelos { get { return _vuelos; } }
 
         public List<Ruta> Rutas { get { return _rutas; } }
-        public List<Aeropuerto> Aeropuerto { get { return _aeropuertos; } }
+        public List<Aeropuerto> Aeropuertos { get { return _aeropuertos; } }
 
         public List<Pasaje> Pasajes { get { return _pasajes; } }
         public List<Avion> Avion { get { return _aviones; } }
@@ -91,7 +91,7 @@ namespace Dominio
                 string IATAsalida = unVuelo.Ruta.ObtenerIATAAeropuertoDeSalida();
                 string IATAllegada = unVuelo.Ruta.ObtenerIATAAeropuertoDeLlegada();
 
-                if (IATAsalida == IATAfiltro || IATAllegada == IATAfiltro)
+                if (IATAsalida == IATAfiltro && IATAllegada == IATAfiltro2 || IATAsalida == IATAfiltro2 && IATAllegada == IATAfiltro)
                 {
                     vuelosQueSeVanAListar.Add(unVuelo);
                 }
@@ -104,6 +104,8 @@ namespace Dominio
 
             return vuelosQueSeVanAListar;
         }
+
+
 
 
 

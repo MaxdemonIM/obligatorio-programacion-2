@@ -10,7 +10,7 @@ namespace WebApp_Obligatorio_P2.Controllers
         {
 
             ViewBag.Mensaje = mensaje;
-
+            ViewBag.Aeropuertos = _sistema.Aeropuertos;
             return View(_sistema.Vuelos);
         }
 
@@ -18,8 +18,19 @@ namespace WebApp_Obligatorio_P2.Controllers
 
         public IActionResult Index(string IATAsalida, string IATAllegada)
         {
+            try
+            {
+                ViewBag.Aeropuertos = _sistema.Aeropuertos;
+            List<Vuelo> vuelos = _sistema.ListarVuelosPorAeropuerto(IATAsalida, IATAllegada);
 
-            return View(_sistema.Vuelos);
+            return View(vuelos);
+            }
+            catch (Exception ex)
+            {
+
+                return RedirectToAction("Index", "Vuelo", new { mensaje = ex.Message, });
+            }
+            ;
         }
 
         public IActionResult Details(int id) 
