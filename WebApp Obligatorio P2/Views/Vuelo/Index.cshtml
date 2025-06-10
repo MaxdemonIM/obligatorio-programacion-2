@@ -78,7 +78,7 @@
                         <td>
                             <form action="~/Pasaje/Add" method="post">
                                 <input type="hidden" value="@vuelo.NumVuelo" name="numVuelo" />
-                                <input type="date" name="fecha" />
+                                <input type="date" name="fecha"/>
                                 <select name="tipoEquipaje">
                                     <option value="">-----</option>
                                     @foreach (string equipaje in Enum.GetNames(typeof(TipoEquipaje))) 

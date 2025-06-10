@@ -23,7 +23,15 @@ namespace WebApp_Obligatorio_P2.Controllers
                 ViewBag.Aeropuertos = _sistema.Aeropuertos;
             List<Vuelo> vuelos = _sistema.ListarVuelosPorAeropuerto(IATAsalida, IATAllegada);
 
-            return View(vuelos);
+                //todooooo
+
+                //if llegada == "" && salida != ""
+
+            //llegada = salida
+
+           
+
+                return View(vuelos);
             }
             catch (Exception ex)
             {
@@ -32,6 +40,8 @@ namespace WebApp_Obligatorio_P2.Controllers
             }
             ;
         }
+      
+           
 
         public IActionResult Details(int id) 
         {

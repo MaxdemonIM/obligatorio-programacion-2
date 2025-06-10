@@ -8,6 +8,7 @@ namespace WebApp_Obligatorio_P2
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddSession();
 
             var app = builder.Build();
 
@@ -23,6 +24,7 @@ namespace WebApp_Obligatorio_P2
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession();
 
             app.UseAuthorization();
 

@@ -32,7 +32,7 @@ namespace WebApp_Obligatorio_P2.Controllers
 
         [HttpPost]
 
-        //TODOOOOOOO 
+        
         public IActionResult Add(int numVuelo, DateTime fecha, TipoEquipaje? tipoEquipaje)
         {
             try 

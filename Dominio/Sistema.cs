@@ -135,7 +135,31 @@ namespace Dominio
             _usuarios.Add(nuevoUsuario);
         }
 
-      
+      // para login 
+
+        public Usuario Login(string email, string password)
+        {
+
+
+            foreach (Usuario usuario in this._usuarios) { 
+                if (usuario.email== email)
+                {
+
+                    if(usuario.password == password)
+                    {
+                        return usuario;
+                    } else
+                    {
+
+                        throw new Exception("Contraseña incorrecta");
+                    }
+                }
+            }
+            throw new Exception("Nombre de usuario o contraseña Incorrecta.");
+
+        }
+
+
         public Vuelo ObtenerVueloPorNumVuelo(int numVuelo)
         {
             foreach (Vuelo unVuelo in this._vuelos)
