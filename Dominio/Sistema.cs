@@ -83,7 +83,7 @@ namespace Dominio
 
         //-------- PARTE B -------- LISTAR VUELOS INCLUYEN UN CODIGO DE AEROPUERTO
 
-        public List<Vuelo> ListarVuelosPorAeropuerto (string IATAfiltro)
+        public List<Vuelo> ListarVuelosPorAeropuerto (string IATAfiltro, string IATAfiltro2)
         {
             List<Vuelo> vuelosQueSeVanAListar = new List<Vuelo>();
             foreach (Vuelo unVuelo in _vuelos)
@@ -199,6 +199,20 @@ namespace Dominio
             throw new Exception("No existe ocasional con el email:" + email);
         }
 
+        public List<Pasaje> ObtenerListaDePasajero()
+        {
+            List<Pasaje> listaFiltrada = new List<Pasaje>();
+
+            foreach (Pasaje unPasaje in this._pasajes)
+            {
+                if (unPasaje.Pasajero == this.Usuarios[0])//hay que cambiarlo por el usuario logueado cuando hagamos el login
+                {
+                    listaFiltrada.Add(unPasaje);
+                }
+            }
+            return listaFiltrada;
+        }
+
         public List<Pasaje> ObtenerPasajeEntre(DateTime fechaInicial, DateTime fechaFinal)
         {
             List<Pasaje> listaDePasajes = new List<Pasaje>();
@@ -245,10 +259,17 @@ namespace Dominio
         //Usuario ADMINISTRADOR
 
         //Ver pasajes PARA CLIENTE, ordenados por PRECIO (usamos la clase COMPARADORA CompararPasajePorPrecio creada). 
-        public void OrdenarPasajesPorPrecio()
+
+        /*
+
+        public List<Pasaje> OrdenarPasajesPorPrecio(List<Pasaje> listaDesordenada)
         {
-            this._pasajes.Sort(new CompararPasajePorPrecio());
+            List<Pasaje> listaOrdenada = new List<Pasaje>(this.Pasajes.Sort(new CompararPasajePorPrecio())); //ROTOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+
+            return listaOrdenada;
         }
+
+        */
 
         //--------------PRECARGA------------------
         /* PROMT: Necesito que hagas una precarga mediante el metodo "public void PrecargarDatos()" de 5 clientes premium, 5 ocasionales y 2 administradores (que sean lo mas realistas posible (cedulas coherentes, etc) y validos. También, de 4 aviones,  

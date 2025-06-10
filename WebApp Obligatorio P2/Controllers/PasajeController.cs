@@ -13,13 +13,15 @@ namespace WebApp_Obligatorio_P2.Controllers
 
         }
 
-
+        /*
         public IActionResult ListarPasajesPorPrecio()
         {
-            _sistema.OrdenarPasajesPorPrecio();
-            return View(_sistema.Pasajes); //para ordenar los pasajes emitidos por precio para CLIENTE. 
+            List<Pasaje> listaOrdenada = 
+            _sistema.OrdenarPasajesPorPrecio(_sistema.ObtenerListaDePasajero());//rOTOOOOOOOOOOOOOOOOOOOOOOOORETSWEIORTSWUERITSERT
 
-        }
+            return View(); //para ordenar los pasajes emitidos por precio para CLIENTE. 
+
+        }*/
 
         public IActionResult ListarPasajesPorFecha()
         {
@@ -31,38 +33,35 @@ namespace WebApp_Obligatorio_P2.Controllers
         [HttpPost]
 
         //TODOOOOOOO 
-        public IActionResult Add(int numVuelo, DateTime fecha, TipoEquipaje tipoEquipajeString)
+        public IActionResult Add(int numVuelo, DateTime fecha, TipoEquipaje? tipoEquipaje)
         {
             try 
             {
                 Vuelo vuelo = _sistema.ObtenerVueloPorNumVuelo(numVuelo);        
                 Pasajero pasajeroHardcodeado = (Pasajero)_sistema.Usuarios[7];
-               // ValidarTipoEquipaje(tipoEquipajeString);
-                //TipoEquipaje tipoEquipaje = (TipoEquipaje)Enum.Parse(typeof(TipoEquipaje), tipoEquipajeString); // Recibe el string del formulario de la VIEW y lo convierte en TipoEquipaje (ENUM) para poder crear el pasaje. De lo contrario no se podría por si solo con lo que se manda de la VIEW por que es un STRING. 
-                Pasaje nuevo = new Pasaje(vuelo, pasajeroHardcodeado, fecha , tipoEquipajeString);
+                this.EsTipoEquipajeValido(tipoEquipaje);
+                
+                Pasaje nuevo = new Pasaje(vuelo, pasajeroHardcodeado, fecha , tipoEquipaje.Value);
 
                 _sistema.AgregarPasaje(nuevo);
 
-                return RedirectToAction("Index", "Vuelo",
-
-                    new
-                    {
-                        mensaje = $"Se compró el pasaje para la fecha " +
-                    $"{fecha.ToString("dd MMM yyyy")}"
-
-                    });
+                return RedirectToAction("Index", "Vuelo", new { mensaje = $"Se compró el pasaje para la fecha " +
+                    $"{fecha.ToString("dd MMM yyyy")}"});
+                
             } catch (Exception ex)
             {
+
                 return RedirectToAction("Index", "Vuelo", new { mensaje = ex.Message,});
             }; 
 
         }
-        public void ValidarTipoEquipaje(string tipoEquipaje)
+        public void EsTipoEquipajeValido(TipoEquipaje? tipoEquipaje)
         {
-            if(tipoEquipaje == "")
+            if(tipoEquipaje == null )
             {
                 throw new Exception("Debe seleccionar un tipo de equipaje para comprar el pasaje.");
             }
+
         } 
     }
 }

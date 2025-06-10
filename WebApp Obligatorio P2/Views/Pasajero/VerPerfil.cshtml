@@ -1,0 +1,35 @@
+﻿@using Dominio
+@model Pasajero
+
+<h2>Perfil de: @Model.Nombre</h2>
+
+<table class="table table-hover table-info">
+        <tbody>
+            <tr>
+                <th>Nombre</th>
+                <td>@Model.Nombre</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>@Model.email</td>
+            </tr>
+            <tr>
+                <th>Nacionalidad</th>
+                <td>@Model.Nacionalidad</td>
+            </tr>
+            <tr>
+                <th>Documento de identidad</th>
+                <td>@Model.DocIdentidad</td>
+            </tr>
+
+            @if (Model is Premium premium)
+            {
+                <tr>
+                    <th>Puntos</th>
+                    <td>@premium.Puntos</td>
+                </tr>
+            }
+
+        </tbody>
+
+</table>

@@ -10,9 +10,14 @@ namespace WebApp_Obligatorio_P2.Controllers
         public IActionResult Index(string mensaje)
         {
             ViewBag.Mensaje = mensaje;
-            _sistema.OrdenarPasajesPorPrecio();
             return View(_sistema.ListarPasajeros());
         }
+
+        public IActionResult VerPerfil() 
+        {
+            return View(_sistema.Usuarios[6]);
+        }
+
 
         [HttpPost]
         public IActionResult Index(int puntos, string elegible, string pasajeroEmail)
@@ -34,15 +39,14 @@ namespace WebApp_Obligatorio_P2.Controllers
                         return RedirectToAction("Index", new { mensaje = "Elegibilidad actualizada correctamente" });
 
                     }
-                    
                 }
                 return View();
             } catch (Exception ex)
             {
                 return RedirectToAction("Index", new { mensaje = ex.Message });
             }
-        
         }
+
 
     }
            
