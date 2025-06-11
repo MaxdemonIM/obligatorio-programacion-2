@@ -63,12 +63,6 @@ C:\Users\maric\source\repos\obligatorio-programacion-2\WebApp Obligatorio P2\obj
 C:\Users\maric\source\repos\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\maric\source\repos\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\maric\source\repos\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\maric\source\repos\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\staticwebassets\msbuild.WebApp Obligatorio P2.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\maric\source\repos\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\staticwebassets\msbuild.WebApp Obligatorio P2.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\maric\source\repos\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\staticwebassets\msbuild.build.WebApp Obligatorio P2.props
-C:\Users\maric\source\repos\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WebApp Obligatorio P2.props
-C:\Users\maric\source\repos\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WebApp Obligatorio P2.props
-C:\Users\maric\source\repos\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\maric\source\repos\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\maric\source\repos\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\WebApp O.527F8852.Up2Date
 C:\Users\maric\source\repos\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\WebApp Obligatorio P2.dll
@@ -76,3 +70,8 @@ C:\Users\maric\source\repos\obligatorio-programacion-2\WebApp Obligatorio P2\obj
 C:\Users\maric\source\repos\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\WebApp Obligatorio P2.pdb
 C:\Users\maric\source\repos\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\WebApp Obligatorio P2.genruntimeconfig.cache
 C:\Users\maric\source\repos\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\ref\WebApp Obligatorio P2.dll
+C:\Users\maric\source\repos\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\maric\source\repos\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\maric\source\repos\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\maric\source\repos\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\maric\source\repos\obligatorio-programacion-2\WebApp Obligatorio P2\obj\Debug\net8.0\staticwebassets.build.json.cache
