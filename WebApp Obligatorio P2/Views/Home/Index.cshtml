@@ -1,8 +1,15 @@
 ﻿<div id="login" class="container p-4">
     <div class=" align-content-between">
-            <h1 class="text-center">Bienvenido a <strong> Altavia </strong> </h1>
-            <h2 class="text-center">Ingrese sus datos para iniciar sesion</h2>
+        @(ViewData["Title"] = "Iniciar sesión")
 
+            <h2 class="text-center">Ingrese sus datos para iniciar sesion</h2>
+            @if (!string.IsNullOrWhiteSpace(ViewBag.Mensaje))
+        {
+            <div class="alert alert-danger">
+                @ViewBag.Mensaje
+            </div>
+
+        }
 
         <div class=" d-flex just p-5 justify-content-center align-content-center">
             <h3> @Context.Session.GetString("Email")</h3>
@@ -15,6 +22,8 @@
                         <label for="">Ingrese su correo:</label>
                         <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo">
                     </div>
+
+                    <p>lucia.gonzalez@mail.com  Password1.</p>
 
                     <div class="form-group col-12 my-4">
                         <label for="exampleInputPassword1">Ingrese su contraseña:</label>

@@ -55,7 +55,7 @@ namespace Dominio
             }
         }
 
-        //-------- PARTE A --------
+        //----------------
 
         //Primero recorremos la lista que tenemos GENERAL de usuarios (_usuarios). Esta lista, va tener objetos que son Administrador y otros que son pasajeros (ocasional u premium). A nosotros,
         //solo nos importa mostrar estos últimos.  Dentro del if, vamos a preguntar dos cosas. Primero, pregunta si un objeto es un Pasajero (o una subclase de el, ya sea ocasional o premium).
@@ -81,33 +81,55 @@ namespace Dominio
         }
 
 
-        //-------- PARTE B -------- LISTAR VUELOS INCLUYEN UN CODIGO DE AEROPUERTO
+        //---------------- LISTAR VUELOS INCLUYEN UN CODIGO DE AEROPUERTO
 
         public List<Vuelo> ListarVuelosPorAeropuerto (string IATAfiltro, string IATAfiltro2)
         {
             List<Vuelo> vuelosFiltradosPorAeropuerto = new List<Vuelo>();
 
-            if (IATAfiltro == "" && IATAfiltro2 != "")
+            if (string.IsNullOrWhiteSpace(IATAfiltro) && !string.IsNullOrWhiteSpace(IATAfiltro2))
             {
                 IATAfiltro = IATAfiltro2;
-                IATAfiltro2 = IATAfiltro;
+                IATAfiltro2 = "";
+            }
+
+            if (string.IsNullOrWhiteSpace(IATAfiltro) && string.IsNullOrWhiteSpace(IATAfiltro2))
+            {
+                return _vuelos; // sin filtros, se devuelve todos los vuelos
             }
 
             foreach (Vuelo unVuelo in _vuelos)
             {
-                string IATAsalida = unVuelo.Ruta.ObtenerIATAAeropuertoDeSalida();
-                string IATAllegada = unVuelo.Ruta.ObtenerIATAAeropuertoDeLlegada();
+                string iataSalida = unVuelo.Ruta.ObtenerIATAAeropuertoDeSalida();
+                string iataLlegada = unVuelo.Ruta.ObtenerIATAAeropuertoDeLlegada();
 
-                if (IATAsalida == IATAfiltro && IATAllegada == IATAfiltro2 || IATAsalida == IATAfiltro2 && IATAllegada == IATAfiltro)
+                // Si se ingresó solo un filtro
+                if (!string.IsNullOrWhiteSpace(IATAfiltro) && string.IsNullOrWhiteSpace(IATAfiltro2))
                 {
-                    vuelosFiltradosPorAeropuerto.Add(unVuelo);
+                    if (iataSalida == IATAfiltro || iataLlegada == IATAfiltro)
+                    {
+                        vuelosFiltradosPorAeropuerto.Add(unVuelo);
+                    }
+                }
+
+                // Si se ingresaron dos filtros
+                else if (!string.IsNullOrWhiteSpace(IATAfiltro) && !string.IsNullOrWhiteSpace(IATAfiltro2))
+                {
+                    if (
+                (iataSalida == IATAfiltro && iataLlegada == IATAfiltro2) ||
+                (iataSalida == IATAfiltro2 && iataLlegada == IATAfiltro)
+            )
+                    {
+                        vuelosFiltradosPorAeropuerto.Add(unVuelo);
+                    }
                 }
             }
 
-            this.ValidarListaDeVuelosFiltrados(vuelosFiltradosPorAeropuerto);
-
             return vuelosFiltradosPorAeropuerto;
         }
+
+
+
 
 
         public void ValidarListaDeVuelosFiltrados (List<Vuelo> vuelosFiltradosPorAeropuerto)
@@ -119,7 +141,7 @@ namespace Dominio
         }
 
 
-        //-------- PARTE C --------DAR DE ALTA USUARIO-------------------
+        //----------------DAR DE ALTA USUARIO-------------------
 
         //Primero vamos a recibir el nuevo usuario. Se verifica que no haya sido dado de alta previamente, se valida que lleguen correctos los datos segun lo que definimos en la clase y
         //por ultimo agregamos el usuario a la lista general de usuarios con el .add
@@ -396,7 +418,7 @@ namespace Dominio
             DarDeAltaUsuario(new Administrador("admin2", "Admin456@", "admin2@empresa.com"));
 
             // ----- PASAJEROS PREMIUM -----
-            DarDeAltaUsuario(new Premium("Uruguaya", "12345678", "Lucía González", "Password1@", "lucia.gonzalez@mail.com"));
+            DarDeAltaUsuario(new Premium("Uruguaya", "12345678", "Lucía González", "Password1.", "lucia.gonzalez@mail.com"));
             DarDeAltaUsuario(new Premium("Argentina", "23456789", "Carlos Pérez", "Password2@", "carlos.perez@mail.com"));
             DarDeAltaUsuario(new Premium("Chilena", "34567890", "Ana Torres", "Password3@", "ana.torres@mail.com"));
             DarDeAltaUsuario(new Premium("Brasilera", "45678901", "Mateo Fernández", "Password4@", "mateo.fernandez@mail.com"));
