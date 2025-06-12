@@ -1,32 +1,45 @@
 ﻿using Dominio;
 using Microsoft.AspNetCore.Mvc;
+using WebApp_Obligatorio_P2.Filters;
 
 namespace WebApp_Obligatorio_P2.Controllers
 {
+    [Authentication]
     public class PasajeController : Controller
     {
         private Sistema _sistema = Sistema.Instancia;
 
         public IActionResult Index()
         {
-            return View();
+
+            if (HttpContext.Session.GetString("rol") == "Administrador")
+            {
+                return RedirectToAction("VerTodosLosPasajes");
+            }
+            else
+            {
+                return RedirectToAction("VerPasajesUsuario");
+            }
 
         }
 
-        public IActionResult ListarPasajesPorPrecio()
+        public IActionResult VerPasajesUsuario()
         {
-            _sistema.OrdenarPasajesPorPrecio();
+            string mailLogueado = HttpContext.Session.GetString("email");
+            Pasajero pasajeroLogueado = (Pasajero)_sistema.ObtenerUsuarioPorMail(mailLogueado);
 
-            return View(_sistema.Pasajes); //para ordenar los pasajes emitidos por precio para CLIENTE. 
+            _sistema.OrdenarPasajesPorPrecio();
+            return View("Index", _sistema.ObtenerListaPasajeDeUsuario(pasajeroLogueado));
         }
 
-
-        public IActionResult ListarPasajesPorFecha()
+        
+        
+        public IActionResult VerTodosLosPasajes()
         {
             _sistema.OrdenarPasajes();
-            return View(_sistema.Pasajes); //para ordenar los pasajes emitidos por fecha PARA ADMINISTRADOR. 
-
+            return View("Index", _sistema.Pasajes);
         }
+        
 
         [HttpPost]
 
@@ -35,13 +48,17 @@ namespace WebApp_Obligatorio_P2.Controllers
         {
             try 
             {
-                Vuelo vuelo = _sistema.ObtenerVueloPorNumVuelo(numVuelo);        
-                Pasajero pasajeroHardcodeado = (Pasajero)_sistema.Usuarios[7];
-                this.EsTipoEquipajeValido(tipoEquipaje);
-                
-                Pasaje nuevo = new Pasaje(vuelo, pasajeroHardcodeado, fecha , tipoEquipaje.Value);
+                Vuelo vuelo = _sistema.ObtenerVueloPorNumVuelo(numVuelo);
+                string mailLogueado = HttpContext.Session.GetString("email");
+                Pasajero logueado = (Pasajero)_sistema.ObtenerUsuarioPorMail(mailLogueado);
+                Pasaje nuevo = new Pasaje(vuelo, logueado, fecha, tipoEquipaje.Value);
+                _sistema.EsTipoEquipajeValido(tipoEquipaje);
+
 
                 _sistema.AgregarPasaje(nuevo);
+              
+
+
 
                 return RedirectToAction("Index", "Vuelo", new { mensaje = $"Se compró el pasaje para la fecha " +
                     $"{fecha.ToString("dd MMM yyyy")}"});
@@ -53,14 +70,7 @@ namespace WebApp_Obligatorio_P2.Controllers
             }; 
 
         }
-        public void EsTipoEquipajeValido(TipoEquipaje? tipoEquipaje)
-        {
-            if(tipoEquipaje == null )
-            {
-                throw new Exception("Debe seleccionar un tipo de equipaje para comprar el pasaje.");
-            }
 
-        } 
     }
 }
 

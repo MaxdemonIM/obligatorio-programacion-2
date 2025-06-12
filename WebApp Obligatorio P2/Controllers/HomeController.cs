@@ -14,10 +14,14 @@ namespace WebApp_Obligatorio_P2.Controllers
             return View();
         }
 
+        public IActionResult Login(string mensaje)
+        {
+            ViewBag.Mensaje = mensaje;
+            return View();
+        }
         [HttpPost]
 
-        public IActionResult Index(string email, string password)
-
+        public IActionResult Login(string email, string password)
         {
             try
             {
@@ -25,12 +29,14 @@ namespace WebApp_Obligatorio_P2.Controllers
 
                 HttpContext.Session.SetString("email", email);
 
-                return View(logueado);
+                HttpContext.Session.SetString("rol", logueado.GetType().Name);
+
+                return RedirectToAction("Index", "Home");
 
             }
             catch (Exception ex)
             {
-                return RedirectToAction("Index", "Home", new { mensaje = ex.Message, });
+                return RedirectToAction("Login", "Home", new { mensaje = ex.Message, });
             }
         }
 
@@ -39,8 +45,11 @@ namespace WebApp_Obligatorio_P2.Controllers
         {
             HttpContext.Session.SetString("email", "");
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Login");
         }
+
+      
+
 
 
 

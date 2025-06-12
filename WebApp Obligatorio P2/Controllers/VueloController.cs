@@ -1,8 +1,10 @@
 ﻿using Dominio;
 using Microsoft.AspNetCore.Mvc;
+using WebApp_Obligatorio_P2.Filters;
 
 namespace WebApp_Obligatorio_P2.Controllers
 {
+    [Authentication]
     public class VueloController : Controller
     {
         private Sistema _sistema = Sistema.Instancia;
