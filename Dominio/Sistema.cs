@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,7 +56,7 @@ namespace Dominio
             }
         }
 
-        //-------- PARTE A --------
+        //----------------
 
         //Primero recorremos la lista que tenemos GENERAL de usuarios (_usuarios). Esta lista, va tener objetos que son Administrador y otros que son pasajeros (ocasional u premium). A nosotros,
         //solo nos importa mostrar estos últimos.  Dentro del if, vamos a preguntar dos cosas. Primero, pregunta si un objeto es un Pasajero (o una subclase de el, ya sea ocasional o premium).
@@ -81,69 +82,61 @@ namespace Dominio
         }
 
 
-        //-------- PARTE B -------- LISTAR VUELOS INCLUYEN UN CODIGO DE AEROPUERTO
+        //---------------- LISTAR VUELOS INCLUYEN UN CODIGO DE AEROPUERTO
 
         public List<Vuelo> ListarVuelosPorAeropuerto (string IATAfiltro, string IATAfiltro2)
         {
             List<Vuelo> vuelosFiltradosPorAeropuerto = new List<Vuelo>();
 
-            if (IATAfiltro == "" && IATAfiltro2 != "")
+            if (string.IsNullOrWhiteSpace(IATAfiltro) && !string.IsNullOrWhiteSpace(IATAfiltro2))
             {
                 IATAfiltro = IATAfiltro2;
-                IATAfiltro2 = IATAfiltro;
+                IATAfiltro2 = "";
+            }
+
+            if (string.IsNullOrWhiteSpace(IATAfiltro) && string.IsNullOrWhiteSpace(IATAfiltro2))
+            {
+                return _vuelos; // sin filtros, se devuelve todos los vuelos
             }
 
             foreach (Vuelo unVuelo in _vuelos)
             {
-                string IATAsalida = unVuelo.Ruta.ObtenerIATAAeropuertoDeSalida();
-                string IATAllegada = unVuelo.Ruta.ObtenerIATAAeropuertoDeLlegada();
+                string iataSalida = unVuelo.Ruta.ObtenerIATAAeropuertoDeSalida();
+                string iataLlegada = unVuelo.Ruta.ObtenerIATAAeropuertoDeLlegada();
 
-                if (IATAsalida == IATAfiltro && IATAllegada == IATAfiltro2 || IATAsalida == IATAfiltro2 && IATAllegada == IATAfiltro)
+                // Si se ingresó solo un filtro
+                if (!string.IsNullOrWhiteSpace(IATAfiltro) && string.IsNullOrWhiteSpace(IATAfiltro2))
                 {
-                    vuelosFiltradosPorAeropuerto.Add(unVuelo);
+                    if (iataSalida == IATAfiltro || iataLlegada == IATAfiltro)
+                    {
+                        vuelosFiltradosPorAeropuerto.Add(unVuelo);
+                    }
+                }
+
+                // Si se ingresaron dos filtros
+                else if (!string.IsNullOrWhiteSpace(IATAfiltro) && !string.IsNullOrWhiteSpace(IATAfiltro2))
+                {
+                    if (iataSalida == IATAfiltro && iataLlegada == IATAfiltro2)
+                    {
+                        vuelosFiltradosPorAeropuerto.Add(unVuelo);
+                    }
                 }
             }
-
-            this.ValidarListaDeVuelosFiltrados(vuelosFiltradosPorAeropuerto);
 
             return vuelosFiltradosPorAeropuerto;
         }
 
 
-        public void ValidarListaDeVuelosFiltrados (List<Vuelo> vuelosFiltradosPorAeropuerto)
-        {
-            if (vuelosFiltradosPorAeropuerto.Count == 0)
-            {
-                throw new Exception("No hay vuelos para el codigo IATA ingresados");
-            }
-        }
 
 
-        //-------- PARTE C --------DAR DE ALTA USUARIO-------------------
+
+
+        //----------------DAR DE ALTA USUARIO-------------------
 
         //Primero vamos a recibir el nuevo usuario. Se verifica que no haya sido dado de alta previamente, se valida que lleguen correctos los datos segun lo que definimos en la clase y
         //por ultimo agregamos el usuario a la lista general de usuarios con el .add
 
- 
-        public void DarDeAltaUsuario(Ocasional nuevoUsuario)
-        {
-            this.ValidarExisteUsuario(nuevoUsuario);
-            nuevoUsuario.Validar();
-            _usuarios.Add(nuevoUsuario);
-        }
-        public void DarDeAltaUsuario(Administrador nuevoUsuario)
-        {
-            this.ValidarExisteUsuario(nuevoUsuario);
-            nuevoUsuario.Validar();
-            _usuarios.Add(nuevoUsuario);
-        }
 
-        public void DarDeAltaUsuario(Premium nuevoUsuario)
-        {
-            this.ValidarExisteUsuario(nuevoUsuario);
-            nuevoUsuario.Validar();
-            _usuarios.Add(nuevoUsuario);
-        }
 
       // para login 
 
@@ -169,39 +162,6 @@ namespace Dominio
 
         }
 
-
-        public Vuelo ObtenerVueloPorNumVuelo(int numVuelo)
-        {
-            foreach (Vuelo unVuelo in this._vuelos)
-            {
-                if (unVuelo.NumVuelo == numVuelo)
-                {
-                
-                    return unVuelo;
-
-                }
-            }
-            throw new Exception($"No existe vuelo con el número: {numVuelo}");
-        }
-
-        public string ObtenerTipoUsuario(Usuario usuario)
-        {
-            string tipoUsuario = "";
-            foreach (Usuario unUsuario in this._usuarios)
-            {
-                if (usuario is Pasajero)
-                {
-
-                    tipoUsuario = "Pasajero";
-
-                }
-                else 
-                { 
-                    tipoUsuario = "Administrador";
-                }
-            }
-            return tipoUsuario;
-        }
 
         //Para editar
 
@@ -234,6 +194,36 @@ namespace Dominio
             }
             throw new Exception("No existe ocasional con el email:" + email);
         }
+
+
+        public Usuario ObtenerUsuarioPorMail(string mail)
+        {
+            foreach (Usuario unUsuario in this.Usuarios)
+            {
+                if (unUsuario.email == mail)
+                {
+                    return unUsuario;
+                }
+            }
+            return null;
+        }
+
+
+
+        public Vuelo ObtenerVueloPorNumVuelo(int numVuelo)
+        {
+            foreach (Vuelo unVuelo in this._vuelos)
+            {
+                if (unVuelo.NumVuelo == numVuelo)
+                {
+
+                    return unVuelo;
+
+                }
+            }
+            throw new Exception($"No existe vuelo con el número: {numVuelo}");
+        }
+
 
         public List<Pasaje> ObtenerListaDePasajero()
         {
@@ -276,9 +266,19 @@ namespace Dominio
             return listaDePasajes;
         }
 
+        public List<Pasaje> ObtenerListaPasajeDeUsuario(Pasajero logueado)
+        {
+            List<Pasaje> listaFiltrada = new List<Pasaje>();
+            foreach (Pasaje unPasaje in this._pasajes)
+            {
+                if (unPasaje.Pasajero.Equals(logueado))
+                {
+                    listaFiltrada.Add(unPasaje);
+                }
+            }
 
-       
-        //Usuario CLIENTE
+            return listaFiltrada;
+        }
 
         //ver pasajes ordenados por FECHA desc(ya hacemos uso del COMPARE TO en pasajes)
 
@@ -288,14 +288,7 @@ namespace Dominio
         }
 
 
-
-        //Usuario ANONIMO
-
-
-        //Usuario ADMINISTRADOR
-
         //Ver pasajes PARA CLIENTE, ordenados por PRECIO (usamos la clase COMPARADORA CompararPasajePorPrecio creada). 
-
 
 
         public void OrdenarPasajesPorPrecio()
@@ -353,6 +346,42 @@ namespace Dominio
             }
         }
 
+        public void ValidarListaDeVuelosFiltrados(List<Vuelo> vuelosFiltradosPorAeropuerto)
+        {
+            if (vuelosFiltradosPorAeropuerto.Count == 0)
+            {
+                throw new Exception("No hay vuelos para el codigo IATA ingresados");
+            }
+        }
+
+        public void EsTipoEquipajeValido(TipoEquipaje? tipoEquipaje)
+        {
+            if (tipoEquipaje == null)
+            {
+                throw new Exception("Debe seleccionar un tipo de equipaje para comprar el pasaje.");
+            }
+
+        }
+
+        public void DarDeAltaUsuario(Ocasional nuevoUsuario)
+        {
+            this.ValidarExisteUsuario(nuevoUsuario);
+            nuevoUsuario.Validar();
+            _usuarios.Add(nuevoUsuario);
+        }
+        public void DarDeAltaUsuario(Administrador nuevoUsuario)
+        {
+            this.ValidarExisteUsuario(nuevoUsuario);
+            nuevoUsuario.Validar();
+            _usuarios.Add(nuevoUsuario);
+        }
+
+        public void DarDeAltaUsuario(Premium nuevoUsuario)
+        {
+            this.ValidarExisteUsuario(nuevoUsuario);
+            nuevoUsuario.Validar();
+            _usuarios.Add(nuevoUsuario);
+        }
 
 
         public void AgregarAvion(Avion unAvion)
@@ -396,7 +425,7 @@ namespace Dominio
             DarDeAltaUsuario(new Administrador("admin2", "Admin456@", "admin2@empresa.com"));
 
             // ----- PASAJEROS PREMIUM -----
-            DarDeAltaUsuario(new Premium("Uruguaya", "12345678", "Lucía González", "Password1@", "lucia.gonzalez@mail.com"));
+            DarDeAltaUsuario(new Premium("Uruguaya", "12345678", "Lucía González", "Password1.", "lucia.gonzalez@mail.com"));
             DarDeAltaUsuario(new Premium("Argentina", "23456789", "Carlos Pérez", "Password2@", "carlos.perez@mail.com"));
             DarDeAltaUsuario(new Premium("Chilena", "34567890", "Ana Torres", "Password3@", "ana.torres@mail.com"));
             DarDeAltaUsuario(new Premium("Brasilera", "45678901", "Mateo Fernández", "Password4@", "mateo.fernandez@mail.com"));
@@ -470,39 +499,7 @@ namespace Dominio
             AgregarRuta(new Ruta(_aeropuertos[12], _aeropuertos[14], 3200));
             AgregarRuta(new Ruta(_aeropuertos[0], _aeropuertos[19], 3900));
 
-            // ----- VUELOS -----
-            /*
-                        AgregarVuelo(new Vuelo(1, _aviones[0], _rutas[0], new List<DayOfWeek> { DayOfWeek.Monday, DayOfWeek.Wednesday }));
-                        AgregarVuelo(new Vuelo(2, _aviones[1], _rutas[1], new List<DayOfWeek> { DayOfWeek.Tuesday, DayOfWeek.Thursday }));
-                        AgregarVuelo(new Vuelo(3, _aviones[2], _rutas[2], new List<DayOfWeek> { DayOfWeek.Friday }));
-                        AgregarVuelo(new Vuelo(4, _aviones[3], _rutas[3], new List<DayOfWeek> { DayOfWeek.Sunday }));
-                        AgregarVuelo(new Vuelo(5, _aviones[0], _rutas[4], new List<DayOfWeek> { DayOfWeek.Monday }));
-                        AgregarVuelo(new Vuelo(6, _aviones[1], _rutas[5], new List<DayOfWeek> { DayOfWeek.Tuesday }));
-                        AgregarVuelo(new Vuelo(7, _aviones[2], _rutas[6], new List<DayOfWeek> { DayOfWeek.Wednesday }));
-                        AgregarVuelo(new Vuelo(8, _aviones[3], _rutas[7], new List<DayOfWeek> { DayOfWeek.Thursday }));
-                        AgregarVuelo(new Vuelo(9, _aviones[0], _rutas[8], new List<DayOfWeek> { DayOfWeek.Friday }));
-                        AgregarVuelo(new Vuelo(10, _aviones[1], _rutas[9], new List<DayOfWeek> { DayOfWeek.Saturday }));
-                        AgregarVuelo(new Vuelo(11, _aviones[2], _rutas[10], new List<DayOfWeek> { DayOfWeek.Sunday }));
-                        AgregarVuelo(new Vuelo(12, _aviones[3], _rutas[11], new List<DayOfWeek> { DayOfWeek.Monday }));
-                        AgregarVuelo(new Vuelo(13, _aviones[0], _rutas[12], new List<DayOfWeek> { DayOfWeek.Tuesday }));
-                        AgregarVuelo(new Vuelo(14, _aviones[1], _rutas[13], new List<DayOfWeek> { DayOfWeek.Wednesday }));
-                        AgregarVuelo(new Vuelo(15, _aviones[2], _rutas[14], new List<DayOfWeek> { DayOfWeek.Thursday }));
-                        AgregarVuelo(new Vuelo(16, _aviones[3], _rutas[15], new List<DayOfWeek> { DayOfWeek.Friday }));
-                        AgregarVuelo(new Vuelo(17, _aviones[0], _rutas[16], new List<DayOfWeek> { DayOfWeek.Saturday }));
-                        AgregarVuelo(new Vuelo(18, _aviones[1], _rutas[17], new List<DayOfWeek> { DayOfWeek.Sunday }));
-                        AgregarVuelo(new Vuelo(19, _aviones[2], _rutas[18], new List<DayOfWeek> { DayOfWeek.Monday }));
-                        AgregarVuelo(new Vuelo(20, _aviones[3], _rutas[19], new List<DayOfWeek> { DayOfWeek.Tuesday }));
-                        AgregarVuelo(new Vuelo(21, _aviones[0], _rutas[20], new List<DayOfWeek> { DayOfWeek.Wednesday }));
-                        AgregarVuelo(new Vuelo(22, _aviones[1], _rutas[21], new List<DayOfWeek> { DayOfWeek.Thursday }));
-                        AgregarVuelo(new Vuelo(23, _aviones[2], _rutas[22], new List<DayOfWeek> { DayOfWeek.Friday }));
-                        AgregarVuelo(new Vuelo(24, _aviones[3], _rutas[23], new List<DayOfWeek> { DayOfWeek.Saturday }));
-                        AgregarVuelo(new Vuelo(25, _aviones[0], _rutas[24], new List<DayOfWeek> { DayOfWeek.Sunday }));
-                        AgregarVuelo(new Vuelo(26, _aviones[1], _rutas[25], new List<DayOfWeek> { DayOfWeek.Monday }));
-                        AgregarVuelo(new Vuelo(27, _aviones[2], _rutas[26], new List<DayOfWeek> { DayOfWeek.Tuesday }));
-                        AgregarVuelo(new Vuelo(28, _aviones[3], _rutas[27], new List<DayOfWeek> { DayOfWeek.Wednesday }));
-                        AgregarVuelo(new Vuelo(29, _aviones[0], _rutas[28], new List<DayOfWeek> { DayOfWeek.Thursday }));
-                        AgregarVuelo(new Vuelo(30, _aviones[1], _rutas[29], new List<DayOfWeek> { DayOfWeek.Friday }));
-            */
+           
             AgregarVuelo(new Vuelo(1, _aviones[0], _rutas[0], new List<DayOfWeek> { DayOfWeek.Tuesday }));      // 2026-05-05
             AgregarVuelo(new Vuelo(2, _aviones[1], _rutas[1], new List<DayOfWeek> { DayOfWeek.Wednesday }));    // 2026-05-06
             AgregarVuelo(new Vuelo(3, _aviones[2], _rutas[2], new List<DayOfWeek> { DayOfWeek.Saturday }));     // 2026-05-09

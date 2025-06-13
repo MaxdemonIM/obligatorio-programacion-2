@@ -1,8 +1,11 @@
 ﻿using Dominio;
 using Microsoft.AspNetCore.Mvc;
+using WebApp_Obligatorio_P2.Filters;
 
 namespace WebApp_Obligatorio_P2.Controllers
 {
+    [Authentication]
+    [SoloPasajero]
     public class VueloController : Controller
     {
         private Sistema _sistema = Sistema.Instancia;
@@ -21,15 +24,8 @@ namespace WebApp_Obligatorio_P2.Controllers
             try
             {
                 ViewBag.Aeropuertos = _sistema.Aeropuertos;
-            List<Vuelo> vuelos = _sistema.ListarVuelosPorAeropuerto(IATAsalida, IATAllegada);
+                List<Vuelo> vuelos = _sistema.ListarVuelosPorAeropuerto(IATAsalida, IATAllegada);
 
-                //todooooo
-
-                //if llegada == "" && salida != ""
-
-            //llegada = salida
-
-           
 
                 return View(vuelos);
             }

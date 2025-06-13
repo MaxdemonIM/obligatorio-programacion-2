@@ -1,27 +1,37 @@
 ﻿using System.Linq.Expressions;
 using Dominio;
 using Microsoft.AspNetCore.Mvc;
+using WebApp_Obligatorio_P2.Filters;
 
 namespace WebApp_Obligatorio_P2.Controllers
 {
+    [Authentication]
     public class PasajeroController : Controller
     {
         private Sistema _sistema = Sistema.Instancia;
+
+        [SoloAdmin]
         public IActionResult Index(string mensaje)
         {
+
+          
             ViewBag.Mensaje = mensaje;
             return View(_sistema.ListarPasajeros());
         }
 
         //CAMBIAR POR DETAIL
 
+        [SoloPasajero]
         public IActionResult VerPerfil() 
         {
-            return View(_sistema.Usuarios[6]);
+            string mailLogueado = HttpContext.Session.GetString("email");
+            Pasajero logueado = (Pasajero)_sistema.ObtenerUsuarioPorMail(mailLogueado);
+            return View(logueado);
         }
 
 
         [HttpPost]
+        [SoloAdmin]
         public IActionResult Index(int puntos, string elegible, string pasajeroEmail)
         {
             try

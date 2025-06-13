@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Iniciar sesión ";
+    }
+
+<div id="login" class="container p-4">
+
+    <div class=" align-content-between">
+        
+
+        <head>
+         
+            <title>@ViewData["Title"]= "Iniciar sesión";</title>
+        
+        </head>
+        <h2 class="text-center">Ingrese sus datos para iniciar sesion</h2>
+        @if (!string.IsNullOrWhiteSpace(ViewBag.Mensaje))
+        {
+            <div class="alert alert-danger">
+                @ViewBag.Mensaje
+            </div>
+
+        }
+
+        <div class=" d-flex just p-5 justify-content-center align-content-center">
+            <h3> @Context.Session.GetString("Email")</h3>
+            @if (string.IsNullOrWhiteSpace(Context.Session.GetString("email")))
+            {
+
+                <form class="d-flex row justify-content-center align-content-between py-2" method="post">
+
+                    <div class="form-group col-12 my-4">
+                        <label for="">Ingrese su correo:</label>
+                        <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo">
+                    </div>
+
+                    <p>lucia.gonzalez@mail.com  Password1.</p>
+
+                    <div class="form-group col-12 my-4">
+                        <label for="exampleInputPassword1">Ingrese su contraseña:</label>
+                        <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Ingrese su contraseña">
+                    </div>
+
+                    <div>
+                        <button type="submit" class="btn btn-primary col-3 my-1">Iniciar sesión</button>
+                    </div>
+
+                    <div>
+                        <a href="~/Ocasional/RegistrarOcasional" class="btn btn-primary col-3 my-1">Registrarse</a>
+                    </div>
+                </form>
+            }
+        </div>
+    </div>
+</div>

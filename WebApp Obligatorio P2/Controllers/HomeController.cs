@@ -9,18 +9,39 @@ namespace WebApp_Obligatorio_P2.Controllers
         private Sistema _sistema = Sistema.Instancia;
         public IActionResult Index( string mensaje)
         {
+            if (string.IsNullOrEmpty(mensaje))  //para el error de mensaje ya logueado
+            {
+                mensaje = HttpContext.Session.GetString("mensaje");
+                
+            }
+            ViewBag.Mensaje = mensaje;
             return View();
         }
 
+        public IActionResult Login(string mensaje)
+        {
+            ViewBag.Mensaje = mensaje;
+            return View();
+        }
         [HttpPost]
 
-        public IActionResult Index(string email, string password)
+        public IActionResult Login(string email, string password)
         {
-            Usuario logueado = _sistema.Login(email, password);
+            try
+            {
+                Usuario logueado = _sistema.Login(email, password);
 
-            HttpContext.Session.SetString("email", email);
+                HttpContext.Session.SetString("email", email);
 
-            return View();
+                HttpContext.Session.SetString("rol", logueado.GetType().Name);
+
+                return RedirectToAction("Index", "Home");
+
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Login", "Home", new { mensaje = ex.Message, });
+            }
         }
 
 
@@ -28,8 +49,11 @@ namespace WebApp_Obligatorio_P2.Controllers
         {
             HttpContext.Session.SetString("email", "");
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Login");
         }
+
+      
+
 
 
 
