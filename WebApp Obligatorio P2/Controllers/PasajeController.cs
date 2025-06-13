@@ -23,6 +23,7 @@ namespace WebApp_Obligatorio_P2.Controllers
 
         }
 
+        [SoloPasajero]
         public IActionResult VerPasajesUsuario()
         {
             string mailLogueado = HttpContext.Session.GetString("email");
@@ -32,18 +33,20 @@ namespace WebApp_Obligatorio_P2.Controllers
             return View("Index", _sistema.ObtenerListaPasajeDeUsuario(pasajeroLogueado));
         }
 
-        
-        
+
+        [SoloAdmin]
         public IActionResult VerTodosLosPasajes()
         {
+
+          
             _sistema.OrdenarPasajes();
             return View("Index", _sistema.Pasajes);
         }
         
 
         [HttpPost]
+        [SoloPasajero]
 
-        
         public IActionResult Add(int numVuelo, DateTime fecha, TipoEquipaje? tipoEquipaje)
         {
             try 

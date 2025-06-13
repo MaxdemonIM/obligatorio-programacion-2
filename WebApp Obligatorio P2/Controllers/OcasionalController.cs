@@ -11,8 +11,11 @@ namespace WebApp_Obligatorio_P2.Controllers
 
         public IActionResult RegistrarOcasional()
         {
-
-            
+            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("email")))
+            {
+                HttpContext.Session.SetString("mensaje", "Ya estás registrado/a y logueado/a.");
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
 
@@ -22,8 +25,10 @@ namespace WebApp_Obligatorio_P2.Controllers
         {
             try
             {
+                
                 HttpContext.Session.SetString("email", ocasional.email);
                 HttpContext.Session.SetString("password", ocasional.password);
+                HttpContext.Session.SetString("rol", ocasional.GetType().Name); // para cuando se registre guarde el rol en la sesión
                 _sistema.DarDeAltaUsuario(ocasional);
                 return RedirectToAction("Index","Home");
 

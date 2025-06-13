@@ -5,6 +5,7 @@ using WebApp_Obligatorio_P2.Filters;
 namespace WebApp_Obligatorio_P2.Controllers
 {
     [Authentication]
+    [SoloPasajero]
     public class VueloController : Controller
     {
         private Sistema _sistema = Sistema.Instancia;

@@ -9,14 +9,19 @@ namespace WebApp_Obligatorio_P2.Controllers
     public class PasajeroController : Controller
     {
         private Sistema _sistema = Sistema.Instancia;
+
+        [SoloAdmin]
         public IActionResult Index(string mensaje)
         {
+
+          
             ViewBag.Mensaje = mensaje;
             return View(_sistema.ListarPasajeros());
         }
 
         //CAMBIAR POR DETAIL
 
+        [SoloPasajero]
         public IActionResult VerPerfil() 
         {
             string mailLogueado = HttpContext.Session.GetString("email");
@@ -26,6 +31,7 @@ namespace WebApp_Obligatorio_P2.Controllers
 
 
         [HttpPost]
+        [SoloAdmin]
         public IActionResult Index(int puntos, string elegible, string pasajeroEmail)
         {
             try

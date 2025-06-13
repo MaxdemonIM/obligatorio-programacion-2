@@ -1,6 +1,16 @@
 ﻿@using Dominio
 @model Pasajero
 
+@{
+    ViewData["Title"] = "Pagina bienvenida ";
+}
+<h2>Bienvenida/o @Context.Session.GetString("email")</h2>
 
-    <h2>Bienvenida/o @Context.Session.GetString("email")</h2>
+@if (!string.IsNullOrEmpty(ViewBag.Mensaje))
+{
+    <div class="alert alert-danger">
 
+        @ViewBag.Mensaje
+
+    </div>
+}

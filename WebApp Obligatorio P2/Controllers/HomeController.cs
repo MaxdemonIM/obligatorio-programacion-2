@@ -9,7 +9,11 @@ namespace WebApp_Obligatorio_P2.Controllers
         private Sistema _sistema = Sistema.Instancia;
         public IActionResult Index( string mensaje)
         {
-
+            if (string.IsNullOrEmpty(mensaje))  //para el error de mensaje ya logueado
+            {
+                mensaje = HttpContext.Session.GetString("mensaje");
+                
+            }
             ViewBag.Mensaje = mensaje;
             return View();
         }
