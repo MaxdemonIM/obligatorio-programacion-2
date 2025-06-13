@@ -56,11 +56,7 @@ namespace Dominio
             }
         }
 
-        //----------------
-
-        //Primero recorremos la lista que tenemos GENERAL de usuarios (_usuarios). Esta lista, va tener objetos que son Administrador y otros que son pasajeros (ocasional u premium). A nosotros,
-        //solo nos importa mostrar estos últimos.  Dentro del if, vamos a preguntar dos cosas. Primero, pregunta si un objeto es un Pasajero (o una subclase de el, ya sea ocasional o premium).
-        //Si llega a ser un pasajero, se muestra en consola aplicando poliformismo, ya que usando el ToString se va ejecutar el de Premium u Ocasional respectivamente
+        //METODOS PARA MANEJAR LISTAS FILTRADAS:
 
         public List<Pasajero> ListarPasajeros()
         {
@@ -82,21 +78,22 @@ namespace Dominio
         }
 
 
-        //---------------- LISTAR VUELOS INCLUYEN UN CODIGO DE AEROPUERTO
 
         public List<Vuelo> ListarVuelosPorAeropuerto (string IATAfiltro, string IATAfiltro2)
         {
             List<Vuelo> vuelosFiltradosPorAeropuerto = new List<Vuelo>();
 
+            //invierte el filtro vacio y el ingresado para manejar menos condiciones luego
             if (string.IsNullOrWhiteSpace(IATAfiltro) && !string.IsNullOrWhiteSpace(IATAfiltro2))
             {
                 IATAfiltro = IATAfiltro2;
                 IATAfiltro2 = "";
             }
 
+            // sin filtros, se devuelve todos los vuelos
             if (string.IsNullOrWhiteSpace(IATAfiltro) && string.IsNullOrWhiteSpace(IATAfiltro2))
             {
-                return _vuelos; // sin filtros, se devuelve todos los vuelos
+                return _vuelos;
             }
 
             foreach (Vuelo unVuelo in _vuelos)
@@ -104,7 +101,7 @@ namespace Dominio
                 string iataSalida = unVuelo.Ruta.ObtenerIATAAeropuertoDeSalida();
                 string iataLlegada = unVuelo.Ruta.ObtenerIATAAeropuertoDeLlegada();
 
-                // Si se ingresó solo un filtro
+                // Si se ingresó solo un filtro devuelve todos los que contengan ese aeropuerto, tanto en salida como en llegada
                 if (!string.IsNullOrWhiteSpace(IATAfiltro) && string.IsNullOrWhiteSpace(IATAfiltro2))
                 {
                     if (iataSalida == IATAfiltro || iataLlegada == IATAfiltro)
@@ -113,7 +110,8 @@ namespace Dominio
                     }
                 }
 
-                // Si se ingresaron dos filtros
+                // Si se ingresaron dos filtros devuelve los que tengan esa ruta exacta, no devuelve inversos
+
                 else if (!string.IsNullOrWhiteSpace(IATAfiltro) && !string.IsNullOrWhiteSpace(IATAfiltro2))
                 {
                     if (iataSalida == IATAfiltro && iataLlegada == IATAfiltro2)
@@ -128,79 +126,11 @@ namespace Dominio
 
 
 
-
-
-
-        //----------------DAR DE ALTA USUARIO-------------------
-
-        //Primero vamos a recibir el nuevo usuario. Se verifica que no haya sido dado de alta previamente, se valida que lleguen correctos los datos segun lo que definimos en la clase y
-        //por ultimo agregamos el usuario a la lista general de usuarios con el .add
-
-
-
-      // para login 
-
-        public Usuario Login(string email, string password)
-        {
-
-
-            foreach (Usuario usuario in this._usuarios) { 
-                if (usuario.email== email)
-                {
-
-                    if(usuario.password == password)
-                    {
-                        return usuario;
-                    } else
-                    {
-
-                        throw new Exception("Contraseña incorrecta");
-                    }
-                }
-            }
-            throw new Exception("Nombre de usuario o contraseña Incorrecta.");
-
-        }
-
-
-        //Para editar
-
-        public void ActualizarPuntosPremium(int puntos, string email)
-        {
-            
-            foreach (Usuario usuario in this._usuarios)
-            {
-                if (usuario is Premium premium && premium.email == email)
-                {
-                    premium.ValidarPuntos(puntos);
-                    premium.Puntos = puntos;
-                    return;
-
-                }
-            }
-            throw new Exception ("No existe premium con el email:" + email);
-        }
-
-        public void ActualizarElegibilidadOcasional( string email, bool nuevoEstado)
-        {
-            foreach (Usuario usuario in this._usuarios)
-            {
-                if (usuario is Ocasional ocasional && ocasional.email == email)
-                {
-
-                    ocasional.elegible = nuevoEstado;
-                    return;
-                }
-            }
-            throw new Exception("No existe ocasional con el email:" + email);
-        }
-
-
         public Usuario ObtenerUsuarioPorMail(string mail)
         {
             foreach (Usuario unUsuario in this.Usuarios)
             {
-                if (unUsuario.email == mail)
+                if (unUsuario.Email == mail)
                 {
                     return unUsuario;
                 }
@@ -225,47 +155,6 @@ namespace Dominio
         }
 
 
-        public List<Pasaje> ObtenerListaDePasajero()
-        {
-            List<Pasaje> listaFiltrada = new List<Pasaje>();
-
-            foreach (Pasaje unPasaje in this._pasajes)
-            {
-                if (unPasaje.Pasajero == this.Usuarios[0])//hay que cambiarlo por el usuario logueado cuando hagamos el login
-                {
-                    listaFiltrada.Add(unPasaje);
-                }
-            }
-            return listaFiltrada;
-        }
-
-        public List<Pasaje> ObtenerPasajeEntre(DateTime fechaInicial, DateTime fechaFinal)
-        {
-            List<Pasaje> listaDePasajes = new List<Pasaje>();
-
-            if(fechaFinal < fechaInicial)
-            {
-                DateTime aux = fechaFinal;
-                fechaFinal = fechaInicial;
-                fechaInicial = aux;
-            }
-
-            foreach (Pasaje pasaje in _pasajes)
-            {
-                if (pasaje.Fecha >= fechaInicial && pasaje.Fecha <= fechaFinal)
-                {
-                    listaDePasajes.Add(pasaje);
-                }
-            }
-
-            if (listaDePasajes.Count == 0)
-            {
-                throw new Exception("No hay pasajes expedidos entre las fechas ingresadas");
-            }
-
-            return listaDePasajes;
-        }
-
         public List<Pasaje> ObtenerListaPasajeDeUsuario(Pasajero logueado)
         {
             List<Pasaje> listaFiltrada = new List<Pasaje>();
@@ -279,6 +168,65 @@ namespace Dominio
 
             return listaFiltrada;
         }
+
+
+        //Crea el usuario que va a iniciar sesion segun los parametros ingresados y lo busca en la lista de usuarios, si existe lo devuelve, si no tira excepción.
+
+        public Usuario Login(string email, string password)
+        {
+
+
+            foreach (Usuario usuario in this._usuarios) { 
+                if (usuario.Email== email)
+                {
+
+                    if(usuario.Password == password)
+                    {
+                        return usuario;
+                    } else
+                    {
+
+                        throw new Exception("Contraseña incorrecta");
+                    }
+                }
+            }
+            throw new Exception("Nombre de usuario o contraseña Incorrecta.");
+
+        }
+
+
+        //Para editar
+
+        public void ActualizarPuntosPremium(int puntos, string email)
+        {
+            
+            foreach (Usuario usuario in this._usuarios)
+            {
+                if (usuario is Premium premium && premium.Email == email)
+                {
+                    premium.ValidarPuntos(puntos);
+                    premium.Puntos = puntos;
+                    return;
+
+                }
+            }
+            throw new Exception ("No existe premium con el email:" + email);
+        }
+
+        public void ActualizarElegibilidadOcasional( string email, bool nuevoEstado)
+        {
+            foreach (Usuario usuario in this._usuarios)
+            {
+                if (usuario is Ocasional ocasional && ocasional.Email == email)
+                {
+
+                    ocasional.elegible = nuevoEstado;
+                    return;
+                }
+            }
+            throw new Exception("No existe ocasional con el email:" + email);
+        }
+
 
         //ver pasajes ordenados por FECHA desc(ya hacemos uso del COMPARE TO en pasajes)
 
@@ -297,7 +245,7 @@ namespace Dominio
         }
 
 
-        //METODOS AUXILIARES:
+        //METODOS AUXILIARES de validación:
 
 
         public void ValidarExisteUsuario(Usuario nuevo)
@@ -363,6 +311,13 @@ namespace Dominio
 
         }
 
+        //METODOS AUXILIARES para dar de alta:
+
+
+        //Primero vamos a recibir el nuevo usuario. Se verifica que no haya sido dado de alta previamente, se valida que lleguen correctos los datos segun lo que definimos en la clase y
+        //por ultimo agregamos el usuario a la lista general de usuarios con el .add
+
+
         public void DarDeAltaUsuario(Ocasional nuevoUsuario)
         {
             this.ValidarExisteUsuario(nuevoUsuario);
@@ -415,7 +370,7 @@ namespace Dominio
             _pasajes.Add(unPasaje);
         }
 
-
+        
 
         public void PrecargarDatos()
         {

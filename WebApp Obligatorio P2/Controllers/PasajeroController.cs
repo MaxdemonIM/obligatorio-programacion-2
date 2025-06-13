@@ -36,13 +36,13 @@ namespace WebApp_Obligatorio_P2.Controllers
             {
                 foreach (Usuario usuario in _sistema.Usuarios) {
 
-                    if (usuario.email == pasajeroEmail && usuario is Premium)
+                    if (usuario.Email == pasajeroEmail && usuario is Premium)
                     {
                         _sistema.ActualizarPuntosPremium(puntos, pasajeroEmail);
                         return RedirectToAction("Index", new { mensaje = "Puntos actualizados correctamente" });
 
                     }
-                    else if(usuario.email == pasajeroEmail && usuario is Ocasional)
+                    else if(usuario.Email == pasajeroEmail && usuario is Ocasional)
                     {
                         bool esElegible = elegible == "true";
                         _sistema.ActualizarElegibilidadOcasional(pasajeroEmail, esElegible);

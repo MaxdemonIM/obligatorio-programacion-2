@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public abstract class Pasajero : Usuario , IValidable,IComparable <Pasajero>
+    public abstract class Pasajero : Usuario , IValidable, IComparable <Pasajero>
     {
         private string _nacionalidad;
         private string _docIdentidad;

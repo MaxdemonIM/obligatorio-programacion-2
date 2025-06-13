@@ -8,9 +8,9 @@ namespace Dominio
         protected string _email;
 
         //public, con get y set para usar el Model Binding en Registrar el Ocasional
-        public string password { get { return _password; } set { this._password = value; } }
+        public string Password { get { return _password; } set { this._password = value; } }
 
-        public string email { get { return _email; } set { this._email = value; } }
+        public string Email { get { return _email; } set { this._email = value; } }
 
 
         public Usuario(string password, string email)
