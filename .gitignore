@@ -58,3 +58,21 @@ Thumbs.db
 # Archivos generados por Razor
 **/*.rjsmrazor.dswa.cache.json
 **/*.rjsmcshtml.dswa.cache.json
+/Dominio/bin/Debug/net8.0/Dominio.dll
+/Dominio/bin/Debug/net8.0/Dominio.pdb
+/Dominio/obj/Debug/net8.0/Dominio.csproj.FileListAbsolute.txt
+/Dominio/obj/Debug/net8.0/Dominio.dll
+/Dominio/obj/Debug/net8.0/Dominio.pdb
+/Dominio/obj/Debug/net8.0/Dominio.sourcelink.json
+/Dominio/obj/Debug/net8.0/ref/Dominio.dll
+/Dominio/obj/Debug/net8.0/refint/Dominio.dll
+/obligatorioP2/obj/Debug/net8.0/obligatorioP2.csproj.CoreCompileInputs.cache
+/obligatorioP2/obj/Debug/net8.0/obligatorioP2.csproj.FileListAbsolute.txt
+/obligatorioP2/obj/Debug/net8.0/obligatorioP2.sourcelink.json
+/WebApp Obligatorio P2/bin/Debug/net8.0/Dominio.dll
+/WebApp Obligatorio P2/bin/Debug/net8.0/Dominio.pdb
+/WebApp Obligatorio P2/bin/Debug/net8.0/WebApp Obligatorio P2.staticwebassets.runtime.json
+/WebApp Obligatorio P2/obj/Debug/net8.0/staticwebassets.development.json
+/WebApp Obligatorio P2/obj/Debug/net8.0/WebApp Obligatorio P2.csproj.CoreCompileInputs.cache
+/WebApp Obligatorio P2/obj/Debug/net8.0/WebApp Obligatorio P2.genruntimeconfig.cache
+/WebApp Obligatorio P2/obj/Debug/net8.0/WebApp Obligatorio P2.csproj.FileListAbsolute.txt
