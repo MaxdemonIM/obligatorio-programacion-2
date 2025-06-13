@@ -10,7 +10,7 @@ namespace Dominio
     public class Avion : IValidable
     {
         private string _fabricante;
-        private string _modelo;  //determinante to do
+        private string _modelo;  
         private int _alcance;
         private int _cantAsientos;
         private decimal _costoXKm;
