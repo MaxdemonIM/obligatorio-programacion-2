@@ -1,53 +1,60 @@
 ﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+# .gitignore optimizado para Visual Studio y proyectos .NET 8
 ################################################################################
 
-/.vs/obligatorio-programacion-2/v17/.wsuo
-/.vs/obligatorio-programacion-2/v17/DocumentLayout.backup.json
-/.vs/obligatorio-programacion-2/v17/DocumentLayout.json
-/Dominio/obj/Debug/net8.0/Dominio.AssemblyInfo.cs
-/Dominio/obj/Debug/net8.0/Dominio.AssemblyInfoInputs.cache
-/Dominio/obj/Debug/net8.0/Dominio.assets.cache
-/Dominio/obj/Debug/net8.0/Dominio.GeneratedMSBuildEditorConfig.editorconfig
-/Dominio/obj/Dominio.csproj.nuget.dgspec.json
-/Dominio/obj/Dominio.csproj.nuget.g.props
-/Dominio/obj/project.assets.json
-/Dominio/obj/project.nuget.cache
-/obligatorioP2/obj/Debug/net8.0/apphost.exe
-/obligatorioP2/obj/Debug/net8.0/obligatorioP2.AssemblyInfo.cs
-/obligatorioP2/obj/Debug/net8.0/obligatorioP2.AssemblyInfoInputs.cache
-/obligatorioP2/obj/Debug/net8.0/obligatorioP2.assets.cache
-/obligatorioP2/obj/Debug/net8.0/obligatorioP2.csproj.AssemblyReference.cache
-/obligatorioP2/obj/Debug/net8.0/obligatorioP2.GeneratedMSBuildEditorConfig.editorconfig
-/obligatorioP2/obj/obligatorioP2.csproj.nuget.dgspec.json
-/obligatorioP2/obj/obligatorioP2.csproj.nuget.g.props
-/obligatorioP2/obj/project.assets.json
-/obligatorioP2/obj/project.nuget.cache
-/WebApp Obligatorio P2/obj/Debug/net8.0/WebApp Obligatorio P2.AssemblyInfoInputs.cache
-/WebApp Obligatorio P2/obj/Debug/net8.0/WebApp Obligatorio P2.AssemblyInfo.cs
-/WebApp Obligatorio P2/obj/Debug/net8.0/WebApp Obligatorio P2.assets.cache
-/WebApp Obligatorio P2/obj/Debug/net8.0/WebApp Obligatorio P2.csproj.AssemblyReference.cache
-/WebApp Obligatorio P2/obj/Debug/net8.0/WebApp Obligatorio P2.GeneratedMSBuildEditorConfig.editorconfig
-/WebApp Obligatorio P2/obj/project.assets.json
-/WebApp Obligatorio P2/obj/project.nuget.cache
-/WebApp Obligatorio P2/obj/WebApp Obligatorio P2.csproj.nuget.dgspec.json
-/WebApp Obligatorio P2/obj/WebApp Obligatorio P2.csproj.nuget.g.props
-/Dominio/bin/Debug/net8.0/Dominio.dll
-/Dominio/bin/Debug/net8.0/Dominio.pdb
-/WebApp Obligatorio P2/bin/Debug/net8.0/WebApp Obligatorio P2.dll
-/WebApp Obligatorio P2/bin/Debug/net8.0/WebApp Obligatorio P2.exe
-/WebApp Obligatorio P2/bin/Debug/net8.0/WebApp Obligatorio P2.pdb
-/WebApp Obligatorio P2/bin/Debug/net8.0/WebApp Obligatorio P2.staticwebassets.endpoints.json
-/WebApp Obligatorio P2/obj/Debug/net8.0/ref/WebApp Obligatorio P2.dll
-/WebApp Obligatorio P2/obj/Debug/net8.0/refint/WebApp Obligatorio P2.dll
-/WebApp Obligatorio P2/obj/Debug/net8.0/staticwebassets.build.endpoints.json
-/WebApp Obligatorio P2/obj/Debug/net8.0/apphost.exe
-/WebApp Obligatorio P2/obj/Debug/net8.0/rjimswa.dswa.cache.json
-/WebApp Obligatorio P2/obj/Debug/net8.0/rjsmcshtml.dswa.cache.json
-/WebApp Obligatorio P2/obj/Debug/net8.0/rjsmrazor.dswa.cache.json
-/WebApp Obligatorio P2/obj/Debug/net8.0/rpswa.dswa.cache.json
-/WebApp Obligatorio P2/obj/Debug/net8.0/staticwebassets.build.json
-/WebApp Obligatorio P2/obj/Debug/net8.0/staticwebassets.build.json.cache
-/WebApp Obligatorio P2/obj/Debug/net8.0/WebApp Obligatorio P2.dll
-/WebApp Obligatorio P2/obj/Debug/net8.0/WebApp Obligatorio P2.pdb
-/WebApp Obligatorio P2/obj/Debug/net8.0/WebApp Obligatorio P2.sourcelink.json
+# Archivos y carpetas de configuración de Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Archivos generados por compilación
+**/bin/
+**/obj/
+
+# Archivos generados por NuGet
+project.lock.json
+project.fragment.lock.json
+*.nuget.props
+*.nuget.targets
+*.nuget.dgspec.json
+*.nuget.g.props
+*.nuget.g.targets
+*.nuget.cache
+
+# Archivos temporales, logs y bases de datos locales
+*.log
+*.tmp
+*.temp
+*.db
+*.sqlite
+
+# Configuración del IDE Rider o similares
+.idea/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos específicos del entorno
+*.pdb
+*.dll
+*.exe
+*.cache
+*.json
+*.editorconfig
+
+# WebApp static assets generados
+**/staticwebassets.build.json
+**/staticwebassets.build.json.cache
+**/*.staticwebassets.endpoints.json
+**/*.dswa.cache.json
+
+# Archivos específicos del entorno local (como wsuo o layout)
+**/.wsuo
+**/DocumentLayout*.json
+
+# Archivos generados por Razor
+**/*.rjsmrazor.dswa.cache.json
+**/*.rjsmcshtml.dswa.cache.json
