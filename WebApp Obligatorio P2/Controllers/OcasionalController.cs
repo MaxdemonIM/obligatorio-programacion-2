@@ -26,10 +26,10 @@ namespace WebApp_Obligatorio_P2.Controllers
             try
             {
                 
+                _sistema.DarDeAltaUsuario(ocasional);
                 HttpContext.Session.SetString("email", ocasional.Email);
                 HttpContext.Session.SetString("password", ocasional.Password);
                 HttpContext.Session.SetString("rol", ocasional.GetType().Name); // para cuando se registre guarde el rol en la sesión
-                _sistema.DarDeAltaUsuario(ocasional);
                 return RedirectToAction("Index","Home");
 
             }
