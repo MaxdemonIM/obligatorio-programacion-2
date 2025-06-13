@@ -19,8 +19,6 @@ namespace WebApp_Obligatorio_P2.Controllers
             return View(_sistema.ListarPasajeros());
         }
 
-        //CAMBIAR POR DETAIL
-
         [SoloPasajero]
         public IActionResult VerPerfil() 
         {
