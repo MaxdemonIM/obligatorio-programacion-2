@@ -48,6 +48,7 @@ namespace WebApp_Obligatorio_P2.Controllers
         public IActionResult Logout()
         {
             HttpContext.Session.SetString("email", "");
+            HttpContext.Session.Clear(); // Limpia toda la sesión para me deje ingresar de nuevo y no me lance la excepcion de ya estoy registrado o logueado.
 
             return RedirectToAction("Login");
         }
