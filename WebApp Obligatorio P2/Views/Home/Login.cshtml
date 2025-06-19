@@ -21,31 +21,30 @@
 
         }
 
-        <div class=" d-flex just p-5 justify-content-center align-content-center">
+        <div class="container d-flex just p-4 justify-content-center align-content-center">
             <h3> @Context.Session.GetString("Email")</h3>
             @if (string.IsNullOrWhiteSpace(Context.Session.GetString("email")))
             {
 
-                <form class="d-flex row justify-content-center align-content-between py-2" method="post">
+                <form class="row justify-content-center align-content-between py-2" method="post">
 
-                    <div class="form-group col-12 my-4">
+                    <div class="form-group col-8 my-4">
                         <label for="">Ingrese su correo:</label>
                         <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo">
                     </div>
 
                 
 
-                    <div class="form-group col-12 my-4">
+                    <div class="form-group col-8 my-4">
                         <label for="exampleInputPassword1">Ingrese su contraseña:</label>
                         <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Ingrese su contraseña">
                     </div>
 
-                    <div>
-                        <button type="submit" class="btn btn-primary col-3 my-1">Iniciar sesión</button>
-                    </div>
+                    <div class="d-flex row col-8 justify-content-between align-content-center">
+                        
+                        <button type="submit" class="btn btn-success bg-gradient col-lg-4 col-12 my-1">Iniciar sesión</button>
 
-                    <div>
-                        <a href="~/Ocasional/RegistrarOcasional" class="btn btn-primary col-3 my-1">Registrarse</a>
+                        <a href="~/Ocasional/RegistrarOcasional" class="btn btn-primary bg-primary-subtle col-lg-4 col-12 my-1">Registrarse</a>
                     </div>
                 </form>
             }

@@ -14,64 +14,67 @@
 
 </head>
 <body>
-    <header class="container-fluid justify-content-between">
+    <header class="bg-dark py-2 border-bottom">
+        <div class="container-fluid px-4">
+            <nav class="navbar navbar-expand-lg navbar-dark w-100">
+                <!-- Logo visible siempre -->
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">
+                    <img src="https://i.imgur.com/Ftvy8a4.png" alt="Logo Altavia" style="height: 48px;" />
+                </a>
 
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
-            <a asp-area="" asp-controller="Home" asp-action="Index" class="col-6"><img class="logo" src="https://i.imgur.com/Ftvy8a4.png" alt="Logo Altavia" /></a>
-            <button class="navbar-toggler border-light" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav text-white ">
+                @if (!string.IsNullOrWhiteSpace(Context.Session.GetString("email")))
+                {
+                    <!-- Botón hamburguesa SOLO si hay sesión iniciada -->
+                    <button class="navbar-toggler bg-warning border-0" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                }
 
-                    @if (!string.IsNullOrWhiteSpace(Context.Session.GetString("email")))
-                    {
-
-                        string rol = Context.Session.GetString("rol");
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-
-
-                        @* SI ES PASAJERO   *@
-
-                        @if (rol == "Ocasional" || rol == "Premium")
+                <div class="collapse navbar-collapse mt-3 mt-lg-0" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto text-end text-lg-start">
+                        @if (!string.IsNullOrWhiteSpace(Context.Session.GetString("email")))
                         {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Pasaje" asp-action="Index"> Ver pasajes</a>
+                            string rol = Context.Session.GetString("rol");
+
+                            <li class="nav-item px-2">
+                                <a class="nav-link text-white fw-semibold" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Pasajero" asp-action="VerPerfil"> Mi perfil</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Vuelo" asp-action="Index"> Ver vuelos</a>
+
+                            @if (rol == "Ocasional" || rol == "Premium")
+                            {
+                                <li class="nav-item px-2">
+                                    <a class="nav-link text-white-50" asp-area="" asp-controller="Pasaje" asp-action="Index">Ver pasajes</a>
+                                </li>
+                                <li class="nav-item px-2">
+                                    <a class="nav-link text-white-50" asp-area="" asp-controller="Pasajero" asp-action="VerPerfil">Mi perfil</a>
+                                </li>
+                                <li class="nav-item px-2">
+                                    <a class="nav-link text-white-50" asp-area="" asp-controller="Vuelo" asp-action="Index">Ver vuelos</a>
+                                </li>
+                            }
+
+                            @if (rol == "Administrador")
+                            {
+                                <li class="nav-item px-2">
+                                    <a class="nav-link text-white-50" asp-area="" asp-controller="Pasajero" asp-action="Index">Ver pasajeros</a>
+                                </li>
+                                <li class="nav-item px-2">
+                                    <a class="nav-link text-white-50" asp-area="" asp-controller="Pasaje" asp-action="Index">Ver pasajes</a>
+                                </li>
+                            }
+
+                            <li class="nav-item px-2">
+                                <a class="nav-link text-danger fw-semibold" asp-area="" asp-controller="Home" asp-action="Logout">Cerrar Sesión</a>
                             </li>
                         }
-
-                        @if (rol == "Administrador")
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Pasajero" asp-action="Index"> Ver pasajeros</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Pasaje" asp-action="Index"> Ver pasajes</a>
-                            </li>
-
-                        }
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Logout"> Cerrar Sesion</a>
-                        </li>
-                    }
-
-                </ul>
-
-
-            </div>
-        </nav>
+                    </ul>
+                </div>
+            </nav>
+        </div>
     </header>
+
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -83,7 +86,9 @@
             <div>
                 <img class="logo" src="https://i.imgur.com/e0VxB0m.png" alt="Alternate Text" />
             </div>
-            &copy;Altavia  2025 - Todos los derechos reservados - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <p>
+                &copy;Altavia  2025 - Todos los derechos reservados
+            </p>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

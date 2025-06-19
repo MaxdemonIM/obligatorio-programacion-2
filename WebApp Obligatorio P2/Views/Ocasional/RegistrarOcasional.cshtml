@@ -5,63 +5,62 @@
 @using Dominio
 @model Ocasional
 
+<div class="container">
+    <h2>REGISTRARSE</h2>
 
-<h2>REGISTRARSE</h2>
-
-@if (!string.IsNullOrWhiteSpace(ViewBag.Error)){
+    @if (!string.IsNullOrWhiteSpace(ViewBag.Error)){
 
     <div class="alert alert-danger">
 
         @ViewBag.Error
 
     </div>
+    }
 
-}
-
-<form method="post">
-    @*NACIONALIDAD*@
-    <div class="form-group">
-        <label for="txtNacionalidad">Nacionalidad</label>
-        <input type="text" class="form-control" name="nacionalidad" id="txtNacionalidad" placeholder="Ingrese nacionalidad..">
+    <form method="post">
+        @*NACIONALIDAD*@
+        <div class="form-group">
+            <label for="txtNacionalidad">Nacionalidad</label>
+            <input type="text" class="form-control" name="nacionalidad" id="txtNacionalidad" placeholder="Ingrese nacionalidad..">
         
-    </div>
-    @*DOCUMENTO DE IDENTIDAD*@
+        </div>
+        @*DOCUMENTO DE IDENTIDAD*@
 
-    <div class="form-group">
-        <label for="txtDocIdentidad">Documento de identidad</label>
-        <input type="text" class="form-control" name="docIdentidad" id="txtDocIdentidad" placeholder="Ingrese su documento de identidad..">
+        <div class="form-group">
+            <label for="txtDocIdentidad">Documento de identidad</label>
+            <input type="text" class="form-control" name="docIdentidad" id="txtDocIdentidad" placeholder="Ingrese su documento de identidad..">
 
-    </div>
+        </div>
 
-    @*NOMBRE*@
-    <div class="form-group">
-        <label for="txtNombre">Nombre </label>
-        <input type="text" class="form-control" name="nombre" id="txtNombre" placeholder="Ingrese su nombre..">
+        @*NOMBRE*@
+        <div class="form-group">
+            <label for="txtNombre">Nombre </label>
+            <input type="text" class="form-control" name="nombre" id="txtNombre" placeholder="Ingrese su nombre..">
 
-    </div>
+        </div>
 
-    @*CONTRASEÑA*@
+        @*CONTRASEÑA*@
 
-    <div class="form-group">
-        <label for="txtContrasenha">Ingrese su Contraseña</label>
-        <input type="password" class="form-control" name="password" id="txtContrasenha" placeholder="Ingrese su contraseña..">
-    </div>
+        <div class="form-group">
+            <label for="txtContrasenha">Ingrese su Contraseña</label>
+            <input type="password" class="form-control" name="password" id="txtContrasenha" placeholder="Ingrese su contraseña..">
+        </div>
 
-    @*EMAIL*@
-    <div class="form-group">
-        <label for="email">Ingrese su email</label>
-        <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su email..">
+        @*EMAIL*@
+        <div class="form-group">
+            <label for="email">Ingrese su email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su email..">
         
-    </div>
+        </div>
    
-    <br/>
-    <div class="d-flex gap-3">
-        <button type="submit" class="btn btn-primary">Registrarse</button>
-        @*ANCLA PARA A FUTURO REDIRIJA A LA VISTA DE ANONIMO (PREVIO A REGISTRARSE) *@
-        <a href="~/Home/Login" class="btn btn-outline-info"> Volver</a>
-    </div>
-</form>
-
+        <br/>
+        <div class="d-flex gap-3">
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+            @*ANCLA PARA A FUTURO REDIRIJA A LA VISTA DE ANONIMO (PREVIO A REGISTRARSE) *@
+            <a href="~/Home/Login" class="btn btn-outline-info"> Volver</a>
+        </div>
+    </form>
+</div>
 
 
 

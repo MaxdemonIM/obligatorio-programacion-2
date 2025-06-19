@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Lista de vuelos ";
+    ViewData["Title"] = "Vuelos disponibles ";
 }
 
 
@@ -7,8 +7,8 @@
 @model List<Vuelo>
 
 
-<div class="d-flex justify-content-center align-item-center">
-    <h2 class="m-4">LISTA DE VUELOS:</h2>
+<div class="d-flex row justify-content-center align-item-center">
+    <h2 class="m-4">Elija el vuelo que quiere reservar:</h2>
 
     <div class="d-block">
 
@@ -30,7 +30,7 @@
     {   
         <form method="post" class="my-2">
             <select name="IATAsalida">
-                <option value="">Elija un codigo de aeropuerto de salida</option>
+                <option value="">Aeropuerto de salida</option>
                 @foreach (Aeropuerto aeropuerto in ViewBag.Aeropuertos)
                 {
                     <option value="@aeropuerto.IATACode">@aeropuerto.IATACode</option>
@@ -38,7 +38,7 @@
                 }
             </select>
             <select name="IATAllegada">
-                <option value="">Elija un codigo de aeropuerto de llegada</option>
+                <option value="">Aeropuerto de llegada</option>
                 @foreach (Aeropuerto aeropuerto in ViewBag.Aeropuertos)
                 {
                     <option value="@aeropuerto.IATACode">@aeropuerto.IATACode</option>
