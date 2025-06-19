@@ -47,9 +47,6 @@ namespace Dominio
                     return 1m;
                     
             }
-
-
-         
         }
 
 
