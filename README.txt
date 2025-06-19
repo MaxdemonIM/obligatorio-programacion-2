@@ -6,8 +6,7 @@ Aplicación de consola desarrollada en C# como parte del curso de Programación 
 
 Simular un sistema de backend para una aerolínea, con lógica de negocio aplicada a:
 - Gestión de vuelos
-- Alta y baja de usuarios (pasajeros ocasionales y premium)
-- Administración de rutas y aviones
+- Alta de usuarios (pasajeros ocasionales y premium)
 - Compra de pasajes
 - Roles de administrador y pasajero
 
