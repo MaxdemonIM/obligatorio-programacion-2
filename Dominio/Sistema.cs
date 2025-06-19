@@ -483,6 +483,7 @@ namespace Dominio
 
 
             // ----- PASAJES -----
+            
             AgregarPasaje(new Pasaje(_vuelos[0], (Pasajero)_usuarios[2], new DateTime(2026, 5, 5), TipoEquipaje.CABINA));
             AgregarPasaje(new Pasaje(_vuelos[1], (Pasajero)_usuarios[3], new DateTime(2026, 5, 6), TipoEquipaje.LIGHT));
             AgregarPasaje(new Pasaje(_vuelos[2], (Pasajero)_usuarios[4], new DateTime(2026, 5, 9), TipoEquipaje.BODEGA));
@@ -509,6 +510,7 @@ namespace Dominio
             AgregarPasaje(new Pasaje(_vuelos[23], (Pasajero)_usuarios[7], new DateTime(2026, 5, 31), TipoEquipaje.BODEGA));
             AgregarPasaje(new Pasaje(_vuelos[24], (Pasajero)_usuarios[8], new DateTime(2026, 6, 1), TipoEquipaje.CABINA));
 
+            
         }
     }
 }
