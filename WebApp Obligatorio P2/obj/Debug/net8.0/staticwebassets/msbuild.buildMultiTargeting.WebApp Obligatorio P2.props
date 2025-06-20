@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\WebApp Obligatorio P2.props" />
-</Project>
