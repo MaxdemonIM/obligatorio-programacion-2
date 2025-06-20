@@ -24,6 +24,9 @@ namespace Dominio
 
         public string Modelo { get { return this._modelo; } }
 
+        public string Fabricante { get { return this._fabricante; } }
+
+
         public Avion(string fabricante, string modelo, int alcance, int cantAsientos, decimal costoXKm, string tipoAeronave)
         {
             this._fabricante = fabricante;

@@ -56,6 +56,7 @@
                 <tr>
 
                     <th scope="col">NUMERO DE VUELO</th>
+                    <th scope="col">AVIÓN</th>
                     <th scope="col">RUTA</th>
                     <th scope="col">FRECUENCIA</th>
                     <th scope="col"></th>
@@ -72,6 +73,7 @@
                     <tr>
 
                         <td>@vuelo.NumVuelo</td>
+                        <td>@vuelo.Avion.Fabricante @vuelo.Avion.Modelo</td>
                         <td>@vuelo.Ruta</td>
                         <td>
                             @foreach (DayOfWeek dia in vuelo.Frecuencia) //para mostrar la frecuencia

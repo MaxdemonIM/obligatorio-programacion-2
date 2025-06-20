@@ -40,14 +40,12 @@ namespace WebApp_Obligatorio_P2.Controllers
                     {
                         _sistema.ActualizarPuntosPremium(puntos, pasajeroEmail);
                         return RedirectToAction("Index", new { mensaje = "Puntos actualizados correctamente" });
-
                     }
                     else if(usuario.Email == pasajeroEmail && usuario is Ocasional)
                     {
                         bool esElegible = elegible == "true";
                         _sistema.ActualizarElegibilidadOcasional(pasajeroEmail, esElegible);
                         return RedirectToAction("Index", new { mensaje = "Elegibilidad actualizada correctamente" });
-
                     }
                 }
                 return View();

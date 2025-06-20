@@ -54,8 +54,8 @@ namespace WebApp_Obligatorio_P2.Controllers
                 Vuelo vuelo = _sistema.ObtenerVueloPorNumVuelo(numVuelo);
                 string mailLogueado = HttpContext.Session.GetString("email");
                 Pasajero logueado = (Pasajero)_sistema.ObtenerUsuarioPorMail(mailLogueado);
-                Pasaje nuevo = new Pasaje(vuelo, logueado, fecha, tipoEquipaje.Value);
                 _sistema.EsTipoEquipajeValido(tipoEquipaje);
+                Pasaje nuevo = new Pasaje(vuelo, logueado, fecha, tipoEquipaje.Value);
 
 
                 _sistema.AgregarPasaje(nuevo);

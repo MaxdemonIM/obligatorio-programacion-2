@@ -13,6 +13,9 @@
                 Precio : $@(Model.CalcularCostoSinEquipajeParaVistaDetails().ToString("F2"))
             </h6>
 
+            <h6 class="mt-3">Avión:</h6>
+            <p>@Model.Avion.Fabricante @Model.Avion.Modelo</p>
+            
             <h6 class="mt-3">Frecuencia:</h6>
             <p>
                 @foreach (DayOfWeek dia in Model.Frecuencia)
